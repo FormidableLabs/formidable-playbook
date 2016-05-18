@@ -15,10 +15,20 @@ similar projects.
 
 ## The Frontend Playbook
 
-**TODO: Webpack build**
+Our frontend infrastructure is based around [webpack][] builds, but many of the
+guidelines / goals apply to any build tool.
+
+### Webpack plugins
+
 **TODO: Suggested plugins - Dedupe, uglify, lodash**
 **TODO: Avoid / check - occurrenceorder**
 
-**TODO: inspectpack reports, audits**
+### Other tools
 
 **TODO: tools -- little-loader for script loading**
+
+### Performance auditing
+
+**TODO: inspectpack reports, audits**
+
+[webpack]: https://webpack.github.io/
