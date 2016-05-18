@@ -8,10 +8,10 @@ backend, and beyond.
 
 ## The Architecture Playbook
 
-### Have a single infrastructure
+### [Have a single infrastructure](docs/infrastructure/single.md)
 
-A project should have a [single infrastructure](docs/infrastructure/single.md)
-control all similar projects.
+A unified development effort should have a single infrastructure control all
+similar projects.
 
 ## The Frontend Playbook
 

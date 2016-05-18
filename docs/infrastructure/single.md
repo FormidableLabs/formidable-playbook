@@ -1,8 +1,8 @@
 ### Have a single infrastructure
 
-A project should have a single infrastructure control all similar projects.
-Classes of similar projects include React components, Hapi plugins, Node.js
-servers, etc.
+A unified development effort should have a single infrastructure control all
+similar projects. Classes of similar projects include React components, Hapi
+plugins, Node.js servers, etc.
 
 There are many different ways of implementing your projects and builds, and
 without being too preachy, the goals should be:
