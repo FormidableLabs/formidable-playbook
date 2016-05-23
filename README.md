@@ -33,15 +33,11 @@ A short list of plugin recommendations for best frontend performance include:
 
 | Plugin | Recommend? | Notes |
 | ------ | ---------- | ----- |
-| [`UglifyJsPlugin`](https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin)| Yes | Minimize code |
-| [`DedupePlugin`](https://webpack.github.io/docs/list-of-plugins.html#dedupeplugin)| Yes | Collapse identical code chunks to a single reference |
-| [`lodash-webpack-plugin`](https://github.com/lodash/lodash-webpack-plugin)| Yes | Optimize `lodash` (if used) |
-| [`OccurrenceOrderPlugin`](https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin)| Maybe | Reorder module and chunk ids by occurrence count |
-| [`DefinePlugin`](https://webpack.github.io/docs/list-of-plugins.html#defineplugin)| Maybe | Define constants for better optimization |
-
-**TODO: Write up doc**
-**TODO: OccurrenceOrderPlugin - determinism, watch min+gz**
-**TODO: DefinePlugin - `process.env.NODE_ENV = production`**
+| [`UglifyJsPlugin`](https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin) | Yes | Minimize code |
+| [`DedupePlugin`](https://webpack.github.io/docs/list-of-plugins.html#dedupeplugin) | Yes | Collapse identical code chunks to a single reference |
+| [`lodash-webpack-plugin`](https://github.com/lodash/lodash-webpack-plugin) | Yes | Optimize `lodash` (if used) |
+| [`OccurrenceOrderPlugin`](https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin) | Maybe | Reorder module and chunk ids by occurrence count |
+| [`DefinePlugin`](https://webpack.github.io/docs/list-of-plugins.html#defineplugin) | Maybe | Define constants for better optimization |
 
 #### [Code splitting](docs/frontend/webpack-code-splitting.md)
 
