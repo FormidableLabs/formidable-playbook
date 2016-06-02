@@ -42,26 +42,82 @@ a scan by webpack to coalesce identical code chunks to a single reference.
 
 **TODO: inspectpack duplicates reference + note*
 
-
-
-
 ##### [`OccurrenceOrderPlugin`](https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin)
 
 * Recommended?: **Maybe**
 
-**TODO: OccurrenceOrderPlugin - determinism, watch min+gz**
+Reorder module / chunk ids by order of most-to-least occurring. This reduces
+raw code size since smaller integer indexes are `require`-ed more. Also makes
+the order of modules deterministic.
 
+Typical configuration:
+
+```js
+new webpack.optimize.OccurrenceOrderPlugin()
+```
+
+**Assessment**: The size gains are often not significant, and can make the
+ultimate minified + gzipped bundle size actually _larger_. And this calculus
+can change over time, so generally speaking size should not be a motivating
+factor for enabling this plugin. However, if you need a deterministic ordering
+of chunks and modules, this plugin is appropriate.
 
 ##### [`DefinePlugin`](https://webpack.github.io/docs/list-of-plugins.html#defineplugin)
 
 * Recommended?: **Maybe**
 
-**TODO: DefinePlugin - `process.env.NODE_ENV = production`**
+Add raw replacement strings for free variables in code. This literally rewrites
+your source code with replacements. With a bit of strategy and a project
+convention you can opportunistically have code paths removed / variables
+replaced for a bespoke optimized production build.
 
+Additionally, many frameworks / tools such as React, expect a definition of
+`"process.env.NODE_ENV": JSON.stringify("production")` for the most optimized
+build of included code.
 
+Example configuration:
 
+```js
+new webpack.optimize.DefinePlugin({
+  "process.env.NODE_ENV": JSON.stringify("production"), // or "\"production\""
+  "DEBUG": false // or "false"
+})
+```
 
-##### [`lodash-webpack-plugin`](https://github.com/lodash/lodash-webpack-plugin))
+**Note**: to expand a variable to a quoted string, you must use
+`JSON.stringify`.
+
+If we had this source:
+
+```js
+if (process.env.NODE_ENV === "production") {
+  console.log("I'm in prod!");
+}
+
+if (DEBUG) {
+  console.log("Explicit debug switch");
+}
+```
+
+with the above configuration, the output would be:
+
+```js
+if ("production" === "production") {
+  console.log("I'm in prod!");
+}
+
+if (false) {
+  console.log("Explicit debug switch");
+}
+```
+
+which with minification would become:
+
+```js
+console.log("I'm in prod!");
+```
+
+##### [`lodash-webpack-plugin`](https://github.com/lodash/lodash-webpack-plugin)
 
 * Recommended?: **Maybe**
 
