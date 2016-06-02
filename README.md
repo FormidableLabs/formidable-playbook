@@ -4,7 +4,21 @@ The Formidable Playbook
 A practical guide for modern applications. Learn how to survive the frontend,
 backend, and beyond.
 
-**TODO: INSERT_TOC / COME_UP_WITH_REGENERATION_STRATEGY**
+<!-- MarkdownTOC autolink=true depth=4 bracket=round -->
+
+- [The Architecture Playbook](#the-architecture-playbook)
+  - [Have a single infrastructure](#have-a-single-infrastructure)
+- [The Frontend Playbook](#the-frontend-playbook)
+  - [Webpack plugins](#webpack-plugins)
+    - [Start with good base plugins](#start-with-good-base-plugins)
+    - [Code splitting](#code-splitting)
+    - [Shared libraries](#shared-libraries)
+    - [Source maps](#source-maps)
+  - [Babel plugins](#babel-plugins)
+  - [Other tools](#other-tools)
+  - [Performance auditing](#performance-auditing)
+
+<!-- /MarkdownTOC -->
 
 ## The Architecture Playbook
 
@@ -33,11 +47,11 @@ A short list of plugin recommendations for best frontend performance include:
 
 | Plugin | Recommend? | Notes |
 | ------ | ---------- | ----- |
-| [`UglifyJsPlugin`](https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin) | Yes | Minimize code |
+| [`UglifyJsPlugin`](https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin)| Yes | Minimize code |
 | [`DedupePlugin`](https://webpack.github.io/docs/list-of-plugins.html#dedupeplugin) | Yes | Collapse identical code chunks to a single reference |
-| [`lodash-webpack-plugin`](https://github.com/lodash/lodash-webpack-plugin) | Yes | Optimize `lodash` (if used) |
 | [`OccurrenceOrderPlugin`](https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin) | Maybe | Reorder module and chunk ids by occurrence count |
 | [`DefinePlugin`](https://webpack.github.io/docs/list-of-plugins.html#defineplugin) | Maybe | Define constants for better optimization |
+| [`lodash-webpack-plugin`](https://github.com/lodash/lodash-webpack-plugin) | Maybe | Optimize `lodash` |
 
 #### [Code splitting](docs/frontend/webpack-code-splitting.md)
 
@@ -52,10 +66,13 @@ A short list of plugin recommendations for best frontend performance include:
 * https://webpack.github.io/docs/list-of-plugins.html#dllreferenceplugin
   ([example](https://github.com/webpack/webpack/tree/master/examples/dll-user))
 
-
 #### [Source maps](docs/frontend/webpack-source-maps.md)
 
 **TODO: Write up intro section / doc**: Get dev / prod friendly sourcemaps
+
+### Babel plugins
+
+**TODO: Write up intro section / doc**
 
 ### Other tools
 

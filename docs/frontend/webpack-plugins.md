@@ -42,20 +42,27 @@ a scan by webpack to coalesce identical code chunks to a single reference.
 
 **TODO: inspectpack duplicates reference + note*
 
+
+
+
 ##### [`OccurrenceOrderPlugin`](https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin)
 
+* Recommended?: **Maybe**
 
-
-
-
-
-| Plugin | Recommend? | Notes |
-| ------ | ---------- | ----- |
-| [`lodash-webpack-plugin`](https://github.com/lodash/lodash-webpack-plugin)| Yes | Optimize `lodash` (if used) |
-| [`OccurrenceOrderPlugin`](https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin)| Maybe | Reorder module and chunk ids by occurrence count |
-| [`DefinePlugin`](https://webpack.github.io/docs/list-of-plugins.html#defineplugin)| Maybe | Define constants for better optimization |
-
-**TODO: Write up doc**
 **TODO: OccurrenceOrderPlugin - determinism, watch min+gz**
+
+
+##### [`DefinePlugin`](https://webpack.github.io/docs/list-of-plugins.html#defineplugin)
+
+* Recommended?: **Maybe**
+
 **TODO: DefinePlugin - `process.env.NODE_ENV = production`**
 
+
+
+
+##### [`lodash-webpack-plugin`](https://github.com/lodash/lodash-webpack-plugin))
+
+* Recommended?: **Maybe**
+
+**TODO: Write up warning from https://github.com/exogen/test-lodash-webpack-plugin**
