@@ -121,4 +121,55 @@ console.log("I'm in prod!");
 
 * Recommended?: **Maybe**
 
-**TODO: Write up warning from https://github.com/exogen/test-lodash-webpack-plugin**
+If your project uses [lodash](https://lodash.com/) and can handle some limiting
+constraints and complexities, this plugin provides some useful optimizations for
+reducing code size.
+
+Typically you'll want to already use the
+[`babel-plugin-lodash`](https://github.com/lodash/babel-plugin-lodash) which
+optimizes some things in a webpack / babel build. This plugin then goes further
+by removing lots of internal code, grouped in logical
+["feature sets"](https://github.com/lodash/lodash-webpack-plugin#feature-sets)
+
+**Big Warning**: The plugin's only real value is removing internal stuff that
+your code **may still depend on**. And it's not always obvious what is getting
+removed.
+
+For example, looking to a simple example provided at:
+https://github.com/exogen/test-lodash-webpack-plugin we have this starting code:
+
+```js
+import get from "lodash/get";
+import assert from "assert";
+
+const x = { a: { b: { c: 1 } } };
+
+assert.strictEqual(get(x, "a.b.c"), 1);
+```
+
+Using the plugin with no configuration:
+
+```js
+new LodashModuleReplacementPlugin()
+```
+
+will fail the assertion because the result of `get(x, "a.b.c")` is `undefined`.
+The reason is that all deep path traversal code is removed under the hood by
+default. Thus to support deep path traversal for the `get()` call, we would
+need to configure the plugin like:
+
+```js
+new LodashModuleReplacementPlugin({
+  paths: true
+})
+```
+
+Thus, this plugin is not really a "fire and forget" thing, but rather a power
+tool with very few safeties. You must be familiar with all the of the feature
+sets removed, probably need to coordinate re-enabling key ones for your specific
+project, and ensure that all lodash usage is tested / complies with the internal
+rewriting of the plugin.
+
+In short, it's easier to just not add the plugin. But if you need that extra
+bit of super-optimized lodash tuning, you can enable the plugin and accept the
+complexity cost of it.
