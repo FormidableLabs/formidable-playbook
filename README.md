@@ -17,6 +17,7 @@ backend, and beyond.
   - [Babel plugins](#babel-plugins)
   - [Other tools](#other-tools)
   - [Performance auditing](#performance-auditing)
+- [The Backend Playbook](#the-backend-playbook)
 
 <!-- /MarkdownTOC -->
 
@@ -55,11 +56,11 @@ A short list of plugin recommendations for best frontend performance include:
 
 #### [Code splitting](docs/frontend/webpack-code-splitting.md)
 
-**TODO: Write up intro section / doc**
+**TODO: Write up intro section / doc - https://github.com/FormidableLabs/formidable-playbook/issues/7**
 
 #### [Shared libraries](docs/frontend/webpack-shared-libs.md)
 
-**TODO: Write up intro section / doc**
+**TODO: Write up intro section / doc - https://github.com/FormidableLabs/formidable-playbook/issues/6**
 
 * https://webpack.github.io/docs/list-of-plugins.html#dllplugin
   ([example](https://github.com/webpack/webpack/tree/master/examples/dll))
@@ -68,18 +69,26 @@ A short list of plugin recommendations for best frontend performance include:
 
 #### [Source maps](docs/frontend/webpack-source-maps.md)
 
-**TODO: Write up intro section / doc**: Get dev / prod friendly sourcemaps
+**TODO: Write up intro section / doc - https://github.com/FormidableLabs/formidable-playbook/issues/10**
+
+* TODO: GOAL - Get dev / prod friendly sourcemaps
 
 ### Babel plugins
 
-**TODO: Write up intro section / doc**
+**TODO: Write up intro section / doc - https://github.com/FormidableLabs/formidable-playbook/issues/9**
 
 ### Other tools
 
-**TODO: tools -- little-loader for script loading**
+**TODO: tools - https://github.com/FormidableLabs/formidable-playbook/issues/8**
+
+* TODO: little-loader for script loading
 
 ### Performance auditing
 
-**TODO: inspectpack reports, audits**
+**TODO: inspectpack reports, audits - https://github.com/FormidableLabs/formidable-playbook/issues/2**
 
 [webpack]: https://webpack.github.io/
+
+## The Backend Playbook
+
+**TODO: Plan, write section - https://github.com/FormidableLabs/formidable-playbook/issues/4**
