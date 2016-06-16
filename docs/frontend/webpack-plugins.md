@@ -180,6 +180,10 @@ sets removed, probably need to coordinate re-enabling key ones for your specific
 project, and ensure that all lodash usage is tested / complies with the internal
 rewriting of the plugin.
 
+For example, after enabling it without configuration in the Victory project,
+we later found that we needed several configurations enabled. See:
+https://github.com/FormidableLabs/builder-victory-component/pull/64
+
 In short, it's easier to just not add the plugin. But if you need that extra
 bit of super-optimized lodash tuning, you can enable the plugin and accept the
 complexity cost of it.

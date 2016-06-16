@@ -30,8 +30,9 @@ similar projects.
 
 ## The Frontend Playbook
 
-Our frontend infrastructure is based around [webpack][] builds, but most of the
-guidelines / goals apply to any build tool.
+Our frontend infrastructure is based around
+[webpack](https://webpack.github.io/) builds, but most of the guidelines / goals
+apply to any build tool.
 
 ### Webpack plugins
 
@@ -56,11 +57,17 @@ A short list of plugin recommendations for best frontend performance include:
 
 #### [Code splitting](docs/frontend/webpack-code-splitting.md)
 
-**TODO: Write up intro section / doc - https://github.com/FormidableLabs/formidable-playbook/issues/7**
+[Code splitting](http://webpack.github.io/docs/code-splitting.html) is a Webpack
+feature that enables a JS bundle within a single build to be split up and loaded
+on-demand in smaller parts. Code splitting is appropriate within a single page
+and build.
 
 #### [Shared libraries](docs/frontend/webpack-shared-libs.md)
 
-**TODO: Write up intro section / doc - https://github.com/FormidableLabs/formidable-playbook/issues/6**
+Webpack shared libraries are slightly different in that common dependencies form
+a JS bundle with a manifest of names in a first build step. Then later entry
+points ingest the manifest and don't need to include the libraries. Shared
+libraries can be used _across_ web page loads and builds.
 
 * https://webpack.github.io/docs/list-of-plugins.html#dllplugin
   ([example](https://github.com/webpack/webpack/tree/master/examples/dll))
@@ -69,9 +76,11 @@ A short list of plugin recommendations for best frontend performance include:
 
 #### [Source maps](docs/frontend/webpack-source-maps.md)
 
-**TODO: Write up intro section / doc - https://github.com/FormidableLabs/formidable-playbook/issues/10**
-
-* TODO: GOAL - Get dev / prod friendly sourcemaps
+The Webpack [SourceMapDevToolPlugin](http://webpack.github.io/docs/list-of-plugins.html#sourcemapdevtoolplugin)
+creates [source maps](https://github.com/ryanseddon/source-map/wiki/Source-maps:-languages,-tools-and-other-info)
+which allows a developer to view / debug developer-friendly source code instead
+of the optimized, mangled, and minified JS bundle of a frontend web app. Source
+maps should be enabled for both development and production.
 
 ### Babel plugins
 
@@ -87,8 +96,7 @@ A short list of plugin recommendations for best frontend performance include:
 
 **TODO: inspectpack reports, audits - https://github.com/FormidableLabs/formidable-playbook/issues/2**
 
-[webpack]: https://webpack.github.io/
-
 ## The Backend Playbook
 
 **TODO: Plan, write section - https://github.com/FormidableLabs/formidable-playbook/issues/4**
+
