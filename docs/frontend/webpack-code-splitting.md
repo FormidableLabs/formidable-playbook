@@ -7,4 +7,9 @@ and build.
 
 <!-- MarkdownTOC autolink=true depth=5 bracket=round -->
 
+- [Basic Example](#basic-example)
+
 <!-- /MarkdownTOC -->
+
+##### Basic Example
+
