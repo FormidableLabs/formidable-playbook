@@ -9,14 +9,14 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, "dist/js"),
-    filename: "[name].js"
+    filename: "[name].js",
+    pathinfo: true
   },
   plugins: [
     // Abstract a common file between apps.
     new webpack.optimize.CommonsChunkPlugin({
       name: "commons",
-      filename: "commons.js",
-      minChunks: 2 // force abstraction for our two apps.
+      filename: "commons.js"
     })
   ]
 };

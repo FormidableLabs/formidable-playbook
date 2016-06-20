@@ -9,7 +9,8 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, "dist/js"),
-    filename: "[name].js"
+    filename: "[name].js",
+    pathinfo: true
   },
   plugins: [
     new webpack.DllReferencePlugin({

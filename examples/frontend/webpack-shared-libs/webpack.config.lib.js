@@ -9,7 +9,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist/js"),
     filename: "[name].js",
-    library: "[name]_[hash]"
+    library: "[name]_[hash]",
+    pathinfo: true
   },
   plugins: [
     new webpack.DllPlugin({
