@@ -212,7 +212,10 @@ particularly useful for the very common case of React application-based routes
 
 ##### Advantages
 
-* **Terse Common Bundle**:
+* **Terse Common Bundle**: Webpack takes care of only adding the libraries to
+  the common bundle that are actually common to multiple chunks / entry points.
+* **Single build step**: Webpack generates the common and entry point chunks
+  as part of a single build.
 
 ##### Disadvantages
 
