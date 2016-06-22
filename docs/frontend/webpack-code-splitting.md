@@ -90,8 +90,9 @@ This produces three files:
 
 Let's look at these files in detail:
 
+[`dist/js/commons.js`](../../examples/frontend/webpack-code-splitting/dist/js/commons.js)
+
 ```js
-// dist/js/commons.js
 /******/ (function(modules) { // webpackBootstrap
 /******/  // SNIPPED
 /******/  window["webpackJsonp"] = // DEFINITION
@@ -115,8 +116,9 @@ Let's look at these files in detail:
 /******/ ]);
 ```
 
+[`dist/js/app1.js`](../../examples/frontend/webpack-code-splitting/dist/js/app1.js)
+
 ```js
-// dist/js/app1.js
 webpackJsonp([0],[
 /* 0 */
 /*!*****************!*\
@@ -133,8 +135,9 @@ webpackJsonp([0],[
 ]);
 ```
 
+[`dist/js/app2.js`](../../examples/frontend/webpack-code-splitting/dist/js/app2.js)
+
 ```js
-// dist/js/app2.js
 webpackJsonp([1],[
 /* 0 */
 /*!*****************!*\
