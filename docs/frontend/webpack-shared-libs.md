@@ -59,16 +59,16 @@ We then add one more file:
 require("./foo");
 ```
 
-Which doesn't _do_ anything `./foo`. It instead just declares "add this
-dependency" for our later use in creating a manual bundle of shared
+Which doesn't _do_ anything with the `./foo` import. It instead just declares
+"add this dependency" for our later use in creating a manual bundle of shared
 dependencies. This explicit definition is essentially the big difference with
 code splitting which automatically infers shared dependencies. For the shared
-library approach in this section, we will need to manually curate and update
-the libraries to include in the shared bundle.
+library approach in this section, we will need to manually curate and update the
+libraries to include in the shared bundle.
 
 ##### Shared Lib Example
 
-Shared libraries allows us to manually specify code in shared bundle, that can
+Shared libraries allow us to manually specify code in shared bundle, that can
 then be excluded in any other entry points (across projects). To accomplish
 this we need **two** separate webpack configurations.
 

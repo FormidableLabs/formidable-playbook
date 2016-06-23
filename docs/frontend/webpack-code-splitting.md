@@ -197,11 +197,11 @@ So, we could tweak our example configuration of:
 to point to a new file that async loads both apps like:
 
 ```js
-require.ensure([], function () {
-  require("./app1");
+require.ensure([], function (_require) {
+  _require("./app1");
 });
-require.ensure([], function () {
-  require("./app2");
+require.ensure([], function (_require) {
+  _require("./app2");
 });
 ```
 
@@ -228,7 +228,7 @@ particularly useful for the very common case of React application-based routes
 ##### Disadvantages
 
 * **Cannot be shared across projects**: The common bundle created with code
-  splitting deals with indexes based on the entry points in a single builde.
+  splitting deals with indexes based on the entry points in a single build.
   The resulting bundle cannot be shared across projects / builds.
 * **Cache hits**: Because the common bundle uses only what is defined in the
   constituent apps and is reliant on index ordering, it is unlikely to have
