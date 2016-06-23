@@ -2,7 +2,7 @@
   "name": "formidable-playbook",
   "version": "0.0.1",
   "description": "The Formidable Playbook",
-  "main": "\"\"",
+  "main": "",
   "scripts": {
     "build-md-toc": "doctoc --notitle README.md docs",
     "build-webpack-code-splitting-clean": "rimraf examples/frontend/webpack-code-splitting/dist",
