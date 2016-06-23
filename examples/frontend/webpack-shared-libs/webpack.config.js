@@ -14,7 +14,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DllReferencePlugin({
-      context: path.join(__dirname, "client"),
+      context: path.join(__dirname, "../src"),
       manifest: require("./dist/js/lib-manifest.json")
     })
   ]

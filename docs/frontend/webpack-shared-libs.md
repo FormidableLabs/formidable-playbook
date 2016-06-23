@@ -14,7 +14,6 @@ HTML pages.
 
 - [Basic Example](#basic-example)
 - [Shared Lib Example](#shared-lib-example)
-- [Automatic Splitting](#automatic-splitting)
 - [Advantages](#advantages)
 - [Disadvantages](#disadvantages)
 
@@ -51,6 +50,21 @@ document.querySelector("#content").innerHTML += foo("app2", "App 2");
 
 ... so basically two separate "apps" that will add the headings `App 1` and
 `App 2` to a page using the same `foo()` method...
+
+We then add one more file:
+
+[`lib.js`](../../examples/frontend/src/lib.js)
+
+```js
+require("./foo");
+```
+
+Which doesn't _do_ anything `./foo`. It instead just declares "add this
+dependency" for our later use in creating a manual bundle of shared
+dependencies. This explicit definition is essentially the big difference with
+code splitting which automatically infers shared dependencies. For the shared
+library approach in this section, we will need to manually curate and update
+the libraries to include in the shared bundle.
 
 ##### Shared Lib Example
 
@@ -96,9 +110,20 @@ This produces two files:
 * [`dist/js/lib-manifest.json`](../../examples/frontend/webpack-shared-libs/dist/js/lib-manifest.json):
   A mapping of code part file paths to index in the shared code bundle.
 
-We then have a webpack configuration for our entry points which consumes the
-`lib-manifest.json` file to exclude the things that are in the shared library
-from the resulting entry points using the
+**NOTE - Cross project sharing**: The biggest thing to understand for shared
+libraries is that this first step can be completely independent of the second
+entry point build step -- across:
+
+* Multiple entry points in the same project / application
+* Multiple entry points in _different_ projects / applications
+
+This means that we have a truly portable, cacheable library for an entire
+website or collection of sites, unlike the project-specific code splitting
+solution.
+
+Turning back to our build, we then use a webpack configuration for our entry
+points which consumes the `lib-manifest.json` file to exclude the things that
+are in the shared library from the resulting entry points using the
 [`DllReferencePlugin`](https://webpack.github.io/docs/list-of-plugins.html#dllreferenceplugin)
 ([example](https://github.com/webpack/webpack/tree/master/examples/dll-user)).
 
@@ -121,7 +146,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DllReferencePlugin({
-      context: path.join(__dirname, "client"),
+      context: path.join(__dirname, "../src"),
       manifest: require("./dist/js/lib-manifest.json")
     })
   ]
@@ -137,34 +162,43 @@ All together, this leaves us with four files:
 * [`dist/js/app2.js`](../../examples/frontend/webpack-shared-libs/dist/js/app1.js):
   The `app2` entry point.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Let's look at these files in detail:
 
-[`dist/js/commons.js`](../../examples/frontend/webpack-shared-libs/dist/js/commons.js)
+[`dist/js/lib.js`](../../examples/frontend/webpack-shared-libs/dist/js/lib.js)
 
 ```js
+var lib_1c456e9656dd9be74724 =
 /******/ (function(modules) { // webpackBootstrap
-/******/  // SNIPPED
-/******/  window["webpackJsonp"] = // DEFINITION
 /******/  // SNIPPED
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
+/* 0 */
+/*!***************!*\
+  !*** dll lib ***!
+  \***************/
+/***/ function(module, exports, __webpack_require__) {
+
+  module.exports = __webpack_require__;
+
+/***/ },
 /* 1 */
+/*!****************!*\
+  !*** ./lib.js ***!
+  \****************/
+/***/ function(module, exports, __webpack_require__) {
+
+  /**
+   * Shared Library (DLL)
+   *
+   * Don't need to assign to variable, just the side-effect of "including"
+   * desired libraries in this file.
+   */
+  __webpack_require__(/*! ./foo */ 2);
+
+
+/***/ },
+/* 2 */
 /*!****************!*\
   !*** ./foo.js ***!
   \****************/
@@ -179,10 +213,26 @@ Let's look at these files in detail:
 /******/ ]);
 ```
 
+[`dist/js/lib-manifest.json`](../../examples/frontend/webpack-shared-libs/dist/js/lib-manifest.json)
+
+```js
+{
+  "name": "lib_1c456e9656dd9be74724",
+  "content": {
+    "./lib.js": 1,
+    "./foo.js": 2
+  }
+}
+```
+
 [`dist/js/app1.js`](../../examples/frontend/webpack-shared-libs/dist/js/app1.js)
 
 ```js
-webpackJsonp([0],[
+/******/ (function(modules) { // webpackBootstrap
+/******/  // SNIPPED
+/******/ })
+/************************************************************************/
+/******/ ([
 /* 0 */
 /*!*****************!*\
   !*** ./app1.js ***!
@@ -194,14 +244,36 @@ webpackJsonp([0],[
   document.querySelector("#content").innerHTML += foo("app1", "App 1");
 
 
+/***/ },
+/* 1 */
+/*!**********************************************************************!*\
+  !*** delegated ./foo.js from dll-reference lib_1c456e9656dd9be74724 ***!
+  \**********************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+  module.exports = (__webpack_require__(2))(2);
+
+/***/ },
+/* 2 */
+/*!*******************************************!*\
+  !*** external "lib_1c456e9656dd9be74724" ***!
+  \*******************************************/
+/***/ function(module, exports) {
+
+  module.exports = lib_1c456e9656dd9be74724;
+
 /***/ }
-]);
+/******/ ]);
 ```
 
 [`dist/js/app2.js`](../../examples/frontend/webpack-shared-libs/dist/js/app2.js)
 
 ```js
-webpackJsonp([1],[
+/******/ (function(modules) { // webpackBootstrap
+/******/  // SNIPPED
+/******/ })
+/************************************************************************/
+/******/ ([
 /* 0 */
 /*!*****************!*\
   !*** ./app2.js ***!
@@ -213,12 +285,64 @@ webpackJsonp([1],[
   document.querySelector("#content").innerHTML += foo("app2", "App 2");
 
 
+/***/ },
+/* 1 */
+/*!**********************************************************************!*\
+  !*** delegated ./foo.js from dll-reference lib_1c456e9656dd9be74724 ***!
+  \**********************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+  module.exports = (__webpack_require__(2))(2);
+
+/***/ },
+/* 2 */
+/*!*******************************************!*\
+  !*** external "lib_1c456e9656dd9be74724" ***!
+  \*******************************************/
+/***/ function(module, exports) {
+
+  module.exports = lib_1c456e9656dd9be74724;
+
 /***/ }
-]);
+/******/ ]);
 ```
 
-The `commons.js` file does indeed contain our common code and bootstrap loader,
-leaving us with very small `app1|2` files.
+The `lib.js` file does indeed contain our common code. In contrast to the
+code splitting examples, the files created with the shared library plugins all
+contain a Webpack bootstrap loader. The main trick is seeing that there is a
+mapping of indirection for shared code like `./foo` in our entry point code:
+
+Let's start at `app1`, index `0` (or `app1:0`):
+
+```js
+var foo = __webpack_require__(/*! ./foo */ 1);
+```
+
+This means that we get `foo` from `app1:1`. Looking there we see:
+
+```js
+module.exports = (__webpack_require__(2))(2);
+```
+
+this means we need to look at `app1:2` to get a function, which we then call
+with the index `2`. So we get a function from `app1:2` for
+`__webpack_require__(2)`:
+
+```js
+module.exports = lib_1c456e9656dd9be74724;
+```
+
+which is the exported function of shared library. Then we call into `lib:2` to
+find the actual code we want for `foo.js`:
+
+```js
+  module.exports = function (id, msg) {
+    return "<h1 id=\"" + id + "\">" + msg + "</h1>";
+  };
+```
+
+So this is a bit of a tortured adventure of indirection, but hopefully it gets
+us closer to the big picture of how the code sharing works.
 
 Once we build these files, we can load the common chunks and both apps with the
 following webpage:
@@ -230,65 +354,35 @@ following webpage:
 <html>
   <body>
     <div id="content" />
-    <script src="./dist/js/commons.js"></script>
+    <script src="./dist/js/lib.js"></script>
     <script src="./dist/js/app1.js"></script>
     <script src="./dist/js/app2.js"></script>
   </body>
 </html>
 ```
 
-##### Automatic Splitting
-
-In our example above, we specified two separate entry points and added `script`
-tags for both. Webpack is actually intelligent enough to create entry points
-_automatically_ from a single root entry point if desired.
-
-So, we could tweak our example configuration of:
-
-```js
-  entry: {
-    app1: "./app1.js",
-    app2: "./app2.js"
-  },
-```
-
-to point to a new file that async loads both apps like:
-
-```js
-require.ensure([], function () {
-  require("./app1");
-});
-require.ensure([], function () {
-  require("./app2");
-});
-```
-
-and then reconfigure Webpack to just find the hypothetical entry point:
-
-```js
-  entry: {
-    entry: "./entry.js"
-  },
-```
-
-and Webpack will mostly split things up the same way. This approach is
-particularly useful for the very common case of React application-based routes
-(via any router) so that you have (1) a common chunk of code load first, then
-(2) only the specific code needed for a route to load application-wise.
-
 ##### Advantages
 
-* **Terse Common Bundle**: Webpack takes care of only adding the libraries to
-  the common bundle that are actually common to multiple chunks / entry points.
-* **Single build step**: Webpack generates the common and entry point chunks
-  as part of a single build.
+* **Sharing across projects**: The shared library (`lib.js`) can be reused
+  across multiple projects / application servers to create 1+ uniform shared
+  libraries. This should produce cache hits for the shared library even across
+  totally separate applications.
+* **Cache hits across deploys**: Because the shared library is manually
+  specified, it does not change without actually editing the source file. This
+  means that you should get cache hits even across deploys of updates to the
+  overall applications until the shared library source itself changes.
+* **Faster entry point builds**: You only need to build the shared library once.
+  After you have the library and manifest, entry point builds should be faster
+  in individual projects because shared parts are simply excluded from the
+  build process.
 
 ##### Disadvantages
 
-* **Cannot be shared across projects**: The common bundle created with code
-  splitting deals with indexes based on the entry points in a single builde.
-  The resulting bundle cannot be shared across projects / builds.
-* **Cache hits**: Because the common bundle uses only what is defined in the
-  constituent apps and is reliant on index ordering, it is unlikely to have
-  repeated cache hits across code changes without significant external Webpack
-  hacking.
+* **Inefficient Common Library**: Because the shared code is manually specified
+  there may be parts of the common library that are only used in one entry
+  point or not at all over time. This means that you should regularly inspect
+  and audit the shared library to make sure it includes the right "common"
+  dependencies. It is a best practice to automate such introspection and
+  review.
+* **Mutiple build steps**: You need at least _two_ Webpack build steps instead
+  of one for code splitting / normal builds.
