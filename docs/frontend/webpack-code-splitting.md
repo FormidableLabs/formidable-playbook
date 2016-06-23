@@ -51,7 +51,7 @@ document.querySelector("#content").innerHTML += foo("app2", "App 2");
 
 ##### Code Splitting Example
 
-Code splitting allows us to extra the common parts of both entry points, which
+Code splitting allows us to extract the common parts of both entry points, which
 in our case is the `foo.js` file. We can accomplish this with a single webpack
 configuration:
 
@@ -85,10 +85,13 @@ module.exports = {
 
 This produces three files:
 
-* `dist/js/commons.js`: The common code between `app1` and `app2` and the
-  bootstrap loader `webpackJsonp` needed to load other entry points.
-* `dist/js/app1.js`: The `app1` entry point.
-* `dist/js/app2.js`: The `app2` entry point.
+* [`dist/js/commons.js`](../../examples/frontend/webpack-code-splitting/dist/js/commons.js):
+  The common code between `app1` and `app2` and the bootstrap loader
+  `webpackJsonp` needed to load other entry points.
+* [`dist/js/app1.js`](../../examples/frontend/webpack-code-splitting/dist/js/app1.js):
+  The `app1` entry point.
+* [`dist/js/app2.js`](../../examples/frontend/webpack-code-splitting/dist/js/app1.js):
+  The `app2` entry point.
 
 Let's look at these files in detail:
 
