@@ -7,7 +7,9 @@ Webpack has a rich plugin ecosystem, including both
 Webpack also has a straight forward interface to
 [write your own plugins](https://webpack.github.io/docs/plugins.html).
 
-<!-- MarkdownTOC autolink=true depth=5 bracket=round -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 
 - [`UglifyJsPlugin`](#uglifyjsplugin)
 - [`DedupePlugin`](#dedupeplugin)
@@ -15,7 +17,7 @@ Webpack also has a straight forward interface to
 - [`DefinePlugin`](#defineplugin)
 - [`lodash-webpack-plugin`](#lodash-webpack-plugin)
 
-<!-- /MarkdownTOC -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ##### [`UglifyJsPlugin`](https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin)
 

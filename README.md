@@ -4,7 +4,9 @@ The Formidable Playbook
 A practical guide for modern applications. Learn how to survive the frontend,
 backend, and beyond.
 
-<!-- MarkdownTOC autolink=true depth=4 bracket=round -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 
 - [The Architecture Playbook](#the-architecture-playbook)
   - [Have a single infrastructure](#have-a-single-infrastructure)
@@ -19,7 +21,7 @@ backend, and beyond.
   - [Performance auditing](#performance-auditing)
 - [The Backend Playbook](#the-backend-playbook)
 
-<!-- /MarkdownTOC -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## The Architecture Playbook
 

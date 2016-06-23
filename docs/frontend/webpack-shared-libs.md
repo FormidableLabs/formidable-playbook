@@ -8,9 +8,8 @@ in the shared bundle. Shared libraries are appropriate for better long term
 caching within a single app across deploys and across different projects / real
 HTML pages.
 
-<!-- MarkdownTOC autolink=true depth=5 bracket=round -->
-
-<!-- /MarkdownTOC -->
+<!-- START doctoc -->
+<!-- END doctoc -->
 
 
 

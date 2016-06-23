@@ -5,7 +5,9 @@ feature that enables a JS bundle within a single build to be split up and loaded
 on-demand in smaller parts. Code splitting is appropriate within a single page
 and build.
 
-<!-- MarkdownTOC autolink=true depth=5 bracket=round -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 
 - [Basic Example](#basic-example)
 - [Code Splitting Example](#code-splitting-example)
@@ -13,7 +15,7 @@ and build.
 - [Advantages](#advantages)
 - [Disadvantages](#disadvantages)
 
-<!-- /MarkdownTOC -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ##### Basic Example
 

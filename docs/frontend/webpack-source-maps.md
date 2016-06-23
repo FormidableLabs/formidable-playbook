@@ -6,8 +6,9 @@ which allows a developer to view / debug developer-friendly source code instead
 of the optimized, mangled, and minified JS bundle of a frontend web app. Source
 maps should be enabled for both development and production.
 
-<!-- MarkdownTOC autolink=true depth=5 bracket=round -->
+<!-- START doctoc -->
+<!-- END doctoc -->
 
-<!-- /MarkdownTOC -->
+
 
 * TODO: GOAL - Get dev / prod friendly sourcemaps
