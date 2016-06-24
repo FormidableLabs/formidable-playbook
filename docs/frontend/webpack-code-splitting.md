@@ -222,6 +222,7 @@ particularly useful for the very common case of React application-based routes
 
 * **Terse Common Bundle**: Webpack takes care of only adding the libraries to
   the common bundle that are actually common to multiple chunks / entry points.
+
 * **Single build step**: Webpack generates the common and entry point chunks
   as part of a single build.
 
@@ -230,6 +231,7 @@ particularly useful for the very common case of React application-based routes
 * **Cannot be shared across projects**: The common bundle created with code
   splitting deals with indexes based on the entry points in a single build.
   The resulting bundle cannot be shared across projects / builds.
+
 * **Cache hits**: Because the common bundle uses only what is defined in the
   constituent apps and is reliant on index ordering, it is unlikely to have
   repeated cache hits across code changes without significant external Webpack

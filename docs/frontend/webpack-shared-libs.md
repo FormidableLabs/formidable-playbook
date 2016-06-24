@@ -367,10 +367,12 @@ following webpage:
   across multiple projects / application servers to create 1+ uniform shared
   libraries. This should produce cache hits for the shared library even across
   totally separate applications.
+
 * **Cache hits across deploys**: Because the shared library is manually
   specified, it does not change without actually editing the source file. This
   means that you should get cache hits even across deploys of updates to the
   overall applications until the shared library source itself changes.
+
 * **Faster entry point builds**: You only need to build the shared library once.
   After you have the library and manifest, entry point builds should be faster
   in individual projects because shared parts are simply excluded from the
@@ -384,5 +386,31 @@ following webpage:
   and audit the shared library to make sure it includes the right "common"
   dependencies. It is a best practice to automate such introspection and
   review.
+
 * **Mutiple build steps**: You need at least _two_ Webpack build steps instead
   of one for code splitting / normal builds.
+
+* **Must manually lazy load**: Unlike code splitting with `require.ensure()`,
+  there is no automatic, Webpack-provided way to lazy load the shared code.
+  However, this is easily done manually with a loader like:
+  [`little-loader`](https://github.com/walmartlabs/little-loader). For example,
+  we could lazy load our entry points in the above example with something
+  like [`lazy-load.html`](lazy-load.html)
+
+
+  ```js
+  // Use little-loader to load `lib.js` first.
+  window._lload("./dist/js/lib.js", function () {
+    // Then load entry points in parallel
+    // (assuming we don't care about order).
+    window._lload("./dist/js/app1.js");
+    window._lload("./dist/js/app2.js");
+  });
+  ```
+
+* **Need caution with `require.ensure()` in shared bundle**: Using
+  `require.ensure()` / code splitting in the shared bundle may produce entry
+  point references that assume a dependency is loaded when it is not. The
+  easiest rule of thumb is to avoid `require.ensure()` in the dependencies
+  in the shared bundle. (By contrast, code splitting / `require.ensure()` is
+  totally fine in the application entry points.)

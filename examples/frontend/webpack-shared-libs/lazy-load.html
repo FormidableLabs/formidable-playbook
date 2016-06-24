@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="content" />
+    <script src="https://npmcdn.com/little-loader@0.1.1/dist/little-loader.min.js"></script>
+    <script>
+      // Use little-loader to load `lib.js` first.
+      window._lload("./dist/js/lib.js", function () {
+        // Then load entry points in parallel
+        // (assuming we don't care about order).
+        window._lload("./dist/js/app1.js");
+        window._lload("./dist/js/app2.js");
+      });
+    </script>
+  </body>
+</html>
