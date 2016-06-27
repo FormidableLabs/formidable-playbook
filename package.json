@@ -8,11 +8,14 @@
     "build-webpack-code-splitting-clean": "rimraf examples/frontend/webpack-code-splitting/dist",
     "build-webpack-code-splitting-app": "webpack --config examples/frontend/webpack-code-splitting/webpack.config.js",
     "build-webpack-code-splitting": "npm run build-webpack-code-splitting-clean && npm run build-webpack-code-splitting-app",
+    "build-webpack-code-splitting-ensure-clean": "rimraf examples/frontend/webpack-code-splitting-ensure/dist",
+    "build-webpack-code-splitting-ensure-app": "webpack --config examples/frontend/webpack-code-splitting-ensure/webpack.config.js",
+    "build-webpack-code-splitting-ensure": "npm run build-webpack-code-splitting-ensure-clean && npm run build-webpack-code-splitting-ensure-app",
     "build-webpack-shared-libs-clean": "rimraf examples/frontend/webpack-shared-libs/dist",
     "build-webpack-shared-libs-lib": "webpack --config examples/frontend/webpack-shared-libs/webpack.config.lib.js",
     "build-webpack-shared-libs-app": "webpack --config examples/frontend/webpack-shared-libs/webpack.config.js",
     "build-webpack-shared-libs": "npm run build-webpack-shared-libs-clean && npm run build-webpack-shared-libs-lib && npm run build-webpack-shared-libs-app",
-    "build": "npm run build-md-toc && npm run build-webpack-code-splitting && npm run build-webpack-shared-libs",
+    "build": "npm run build-md-toc && npm run build-webpack-code-splitting && npm run build-webpack-code-splitting-ensure && npm run build-webpack-shared-libs",
     "server": "http-server -p 3000 ."
   },
   "repository": {

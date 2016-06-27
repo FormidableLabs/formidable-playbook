@@ -197,26 +197,32 @@ So, we could tweak our example configuration of:
 to point to a new file that async loads both apps like:
 
 ```js
-require.ensure([], function (_require) {
-  _require("./app1");
+// Note 1: must specify dep in array, then can require in callback.
+// Note 2: callback param **must** be named `require`.
+require.ensure(["./app1"], function (require) {
+  require("./app1");
 });
-require.ensure([], function (_require) {
-  _require("./app2");
+require.ensure(["./app2"], function (require) {
+  require("./app2");
 });
 ```
 
 and then reconfigure Webpack to just find the hypothetical entry point:
 
 ```js
-  entry: {
-    entry: "./entry.js"
-  },
+entry: {
+  entry: "./entry.js"
+},
 ```
 
 and Webpack will mostly split things up the same way. This approach is
 particularly useful for the very common case of React application-based routes
 (via any router) so that you have (1) a common chunk of code load first, then
 (2) only the specific code needed for a route to load application-wise.
+
+We have a working example available in the
+[`webpack-code-splitting-ensure`](../../examples/frontend/webpack-code-splitting-ensure)
+directory.
 
 ##### Advantages
 
