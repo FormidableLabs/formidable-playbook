@@ -7,7 +7,9 @@ Webpack has a rich plugin ecosystem, including both
 Webpack also has a straight forward interface to
 [write your own plugins](https://webpack.github.io/docs/plugins.html).
 
-<!-- MarkdownTOC autolink=true depth=5 bracket=round -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 
 - [`UglifyJsPlugin`](#uglifyjsplugin)
 - [`DedupePlugin`](#dedupeplugin)
@@ -15,7 +17,7 @@ Webpack also has a straight forward interface to
 - [`DefinePlugin`](#defineplugin)
 - [`lodash-webpack-plugin`](#lodash-webpack-plugin)
 
-<!-- /MarkdownTOC -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ##### [`UglifyJsPlugin`](https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin)
 
@@ -179,6 +181,10 @@ tool with very few safeties. You must be familiar with all the of the feature
 sets removed, probably need to coordinate re-enabling key ones for your specific
 project, and ensure that all lodash usage is tested / complies with the internal
 rewriting of the plugin.
+
+For example, after enabling it without configuration in the Victory project,
+we later found that we needed several configurations enabled. See:
+https://github.com/FormidableLabs/builder-victory-component/pull/64
 
 In short, it's easier to just not add the plugin. But if you need that extra
 bit of super-optimized lodash tuning, you can enable the plugin and accept the

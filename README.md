@@ -4,7 +4,9 @@ The Formidable Playbook
 A practical guide for modern applications. Learn how to survive the frontend,
 backend, and beyond.
 
-<!-- MarkdownTOC autolink=true depth=4 bracket=round -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 
 - [The Architecture Playbook](#the-architecture-playbook)
   - [Have a single infrastructure](#have-a-single-infrastructure)
@@ -19,7 +21,7 @@ backend, and beyond.
   - [Performance auditing](#performance-auditing)
 - [The Backend Playbook](#the-backend-playbook)
 
-<!-- /MarkdownTOC -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## The Architecture Playbook
 
@@ -30,8 +32,9 @@ similar projects.
 
 ## The Frontend Playbook
 
-Our frontend infrastructure is based around [webpack][] builds, but most of the
-guidelines / goals apply to any build tool.
+Our frontend infrastructure is based around
+[webpack](https://webpack.github.io/) builds, but most of the guidelines / goals
+apply to any build tool.
 
 ### Webpack plugins
 
@@ -56,22 +59,28 @@ A short list of plugin recommendations for best frontend performance include:
 
 #### [Code splitting](docs/frontend/webpack-code-splitting.md)
 
-**TODO: Write up intro section / doc - https://github.com/FormidableLabs/formidable-playbook/issues/7**
+[Code splitting](http://webpack.github.io/docs/code-splitting.html) is a Webpack
+feature that enables a JS bundle within a single build to be split up and loaded
+on-demand in smaller parts. Code splitting is appropriate within a single page
+and build.
 
 #### [Shared libraries](docs/frontend/webpack-shared-libs.md)
 
-**TODO: Write up intro section / doc - https://github.com/FormidableLabs/formidable-playbook/issues/6**
-
-* https://webpack.github.io/docs/list-of-plugins.html#dllplugin
-  ([example](https://github.com/webpack/webpack/tree/master/examples/dll))
-* https://webpack.github.io/docs/list-of-plugins.html#dllreferenceplugin
-  ([example](https://github.com/webpack/webpack/tree/master/examples/dll-user))
+Webpack shared libraries are slightly different from code splitting scenarios in
+that the common dependencies are shareable across builds and require a two-part
+build. In a first step, a common shared bundle and manifest is created. Then, in
+a second step, entry points ingest the manifest and omit any libraries included
+in the shared bundle. Shared libraries are appropriate for better long term
+caching within a single app across deploys and across different projects / real
+HTML pages.
 
 #### [Source maps](docs/frontend/webpack-source-maps.md)
 
-**TODO: Write up intro section / doc - https://github.com/FormidableLabs/formidable-playbook/issues/10**
-
-* TODO: GOAL - Get dev / prod friendly sourcemaps
+The Webpack [SourceMapDevToolPlugin](http://webpack.github.io/docs/list-of-plugins.html#sourcemapdevtoolplugin)
+creates [source maps](https://github.com/ryanseddon/source-map/wiki/Source-maps:-languages,-tools-and-other-info)
+which allows a developer to view / debug developer-friendly source code instead
+of the optimized, mangled, and minified JS bundle of a frontend web app. Source
+maps should be enabled for both development and production.
 
 ### Babel plugins
 
@@ -87,8 +96,7 @@ A short list of plugin recommendations for best frontend performance include:
 
 **TODO: inspectpack reports, audits - https://github.com/FormidableLabs/formidable-playbook/issues/2**
 
-[webpack]: https://webpack.github.io/
-
 ## The Backend Playbook
 
 **TODO: Plan, write section - https://github.com/FormidableLabs/formidable-playbook/issues/4**
+
