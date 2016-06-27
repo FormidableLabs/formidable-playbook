@@ -5,6 +5,7 @@
     <script src="https://npmcdn.com/little-loader@0.1.1/dist/little-loader.min.js"></script>
     <script>
       // Use little-loader to load `lib.js` first.
+      // **Note**: Need to manually translate files in production to CDN hashes.
       window._lload("./dist/js/lib.js", function () {
         // Then load entry points in parallel
         // (assuming we don't care about order).
