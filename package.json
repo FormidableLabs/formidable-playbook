@@ -35,8 +35,8 @@
   },
   "homepage": "https://github.com/FormidableLabs/formidable-playbook#readme",
   "devDependencies": {
+    "doctoc": "^1.2.0",
     "http-server": "^0.9.0",
-    "markdown-toc": "^0.12.12",
     "rimraf": "^2.5.2",
     "webpack": "^1.13.1"
   }
