@@ -51,6 +51,7 @@
     "builder-docs-archetype": "^2.0.1",
     "formidable-landers": "^3.1.0",
     "markdown-it": "^7.0.0",
+    "radium": "^0.18.1",
     "react": "15.2.1",
     "react-dom": "15.2.1"
   }
