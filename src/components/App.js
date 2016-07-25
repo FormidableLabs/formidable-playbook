@@ -1,8 +1,10 @@
 /* eslint-disable global-require */
 import React from "react";
 import Radium, { Style, StyleRoot } from "radium";
+import { Header, Footer } from "formidable-landers";
 
 import stylesheet from "../playbook-stylesheet";
+import theme from "../playbook-theme";
 
 class App extends React.Component {
   render() {
@@ -13,7 +15,19 @@ class App extends React.Component {
 
     return (
       <StyleRoot style={styleRootStyles}>
+        <Header
+          background={theme.white}
+          linkStyles={{
+            color: theme.charcoal,
+            fontFamily: theme.serif,
+            textDecoration: "none",
+            ":hover": {
+              color: theme.red
+            }
+          }}
+        />
         {this.props.children}
+        <Footer />
         <Style rules={stylesheet}/>
       </StyleRoot>
     );

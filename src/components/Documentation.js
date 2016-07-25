@@ -15,7 +15,7 @@ class Documentation extends React.Component {
   }
 
   render() {
-    return <div dangerouslySetInnerHTML={{__html: this.md.render(this.props.markdown)}} />;
+    return <div className="md" dangerouslySetInnerHTML={{__html: this.md.render(this.props.markdown)}} />;
   }
 }
 

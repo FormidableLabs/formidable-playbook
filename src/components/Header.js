@@ -25,14 +25,15 @@ class Header extends React.Component {
         fontSize: "58px",
         letterSpacing: ".02em",
         WebkitFontSmoothing: "antialiased",
-        textShadow: "2px 2px 8px rgba(168, 37, 27,.3)"
+        textShadow: "2px 2px 8px rgba(168, 37, 27,.5)"
       },
       subHeading: {
         fontSize: "20px",
         fontFamily: theme.serif,
         letterSpacing: ".02em",
+        fontWeight: 100,
         WebkitFontSmoothing: "antialiased",
-        textShadow: "2px 2px 8px rgba(168, 37, 27,.3)"
+        textShadow: "2px 2px 8px rgba(168, 37, 27,.5)"
       }
     };
   }

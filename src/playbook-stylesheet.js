@@ -49,8 +49,10 @@ export default {
     transition: "color 150ms ease-out"
   },
   p: {
-    fontSize: "1rem",
-    lineHeight: 1.4
+    fontSize: "1.1rem",
+    lineHeight: 1.8,
+    color: theme.black,
+    WebkitFontSmoothing: "antialiased"
   },
   "p > code, li > code, h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, h6 > code": {
     padding: "0px 5px",

@@ -1,3 +1,5 @@
+This is our playbook. It is the foundation that allows us to architect & design systems that move our client projects forward.  In it, you will find practical approaches for building frontend & backend javascript applications. This is a living document, and we intend to share our knowledge as we continue to work towards making the web a better place.
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
