@@ -27,7 +27,7 @@ class App extends React.Component {
           }}
         />
         {this.props.children}
-        <Footer />
+        <Footer background={theme.white} />
         <Style rules={stylesheet}/>
       </StyleRoot>
     );

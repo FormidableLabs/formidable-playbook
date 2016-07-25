@@ -11,9 +11,9 @@ module.exports = (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
     <Route path="/frontend" component={Docs} />
-    <Route path="/frontend/:article" component={Docs} />
+    <Route path="/frontend/:slug" component={Docs} />
     <Route path="/infrastructure" component={Docs} />
-    <Route path="/infrastructure/:article" component={Docs} />
+    <Route path="/infrastructure/:slug" component={Docs} />
     <Route path="*" component={NotFound}/>
   </Route>
 );
