@@ -1,3 +1,4 @@
+import Color from "color";
 import theme from "./playbook-theme";
 
 // begin stylesheet
@@ -20,12 +21,16 @@ export default {
     margin: 0
   },
   "html, body": {
-    overflowX: "hidden"
+    overflowX: "hidden",
+    height: "100%"
+  },
+  "body::selection, body::-moz-selection": {
+    background: "#FFFEC2"
   },
   "article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary": {
     display: "block"
   },
-  "h1, h2, h3, h4, h5, h6, hgroup, ul, ol, dd, p, figure, pre, table, fieldset, hr, .highlight": {
+  "h1, h2, h3, h4, h5, h6, ul, ol, dd, p, figure, pre, table, fieldset, hr, .highlight": {
     marginTop: "1.25rem",
     marginBottom: 0
   },
@@ -34,6 +39,14 @@ export default {
   },
   "h1, h2, h3, h4, h5, h6, hgroup": {
     fontFamily: theme.sansSerif
+  },
+  a: {
+    color: theme.red,
+    transition: "color 150ms ease-in"
+  },
+  "a:hover": {
+    color: Color(theme.red).darken(.2).hexString(),
+    transition: "color 150ms ease-out"
   },
   p: {
     fontSize: "1rem",

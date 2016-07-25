@@ -1,9 +1,3 @@
-The Formidable Playbook
-=======================
-
-A practical guide for modern applications. Learn how to survive the frontend,
-backend, and beyond.
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 

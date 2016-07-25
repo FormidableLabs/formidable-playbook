@@ -5,7 +5,6 @@ export default {
   //
   sansSerif: "'sharp', 'Helvetica Neue', Helvetica, Arial, sans-serif",
   serif: "'tiempos', 'Source Serif Pro', Georgia, serif",
-  monospace: "'akkurat', 'Courier New', 'Courier', monospace",
   code: "'Source Code Pro', Consolas, 'Inconsolata', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Courier New', 'Courier', monospace",
   //
   // Colors
@@ -23,5 +22,6 @@ export default {
   //
   // Layout
   //
-  container: "690px"
+  container: "43.13em",
+  gutter: "1.2em"
 };
