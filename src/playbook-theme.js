@@ -11,6 +11,7 @@ export default {
   // Colors
   //
   red: "#C43A31",
+  white: "#F7F7F7",
   black: "#242121",
   charcoal: "#4A4A4A",
   //
@@ -18,5 +19,9 @@ export default {
   //
   breakpoints: {
     medium: "only screen and (min-width: 44.063em)"
-  }
+  },
+  //
+  // Layout
+  //
+  container: "690px"
 };

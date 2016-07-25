@@ -5,3 +5,4 @@ rules:
   "filenames/filenames": 0
   "no-extra-parens": 0
   "strict": 0
+  "new-cap": 0

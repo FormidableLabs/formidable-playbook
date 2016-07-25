@@ -1,13 +1,19 @@
 import React from "react";
 import Header from "./Header";
+import Radium, { Style, StyleRoot } from "radium";
 
-export default class App extends React.Component {
+import stylesheet from "../playbook-stylesheet";
+
+class App extends React.Component {
   render() {
     return (
-      <div>
+      <StyleRoot>
         <Header />
         <div>React App</div>
-      </div>
+        <Style rules={stylesheet}/>
+      </StyleRoot>
     );
   }
 }
+
+export default Radium(App);
