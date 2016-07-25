@@ -53,6 +53,7 @@
     "formidable-landers": "^3.3.2",
     "history": "^2.1.0",
     "markdown-it": "^7.0.0",
+    "markdown-it-named-headers": "0.0.4",
     "radium": "^0.18.1",
     "react": "15.2.1",
     "react-dom": "15.2.1",
