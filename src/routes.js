@@ -3,9 +3,9 @@ import { Route, IndexRoute } from "react-router";
 
 // Components
 import App from "./components/app";
-import Home from "./views/Home";
-import Docs from "./views/Docs";
-import NotFound from "./views/NotFound";
+import Home from "./views/home";
+import Docs from "./views/docs";
+import NotFound from "./views/not-found";
 
 module.exports = (
   <Route path="/" component={App}>

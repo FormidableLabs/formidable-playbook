@@ -1,7 +1,7 @@
 import React from "react";
-import Page from "../components/Page";
-import Header from "../components/Header";
-import Documentation from "../components/Documentation";
+import Page from "../components/page";
+import Header from "../components/header";
+import Documentation from "../components/documentation";
 import Radium from "radium";
 
 import theme from "../playbook-theme";
