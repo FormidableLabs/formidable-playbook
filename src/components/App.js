@@ -1,7 +1,6 @@
 /* eslint-disable global-require */
 import React from "react";
 import Radium, { Style, StyleRoot } from "radium";
-import Home from "../screens/Home";
 
 import stylesheet from "../playbook-stylesheet";
 
@@ -14,7 +13,7 @@ class App extends React.Component {
 
     return (
       <StyleRoot style={styleRootStyles}>
-        <Home />
+        {this.props.children}
         <Style rules={stylesheet}/>
       </StyleRoot>
     );
@@ -22,7 +21,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  children: React.PropTypes.node
+  children: React.PropTypes.node.isRequired
 };
 
 export default Radium(App);
