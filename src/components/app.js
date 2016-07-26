@@ -10,7 +10,8 @@ class App extends React.Component {
   render() {
     const styleRootStyles = {
       display: "flex",
-      flexDirection: "column"
+      flexDirection: "column",
+      height: "100%"
     };
 
     return (
