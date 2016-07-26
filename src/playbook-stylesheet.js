@@ -18,7 +18,8 @@ export default {
     fontFamily: theme.serif,
     fontSize: "16px",
     lineHeight: 1.4,
-    margin: 0
+    margin: 0,
+    WebkitFontSmoothing: "antialiased"
   },
   "html, body": {
     overflowX: "hidden",
@@ -52,8 +53,7 @@ export default {
   p: {
     fontSize: "1.1rem",
     lineHeight: 1.8,
-    color: theme.black,
-    WebkitFontSmoothing: "antialiased"
+    color: theme.black
   },
   code: {
     padding: "0.2em 5px",
@@ -61,7 +61,8 @@ export default {
     fontSize: "85%",
     background: "rgba(0,0,0,0.05)",
     borderRadius: "3px",
-    fontFamily: theme.code
+    fontFamily: theme.code,
+    WebkitFontSmoothing: "subpixel-antialiased"
   },
   li: {
     fontSize: "1rem",
@@ -71,16 +72,16 @@ export default {
     maxWidth: "100%"
   },
   h1: {
-    fontSize: "3rem"
+    fontSize: "4rem"
   },
   h2: {
-    fontSize: "2rem"
+    fontSize: "2.5rem"
   },
   h3: {
-    fontSize: "1.55rem"
+    fontSize: "1.8rem"
   },
   h4: {
-    fontSize: "1.2rem"
+    fontSize: "1.25rem"
   },
   svg: {
     fill: "currentColor"
@@ -89,7 +90,7 @@ export default {
     padding: "0px"
   },
   "table tr": {
-    borderTop: "1px solid #cccccc",
+    borderTop: "1px solid #f4f4f4",
     backgroundColor: "white",
     margin: "0px",
     padding: "0px"
@@ -99,13 +100,13 @@ export default {
   },
   "table tr th": {
     fontWeight: "bold",
-    border: "1px solid #cccccc",
+    border: "1px solid #f4f4f4",
     textAlign: "left",
     margin: "0px",
     padding: "6px 13px"
   },
   "table tr td": {
-    border: "1px solid #cccccc",
+    border: "1px solid #f4f4f4",
     textAlign: "left",
     margin: "0px",
     padding: "6px 13px"

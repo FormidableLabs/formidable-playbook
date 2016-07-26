@@ -23,7 +23,7 @@ class Header extends React.Component {
       },
       mainHeading: {
         margin: "0px",
-        fontSize: "58px",
+        fontSize: "4em",
         letterSpacing: ".02em",
         WebkitFontSmoothing: "antialiased",
         textShadow: "2px 2px 8px rgba(168, 37, 27,.5)"

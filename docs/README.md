@@ -21,7 +21,7 @@ This is our playbook. It is the foundation that allows us to architect & design 
 
 ## The Architecture Playbook
 
-### [Have a single infrastructure](infrastructure/single.md)
+#### [Have a single infrastructure](infrastructure/single.md)
 
 A unified development effort should use a single infrastructure to control all
 similar projects.
