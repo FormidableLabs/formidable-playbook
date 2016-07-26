@@ -38,7 +38,8 @@ export default {
     marginTop: "0"
   },
   "h1, h2, h3, h4, h5, h6, hgroup": {
-    fontFamily: theme.sansSerif
+    fontFamily: theme.sansSerif,
+    letterSpacing: ".02em"
   },
   a: {
     color: theme.red,
@@ -84,5 +85,69 @@ export default {
   },
   svg: {
     fill: "currentColor"
+  },
+  table: {
+    padding: "0px"
+  },
+  "table tr": {
+    borderTop: "1px solid #cccccc",
+    backgroundColor: "white",
+    margin: "0px",
+    padding: "0px"
+  },
+  "table tr:nth-child(2n)": {
+    backgroundColor: "#f8f8f8"
+  },
+  "table tr th": {
+    fontWeight: "bold",
+    border: "1px solid #cccccc",
+    textAlign: "left",
+    margin: "0px",
+    padding: "6px 13px"
+  },
+  "table tr td": {
+    border: "1px solid #cccccc",
+    textAlign: "left",
+    margin: "0px",
+    padding: "6px 13px"
+  },
+  "table tr th:first-child, table tr td:first-child": {
+    marginTop: "0px"
+  },
+  "table tr th:last-child, table tr td:last-child": {
+    marginBottom: "0px"
+  },
+  // Markdown-processed styles
+  ".page-home .md p:first-child": {
+    fontSize: "1.3em"
+  },
+  ".page-home .md ul": {
+    margin: "1.25rem 0px"
+  },
+  ".page-home .md ul ul": {
+    margin: "0px"
+  },
+  ".page-home .md ul li": {
+    position: "relative",
+    listStyle: "none"
+  },
+  ".page-home .md ul li a": {
+    position: "relative",
+    fontSize: "1.2em"
+  },
+  ".page-home .md ul li a:before": {
+    content: "''",
+    display: "block",
+    position: "absolute",
+    left: "-15px",
+    top: "50%",
+    width: "5px",
+    height: "5px",
+    borderRadius: "25px",
+    backgroundColor: theme.red,
+    transform: "translateY(-50%)"
+  },
+  ".page-home .md h2": {
+    marginTop: "1.5em"
   }
 };

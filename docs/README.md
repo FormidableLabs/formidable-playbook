@@ -38,8 +38,7 @@ apply to any build tool.
 
 Webpack has a rich plugin ecosystem, including both
 [core](https://webpack.github.io/docs/list-of-plugins.html) and
-[open source](http://nipstr.com/#webpack plugin)
-[modules](https://www.npmjs.com/browse/keyword/webpack-plugin) modules.
+[open source modules](https://www.npmjs.com/browse/keyword/webpack-plugin).
 Webpack also has a straight forward interface to
 [write your own plugins](https://webpack.github.io/docs/plugins.html).
 

@@ -10,7 +10,7 @@ export default {
   // Colors
   //
   red: "#C43A31",
-  white: "#F7F7F7",
+  white: "#FFFFFF",
   black: "#242121",
   charcoal: "#4A4A4A",
   //
