@@ -55,12 +55,13 @@ export default {
     color: theme.black,
     WebkitFontSmoothing: "antialiased"
   },
-  "p > code, li > code, h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, h6 > code": {
+  code: {
     padding: "0.2em 5px",
     margin: "0px",
     fontSize: "85%",
     background: "rgba(0,0,0,0.05)",
-    borderRadius: "3px"
+    borderRadius: "3px",
+    fontFamily: theme.code
   },
   li: {
     fontSize: "1rem",
@@ -76,10 +77,10 @@ export default {
     fontSize: "2rem"
   },
   h3: {
-    fontSize: "1.5rem"
+    fontSize: "1.55rem"
   },
   h4: {
-    fontSize: "1.3125rem"
+    fontSize: "1.2rem"
   },
   svg: {
     fill: "currentColor"
