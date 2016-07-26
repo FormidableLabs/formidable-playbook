@@ -56,9 +56,7 @@ export default {
     WebkitFontSmoothing: "antialiased"
   },
   "p > code, li > code, h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, h6 > code": {
-    padding: "0px 5px",
-    paddingTop: "0.2em",
-    paddingBottom: "0.2em",
+    padding: "0.2em 5px",
     margin: "0px",
     fontSize: "85%",
     background: "rgba(0,0,0,0.05)",
