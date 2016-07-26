@@ -86,6 +86,9 @@ export default {
   h4: {
     fontSize: "1.25rem"
   },
+  h5: {
+    fontSize: "1rem"
+  },
   svg: {
     fill: "currentColor"
   },
