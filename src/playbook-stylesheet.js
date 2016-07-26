@@ -55,6 +55,9 @@ export default {
     lineHeight: 1.8,
     color: theme.black
   },
+  "pre > code": {
+    display: "block"
+  },
   code: {
     padding: "0.2em 5px",
     margin: "0px",
@@ -90,7 +93,7 @@ export default {
     padding: "0px"
   },
   "table tr": {
-    borderTop: "1px solid #f4f4f4",
+    borderTop: `1px solid ${theme.offWhite}`,
     backgroundColor: "white",
     margin: "0px",
     padding: "0px"
@@ -100,13 +103,13 @@ export default {
   },
   "table tr th": {
     fontWeight: "bold",
-    border: "1px solid #f4f4f4",
+    border: `1px solid ${theme.offWhite}`,
     textAlign: "left",
     margin: "0px",
     padding: "6px 13px"
   },
   "table tr td": {
-    border: "1px solid #f4f4f4",
+    border: `1px solid ${theme.offWhite}`,
     textAlign: "left",
     margin: "0px",
     padding: "6px 13px"

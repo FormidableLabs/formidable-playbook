@@ -1,7 +1,7 @@
 import React from "react";
 
 const Page = function ({name, children}) {
-  return <div className={`page-${name}`}>{children}</div>;
+  return <div className={`page page-${name}`}>{children}</div>;
 };
 
 Page.propTypes = {
