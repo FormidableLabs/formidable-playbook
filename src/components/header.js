@@ -1,6 +1,7 @@
 import React from "react";
 import Radium from "radium";
 import theme from "../playbook-theme";
+import GITHUB_LOGO from "../../static/logo-github.svg";
 
 class Header extends React.Component {
   getStyles() {
@@ -34,6 +35,24 @@ class Header extends React.Component {
         fontWeight: 100,
         WebkitFontSmoothing: "antialiased",
         textShadow: "2px 2px 8px rgba(168, 37, 27,.5)"
+      },
+      githubLink: {
+        display: "flex",
+        alignContent: "center",
+        justifyContent: "center",
+        marginTop: "80px",
+        color: theme.white,
+        fontFamily: theme.serif,
+        WebkitFontSmoothing: "antialiased",
+        textDecoration: "none",
+        textShadow: "2px 2px 8px rgba(168, 37, 27,.5)"
+      },
+      githubLinkLogo: {
+        width: "1.2rem",
+        height: "1.2rem",
+        marginRight: "8px",
+        WebkitFilter: "drop-shadow(2px 2px 8px rgba(168, 37, 27,.5))",
+        filter: "drop-shadow(2px 2px 8px rgba(168, 37, 27,.5))"
       }
     };
   }
@@ -45,6 +64,10 @@ class Header extends React.Component {
         <hgroup style={styles.headerGroup}>
           <h1 style={styles.mainHeading}>Formidable Playbook</h1>
           <h2 style={styles.subHeading}>A practical guide to building modern applications</h2>
+          <a style={styles.githubLink} href="https://github.com/FormidableLabs/formidable-playbook" target="_blank">
+          <span style={styles.githubLinkLogo} dangerouslySetInnerHTML={{__html: GITHUB_LOGO}}/>
+          <span>FormidableLabs/formidable-playbook</span>
+          </a>
         </hgroup>
       </header>
     );

@@ -46,7 +46,7 @@ export default {
     transition: "color 150ms ease-in"
   },
   "a:hover": {
-    color: Color(theme.red).darken(.2).hexString(),
+    color: Color(theme.red).lighten(.2).hexString(),
     transition: "color 150ms ease-out"
   },
   p: {
