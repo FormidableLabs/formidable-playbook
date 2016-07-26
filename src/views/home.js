@@ -14,8 +14,7 @@ const Home = function () {
       maxWidth: `calc(${theme.container} + ${theme.gutter})`,
       margin: `${theme.gutter} auto`,
       padding: theme.gutter
-    },
-    paragraph: {}
+    }
   };
 
   return (

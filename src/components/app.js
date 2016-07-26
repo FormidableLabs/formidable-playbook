@@ -27,11 +27,8 @@ class App extends React.Component {
           }}
         />
         {this.props.children}
-        <Footer
-          background={`${theme.white} url('./static/footer.jpg') no-repeat top center`}
-          styleOverrides={{backgroundSize: "cover"}}
-        />
-        <Style rules={stylesheet}/>
+        <Footer background={`${theme.white} url('./static/footer.jpg') no-repeat top center`} />
+        <Style rules={stylesheet} />
       </StyleRoot>
     );
   }
