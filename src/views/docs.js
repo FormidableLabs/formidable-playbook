@@ -42,7 +42,7 @@ class Docs extends React.Component {
             <DocsHeader />
             <main style={styles.main}>
               <Link to="/" style={styles.homeLink}>&larr; Return Home</Link>
-              <Documentation markdown={require(`!!raw!../../docs${doc.route}.md`)}/>
+              <Documentation markdown={doc.file} />
               <NextRead current={this.props.location.pathname} />
             </main>
           </Page>
