@@ -14,13 +14,16 @@ class Docs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      docsComponent: null
+      docs: { file: "" },
+      loadingError: false
     };
   }
 
   componentWillMount() {
+    const docsComponent = find(config, { route: this.props.location.pathname });
     this.setState({
-      docsComponent: find(config, { route: this.props.location.pathname })
+      docs: docsComponent || { file: "" },
+      loadingError: !docsComponent ? true : false
     });
   }
 
@@ -47,7 +50,7 @@ class Docs extends React.Component {
 
   render() {
     const styles = this.getStyles();
-    if (!this.state.docsComponent) {
+    if (this.state.loadingError) {
       return <NotFound />;
     }
 
@@ -56,7 +59,7 @@ class Docs extends React.Component {
         <DocsHeader />
         <main style={styles.main}>
           <Link to="/" style={styles.homeLink}>&larr; Return Home</Link>
-          <Documentation markdown={this.state.docsComponent.file} />
+          <Documentation markdown={this.state.docs.file} />
           <NextRead current={this.props.location.pathname} />
         </main>
       </Page>
