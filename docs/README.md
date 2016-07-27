@@ -1,15 +1,11 @@
-The Formidable Playbook
-=======================
-
-A practical guide for modern applications. Learn how to survive the frontend,
-backend, and beyond.
+This is our playbook. It is the foundation that allows us to architect & design systems that move our client projects forward.  In it, you will find practical approaches for building frontend & backend javascript applications. This is a living document, and we intend to share our knowledge as we continue to work towards making the web a better place.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
 - [The Architecture Playbook](#the-architecture-playbook)
-  - [Have a single infrastructure](#have-a-single-infrastructure)
+    - [Have a single infrastructure](#have-a-single-infrastructure)
 - [The Frontend Playbook](#the-frontend-playbook)
   - [Webpack plugins](#webpack-plugins)
     - [Start with good base plugins](#start-with-good-base-plugins)
@@ -25,7 +21,7 @@ backend, and beyond.
 
 ## The Architecture Playbook
 
-### [Have a single infrastructure](infrastructure/single.md)
+#### [Have a single infrastructure](infrastructure/single.md)
 
 A unified development effort should use a single infrastructure to control all
 similar projects.
@@ -42,8 +38,7 @@ apply to any build tool.
 
 Webpack has a rich plugin ecosystem, including both
 [core](https://webpack.github.io/docs/list-of-plugins.html) and
-[open source](http://nipstr.com/#webpack plugin)
-[modules](https://www.npmjs.com/browse/keyword/webpack-plugin) modules.
+[open source modules](https://www.npmjs.com/browse/keyword/webpack-plugin).
 Webpack also has a straight forward interface to
 [write your own plugins](https://webpack.github.io/docs/plugins.html).
 
