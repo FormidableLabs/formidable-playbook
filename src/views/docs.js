@@ -34,6 +34,19 @@ const Docs = function (props) {
     homeLink: {
       fontSize: "1rem",
       textDecoration: "none"
+    },
+    heading: {
+      fontSize: "2rem",
+      [`@media ${theme.breakpoints.medium}`]: {
+        fontSize: "3rem"
+      }
+    },
+    subheading: {
+      fontSize: "1rem",
+      margin: ".25em 0em 1em",
+      [`@media ${theme.breakpoints.medium}`]: {
+        fontSize: "1.2rem"
+      }
     }
   };
 
@@ -45,8 +58,8 @@ const Docs = function (props) {
         <Page name="docs">
           <header style={styles.header}>
             <div style={styles.inner}>
-              <h1 style={{fontSize: "3em"}}>Formidable Playbook</h1>
-              <div style={{fontSize: "1.2em", margin: ".25em 0em 1em"}}>A practical guide to building modern applications</div>
+              <h1 style={styles.heading}>Formidable Playbook</h1>
+              <div style={styles.subheading}>A practical guide to building modern applications</div>
             </div>
           </header>
           <main style={styles.main}>

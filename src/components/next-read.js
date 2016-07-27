@@ -9,21 +9,29 @@ const NextRead = function ({current}) {
   const styles = {
     wrapper: {
       display: "flex",
+      flexDirection: "column",
       justifyContent: "space-between",
       margin: "3rem 0rem 0rem",
-      paddingTop: "2rem",
-      borderTop: `1px solid ${theme.offWhite}`
+      paddingTop: "0px",
+      borderTop: `1px solid ${theme.offWhite}`,
+      [`@media ${theme.breakpoints.medium}`]: {
+        paddingTop: "1rem",
+        flexDirection: "row"
+      }
     },
     link: {
       fontSize: "1.2rem"
     },
-    prev: {
+    nextprev: {
       display: "flex",
-      flexDirection: "column"
-    },
-    next: {
-      display: "flex",
-      flexDirection: "column"
+      flexDirection: "column",
+      padding: "1rem",
+      borderBottom: `1px solid ${theme.offWhite}`,
+      textAlign: "center",
+      [`@media ${theme.breakpoints.medium}`]: {
+        borderBottom: "none",
+        textAlign: "left"
+      }
     }
   };
 
@@ -34,7 +42,7 @@ const NextRead = function ({current}) {
     <div style={styles.wrapper}>
       <div>
         {prev ?
-          <div style={styles.prev}>
+          <div style={[styles.nextprev, styles.prev]}>
             <span>Previous Guide</span>
             <Link to={prev.route} style={styles.link}>{prev.label}</Link>
           </div>
@@ -42,7 +50,7 @@ const NextRead = function ({current}) {
       </div>
       <div>
         {next ?
-          <div style={styles.next}>
+          <div style={[styles.nextprev, styles.next]}>
             <span>Next Guide</span>
             <Link to={next.route} style={styles.link}>{next.label}</Link>
           </div>
