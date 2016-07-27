@@ -1,6 +1,7 @@
 import React from "react";
 import Radium from "radium";
 import { Link } from "react-router";
+import { find } from "lodash";
 import Page from "../components/page";
 import Documentation from "../components/documentation";
 import config from "../config";
@@ -10,6 +11,19 @@ import NextRead from "../components/next-read";
 import DocsHeader from "../components/docs-header";
 
 class Docs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      docsComponent: null
+    };
+  }
+
+  componentWillMount() {
+    this.setState({
+      docsComponent: find(config, { route: this.props.location.pathname })
+    });
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
       window.scrollTo(0, 0);
@@ -33,23 +47,20 @@ class Docs extends React.Component {
 
   render() {
     const styles = this.getStyles();
-    let Component = <NotFound />;
+    if (!this.state.docsComponent) {
+      return <NotFound />;
+    }
 
-    config.forEach((doc) => {
-      if (doc.route === this.props.location.pathname) {
-        Component = (
-          <Page name="docs">
-            <DocsHeader />
-            <main style={styles.main}>
-              <Link to="/" style={styles.homeLink}>&larr; Return Home</Link>
-              <Documentation markdown={doc.file} />
-              <NextRead current={this.props.location.pathname} />
-            </main>
-          </Page>
-        );
-      }
-    });
-    return Component;
+    return (
+      <Page name="docs">
+        <DocsHeader />
+        <main style={styles.main}>
+          <Link to="/" style={styles.homeLink}>&larr; Return Home</Link>
+          <Documentation markdown={this.state.docsComponent.file} />
+          <NextRead current={this.props.location.pathname} />
+        </main>
+      </Page>
+    );
   }
 }
 
