@@ -14,6 +14,7 @@ export default {
   white: "#FFFFFF",
   black: "#242121",
   charcoal: "#4A4A4A",
+  offWhite: "#f4f4f4",
   //
   // @media queries
   //

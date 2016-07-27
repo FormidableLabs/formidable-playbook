@@ -23,10 +23,7 @@ export default {
   },
   "html, body": {
     overflowX: "hidden",
-    height: "100%"
-  },
-  "body::selection, body::-moz-selection": {
-    background: "#FFFEC2"
+    minHeight: "100vh"
   },
   "article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary": {
     display: "block"
@@ -50,10 +47,8 @@ export default {
     color: Color(theme.red).lighten(.2).hexString(),
     transition: "color 150ms ease-out"
   },
-  p: {
-    fontSize: "1.1rem",
-    lineHeight: 1.8,
-    color: theme.black
+  "pre > code": {
+    display: "block"
   },
   code: {
     padding: "0.2em 5px",
@@ -62,26 +57,37 @@ export default {
     background: "rgba(0,0,0,0.05)",
     borderRadius: "3px",
     fontFamily: theme.code,
-    WebkitFontSmoothing: "subpixel-antialiased"
+    WebkitFontSmoothing: "subpixel-antialiased",
+    wordWrap: "break-word",
+    maxWidth: "100%",
+    overflowX: "scroll"
+  },
+  p: {
+    fontSize: "95%",
+    lineHeight: 1.8,
+    color: theme.black
   },
   li: {
-    fontSize: "1rem",
+    fontSize: "95%",
     lineHeight: 1.8
   },
   img: {
     maxWidth: "100%"
   },
   h1: {
-    fontSize: "4rem"
+    fontSize: "3rem"
   },
   h2: {
-    fontSize: "2.5rem"
+    fontSize: "2rem"
   },
   h3: {
-    fontSize: "1.8rem"
+    fontSize: "1.5rem"
   },
   h4: {
-    fontSize: "1.25rem"
+    fontSize: "1rem"
+  },
+  h5: {
+    fontSize: "1rem"
   },
   svg: {
     fill: "currentColor"
@@ -90,7 +96,7 @@ export default {
     padding: "0px"
   },
   "table tr": {
-    borderTop: "1px solid #f4f4f4",
+    borderTop: `1px solid ${theme.offWhite}`,
     backgroundColor: "white",
     margin: "0px",
     padding: "0px"
@@ -100,13 +106,13 @@ export default {
   },
   "table tr th": {
     fontWeight: "bold",
-    border: "1px solid #f4f4f4",
+    border: `1px solid ${theme.offWhite}`,
     textAlign: "left",
     margin: "0px",
     padding: "6px 13px"
   },
   "table tr td": {
-    border: "1px solid #f4f4f4",
+    border: `1px solid ${theme.offWhite}`,
     textAlign: "left",
     margin: "0px",
     padding: "6px 13px"
@@ -119,7 +125,7 @@ export default {
   },
   // Markdown-processed styles
   ".page-home .md p:first-child": {
-    fontSize: "1.3em"
+    fontSize: "inherit"
   },
   ".page-home .md ul": {
     margin: "1.25rem 0px"
@@ -133,7 +139,7 @@ export default {
   },
   ".page-home .md ul li a": {
     position: "relative",
-    fontSize: "1.2em"
+    fontSize: "1rem"
   },
   ".page-home .md ul li a:before": {
     content: "''",
@@ -149,5 +155,37 @@ export default {
   },
   ".page-home .md h2": {
     marginTop: "1.5em"
+  },
+  ".page": {
+    flex: "1 1 auto"
+  },
+  mediaQueries: {
+    [theme.breakpoints.medium]: {
+      p: {
+        fontSize: "1.1rem"
+      },
+      li: {
+        fontSize: "1.1rem"
+      },
+      h1: {
+        fontSize: "4rem"
+      },
+      h2: {
+        fontSize: "2.5rem"
+      },
+      h3: {
+        fontSize: "1.8rem"
+      },
+      h4: {
+        fontSize: "1.25rem"
+      },
+      ".page-home .md p:first-child": {
+        fontSize: "1.3rem"
+      },
+      ".page-home .md ul li a": {
+        position: "relative",
+        fontSize: "1.2rem"
+      }
+    }
   }
 };

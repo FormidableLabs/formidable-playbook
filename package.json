@@ -39,19 +39,19 @@
   },
   "homepage": "https://github.com/FormidableLabs/formidable-playbook#readme",
   "devDependencies": {
-    "builder-docs-archetype-dev": "^2.0.1",
+    "builder-docs-archetype-dev": "^3.0.1",
     "doctoc": "^1.2.0",
     "http-server": "^0.9.0",
-    "rimraf": "^2.5.2",
-    "webpack": "^1.13.1"
+    "rimraf": "^2.5.2"
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.5.0",
     "builder": "^2.9.1",
-    "builder-docs-archetype": "^2.0.1",
+    "builder-docs-archetype": "^3.0.1",
     "color": "^0.11.3",
     "formidable-landers": "^3.3.2",
     "history": "^2.1.0",
+    "lodash": "^4.14.0",
     "markdown-it": "^7.0.0",
     "markdown-it-named-headers": "0.0.4",
     "radium": "^0.18.1",
