@@ -7,11 +7,17 @@ import stylesheet from "../playbook-stylesheet";
 import theme from "../playbook-theme";
 
 class App extends React.Component {
+  componentDidUpdate(prevProps) {
+    if (prevProps.location.pathname !== this.props.location.pathname) {
+      window.scrollTo(0, 0);
+    }
+  }
+
   render() {
     const styleRootStyles = {
       display: "flex",
       flexDirection: "column",
-      height: "100%"
+      minHeight: "100vh"
     };
 
     return (
@@ -36,7 +42,8 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  children: React.PropTypes.node.isRequired
+  children: React.PropTypes.node.isRequired,
+  location: React.PropTypes.object.isRequired
 };
 
 export default Radium(App);

@@ -23,7 +23,7 @@ export default {
   },
   "html, body": {
     overflowX: "hidden",
-    height: "100%"
+    minHeight: "100vh"
   },
   "article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary": {
     display: "block"
