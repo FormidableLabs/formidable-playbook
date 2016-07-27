@@ -7,12 +7,6 @@ import stylesheet from "../playbook-stylesheet";
 import theme from "../playbook-theme";
 
 class App extends React.Component {
-  componentDidUpdate(prevProps) {
-    if (prevProps.location.pathname !== this.props.location.pathname) {
-      window.scrollTo(0, 0);
-    }
-  }
-
   render() {
     const styleRootStyles = {
       display: "flex",
