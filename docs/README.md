@@ -5,7 +5,7 @@ This is our playbook. It is the foundation that allows us to architect & design 
 
 
 - [The Architecture Playbook](#the-architecture-playbook)
-  - [Have a single infrastructure](#have-a-single-infrastructure)
+    - [Have a single infrastructure](#have-a-single-infrastructure)
 - [The Frontend Playbook](#the-frontend-playbook)
   - [Webpack plugins](#webpack-plugins)
     - [Start with good base plugins](#start-with-good-base-plugins)

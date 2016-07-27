@@ -1,4 +1,13 @@
+// The order should mirror the README TOC
 module.exports = [
+  {
+    label: "Home",
+    route: "/"
+  },
+  {
+    label: "Having a Single Infrastructure",
+    route: "/infrastructure/single"
+  },
   {
     label: "Webpack Code Splitting",
     route: "/frontend/webpack-code-splitting"
@@ -14,9 +23,5 @@ module.exports = [
   {
     label: "Webpack Source Maps",
     route: "/frontend/webpack-source-maps"
-  },
-  {
-    label: "Having a Single Infrastructure",
-    route: "/infrastructure/single"
   }
 ];
