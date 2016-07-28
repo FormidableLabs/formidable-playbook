@@ -1,4 +1,4 @@
-#### Start with good base plugins
+### Start with good base plugins
 
 Webpack has a rich plugin ecosystem, including both
 [core](https://webpack.github.io/docs/list-of-plugins.html) and

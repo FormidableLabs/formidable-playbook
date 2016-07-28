@@ -1,4 +1,4 @@
-#### Code splitting
+### Code splitting
 
 [Code splitting](http://webpack.github.io/docs/code-splitting.html) is a Webpack
 feature that enables a JS bundle within a single build to be split up and loaded

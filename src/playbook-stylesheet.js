@@ -156,6 +156,9 @@ export default {
   ".page-home .md h2": {
     marginTop: "1.5em"
   },
+  ".page-home .md h4 ~ p": {
+    marginTop: ".5em"
+  },
   ".page": {
     flex: "1 1 auto"
   },
