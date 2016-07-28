@@ -12,10 +12,10 @@ This is our playbook. It is the foundation that allows us to architect & design 
     - [Code splitting](#code-splitting)
     - [Shared libraries](#shared-libraries)
     - [Source maps](#source-maps)
-  - [Babel plugins](#babel-plugins)
-  - [Other tools](#other-tools)
-  - [Performance auditing](#performance-auditing)
-- [The Backend Playbook](#the-backend-playbook)
+  - [Babel plugins - In Progress](#babel-plugins---in-progress)
+  - [Other tools - In Progress](#other-tools---in-progress)
+  - [Performance auditing - In Progress](#performance-auditing---in-progress)
+- [The Backend Playbook - In Progress](#the-backend-playbook---in-progress)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -77,20 +77,20 @@ which allows a developer to view / debug developer-friendly source code instead
 of the optimized, mangled, and minified JS bundle of a frontend web app. Source
 maps should be enabled for both development and production.
 
-### Babel plugins
+### Babel plugins - In Progress
 
-**TODO: Write up intro section / doc - https://github.com/FormidableLabs/formidable-playbook/issues/9**
+<!-- **TODO: Write up intro section / doc - https://github.com/FormidableLabs/formidable-playbook/issues/9** -->
 
-### Other tools
+### Other tools - In Progress
 
-**TODO: tools - https://github.com/FormidableLabs/formidable-playbook/issues/8**
+<!-- **TODO: tools - https://github.com/FormidableLabs/formidable-playbook/issues/8** -->
 
-* TODO: little-loader for script loading
+<!-- * TODO: little-loader for script loading -->
 
-### Performance auditing
+### Performance auditing - In Progress
 
-**TODO: inspectpack reports, audits - https://github.com/FormidableLabs/formidable-playbook/issues/2**
+<!-- **TODO: inspectpack reports, audits - https://github.com/FormidableLabs/formidable-playbook/issues/2** -->
 
-## The Backend Playbook
+## The Backend Playbook - In Progress
 
-**TODO: Plan, write section - https://github.com/FormidableLabs/formidable-playbook/issues/4**
+<!-- **TODO: Plan, write section - https://github.com/FormidableLabs/formidable-playbook/issues/4** -->
