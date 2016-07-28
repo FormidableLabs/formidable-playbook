@@ -1,11 +1,10 @@
 import React from "react";
 import Radium from "radium";
 import { Link } from "react-router";
-import { findIndex } from "lodash";
 import config from "../config";
 import theme from "../playbook-theme";
 
-const NextRead = function ({current}) {
+const NextRead = function ({currentIndex}) {
   const styles = {
     wrapper: {
       display: "flex",
@@ -15,8 +14,8 @@ const NextRead = function ({current}) {
       paddingTop: "0px",
       borderTop: `1px solid ${theme.offWhite}`,
       [`@media ${theme.breakpoints.medium}`]: {
-        paddingTop: "1rem",
-        flexDirection: "row"
+        flexDirection: "row",
+        paddingTop: "1rem"
       }
     },
     link: {
@@ -34,10 +33,8 @@ const NextRead = function ({current}) {
       }
     }
   };
-
-  const currPos = findIndex(config, {route: current});
-  const next = config[currPos + 1];
-  const prev = config[currPos - 1];
+  const next = config[currentIndex + 1];
+  const prev = config[currentIndex - 1];
   return (
     <div style={styles.wrapper}>
       <div>
@@ -62,7 +59,7 @@ const NextRead = function ({current}) {
 };
 
 NextRead.propTypes = {
-  current: React.PropTypes.string.isRequired
+  currentIndex: React.PropTypes.number.isRequired
 };
 
 NextRead.contextTypes = {

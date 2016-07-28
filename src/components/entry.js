@@ -2,9 +2,8 @@
 import React from "react";
 import { render } from "react-dom";
 import { renderToString } from "react-dom/server";
-import { Router, RouterContext, useRouterHistory, match, applyRouterMiddleware } from "react-router";
+import { Router, RouterContext, useRouterHistory, match } from "react-router";
 import { createHistory, createMemoryHistory } from "history";
-import useScroll from "react-router-scroll";
 
 import Index from "../../templates/index.hbs";
 import routes from "../routes";
@@ -20,7 +19,6 @@ if (typeof window !== "undefined" && window.__STATIC_GENERATOR !== true) { //esl
     <Router
       history={history}
       routes={routes}
-      render={applyRouterMiddleware(useScroll())}
     />,
     document.getElementById("content")
   );

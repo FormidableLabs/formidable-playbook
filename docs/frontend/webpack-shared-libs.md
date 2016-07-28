@@ -1,4 +1,4 @@
-#### Shared libraries
+### Shared libraries
 
 Webpack shared libraries are slightly different from code splitting scenarios in
 that the common dependencies are shareable across builds and require a two-part
