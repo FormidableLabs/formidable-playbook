@@ -1,4 +1,5 @@
 import React from "react";
+import Radium from "radium";
 import { Link } from "react-router";
 
 const NotFound = function ({message}) {
@@ -39,4 +40,4 @@ NotFound.propTypes = {
   message: React.PropTypes.string
 };
 
-export default NotFound;
+export default Radium(NotFound);

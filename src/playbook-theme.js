@@ -19,7 +19,7 @@ export default {
   // @media queries
   //
   breakpoints: {
-    medium: "only screen and (minWidth: 44.063em)"
+    medium: "only screen and (min-width: 44.063em)"
   },
   //
   // Layout

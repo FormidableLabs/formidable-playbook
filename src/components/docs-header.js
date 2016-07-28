@@ -1,4 +1,5 @@
 import React from "react";
+import Radium from "radium";
 import theme from "../playbook-theme";
 
 const DocsHeader = function () {
@@ -43,4 +44,4 @@ const DocsHeader = function () {
   );
 };
 
-export default DocsHeader;
+export default Radium(DocsHeader);
