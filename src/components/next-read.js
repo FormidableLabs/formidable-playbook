@@ -1,7 +1,6 @@
 import React from "react";
 import Radium from "radium";
 import { Link } from "react-router";
-import { findIndex } from "lodash";
 import config from "../config";
 import theme from "../playbook-theme";
 
