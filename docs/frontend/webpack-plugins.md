@@ -52,7 +52,7 @@ new webpack.optimize.DedupePlugin()
 performs while flattening the dependency tree in `node_modules`. It is just
 a scan by webpack to coalesce identical code chunks to a single reference.
 
-**TODO: inspectpack duplicates reference + note - https://github.com/FormidableLabs/formidable-playbook/issues/2*
+<!-- **TODO: inspectpack duplicates reference + note - https://github.com/FormidableLabs/formidable-playbook/issues/2* -->
 
 ##### [`OccurrenceOrderPlugin`](https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin)
 
