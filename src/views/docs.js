@@ -1,7 +1,7 @@
 import React from "react";
 import Radium from "radium";
 import { Link } from "react-router";
-import { find, has, indexOf } from "lodash";
+import { indexOf } from "lodash";
 import Page from "../components/page";
 import Documentation from "../components/documentation";
 import config from "../config";
