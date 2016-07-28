@@ -20,21 +20,26 @@ class Docs extends React.Component {
   }
 
   componentWillMount() {
-    this.getCurrentDocs();
+    this.getCurrentDocs(this.props.location.pathname);
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
-      this.getCurrentDocs();
       window.scrollTo(0, 0);
     }
   }
 
-  getCurrentDocs() {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location.pathname !== this.props.location.pathname) {
+      this.getCurrentDocs(nextProps.location.pathname);
+    }
+  }
+
+  getCurrentDocs(location) {
     let docsComponent = { file: "" };
     let counter = 0;
     config.forEach((doc) => {
-      if (doc.route === this.props.location.pathname || `${doc.route}/` === this.props.location.pathname) {
+      if (doc.route === location || `${doc.route}/` === location) {
         docsComponent = doc;
         return false;
       }
