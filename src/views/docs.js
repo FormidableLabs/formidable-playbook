@@ -1,7 +1,7 @@
 import React from "react";
 import Radium from "radium";
 import { Link } from "react-router";
-import { find } from "lodash";
+import { find, has, indexOf } from "lodash";
 import Page from "../components/page";
 import Documentation from "../components/documentation";
 import config from "../config";
@@ -20,17 +20,31 @@ class Docs extends React.Component {
   }
 
   componentWillMount() {
-    const docsComponent = find(config, { route: this.props.location.pathname });
-    this.setState({
-      docs: docsComponent || { file: "" },
-      loadingError: !docsComponent ? true : false
-    });
+    this.getCurrentDocs();
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
+      this.getCurrentDocs();
       window.scrollTo(0, 0);
     }
+  }
+
+  getCurrentDocs() {
+    let docsComponent = { file: "" };
+    let counter = 0;
+    config.forEach((doc) => {
+      if (doc.route === this.props.location.pathname || `${doc.route}/` === this.props.location.pathname) {
+        docsComponent = doc;
+        return false;
+      }
+      counter++;
+    });
+
+    this.setState({
+      docs: docsComponent,
+      loadingError: counter === config.length
+    });
   }
 
   getStyles() {
@@ -60,7 +74,7 @@ class Docs extends React.Component {
         <main style={styles.main}>
           <Link to="/" style={styles.homeLink}>&larr; Return Home</Link>
           <Documentation markdown={this.state.docs.file} />
-          <NextRead current={this.props.location.pathname} />
+          <NextRead currentIndex={indexOf(config, this.state.docs)} />
         </main>
       </Page>
     );
