@@ -395,7 +395,7 @@ following webpage:
   However, this is easily done manually with a loader like:
   [`little-loader`](https://github.com/walmartlabs/little-loader). For example,
   we could lazy load our entry points in the above example with something
-  like [`lazy-load.html`](lazy-load.html)
+  like [`lazy-load.html`](../../examples/frontend/webpack-shared-libs/lazy-load.html)
 
 
   ```js
