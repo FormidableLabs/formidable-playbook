@@ -33,7 +33,7 @@ describe("Docs", function () {
         return adapter.client
           .url(r)
           .elements("#content").then(function (res) {
-            expect(res.value.length).to.eq(1); // Not a 404
+            expect(res.value).to.have.length(1); // Not a 404
           })
           // find every link
           .getAttribute("a[href]", "href").then(function (urls) {
