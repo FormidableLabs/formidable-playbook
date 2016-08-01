@@ -39,15 +39,15 @@ class Documentation extends React.Component {
           // replace .md with /
           href = href.replace(".md", "/");
           // sibling/parent links need backtracked one dir
-          if (href.indexOf('.') === 0) {
+          if (href.indexOf(".") === 0) {
             if (href.indexOf("./") === 0) {
-              href = "." + href;
+              href = `.${href}`;
             } else if (href.indexOf("../") === 0) {
-              href = "../" + href;
+              href = `../${href}`;
             }
             // prefix with / if our currentPath doesn't have a trailing slash
             if (currentPath[currentPath.length - 1] !== "/") {
-              href = "/" + href;
+              href = `/${href}`;
             }
           }
           // prefix with basename/currentpath to accommodate base href
