@@ -41,7 +41,7 @@ class App extends React.Component {
       </StyleRoot>
     );
   }
-};
+}
 
 App.propTypes = {
   children: React.PropTypes.node.isRequired,
