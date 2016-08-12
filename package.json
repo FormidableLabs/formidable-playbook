@@ -22,7 +22,9 @@
     "build-docs": "npm run build-md-toc && npm run build-examples",
     "server-examples": "ecstatic examples --port 3000 .",
     "server-static-prod": "ecstatic --port 8080 --baseDir /open-source/playbook build",
-    "test-func-static-prod": "TEST_FUNC_BASE_DIR=/open-source/playbook builder run test-func-static"
+    "test-func-static-prod": "TEST_FUNC_BASE_DIR=/open-source/playbook builder run test-func-static",
+    "lint": "builder concurrent lint-react lint-config lint-test lint-examples",
+    "lint-examples": "eslint --ext .js,.jsx examples --ignore-pattern **/dist/"
   },
   "repository": {
     "type": "git",
@@ -58,6 +60,7 @@
     "radium": "^0.18.1",
     "react": "15.2.1",
     "react-dom": "15.2.1",
+    "react-ga": "^2.1.1",
     "react-router": "^2.6.0"
   }
 }

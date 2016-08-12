@@ -1,6 +1,7 @@
 /* eslint-disable global-require */
 import React from "react";
 import Radium, { Style, StyleRoot } from "radium";
+import ga from "react-ga";
 import { Header, Footer } from "formidable-landers";
 
 import stylesheet from "../playbook-stylesheet";
@@ -8,7 +9,13 @@ import theme from "../playbook-theme";
 
 class App extends React.Component {
   getChildContext() {
-    return { location: this.props.location };
+    return {
+      location: this.props.location
+    };
+  }
+
+  componentDidMount() {
+    ga.initialize("UA-43290258-1");
   }
 
   render() {
