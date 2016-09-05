@@ -13,10 +13,6 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-    ga.initialize("UA-43290258-1");
-  }
-
   render() {
     const styleRootStyles = {
       display: "flex",
