@@ -20,7 +20,9 @@
     "build-webpack-shared-libs": "npm run build-webpack-shared-libs-clean && npm run build-webpack-shared-libs-lib && npm run build-webpack-shared-libs-app",
     "build-examples": "npm run build-webpack-code-splitting && npm run build-webpack-code-splitting-ensure && npm run build-webpack-shared-libs",
     "build-docs": "npm run build-md-toc && npm run build-examples",
-    "server-examples": "http-server examples -p 3000 .",
+    "server-examples": "ecstatic examples --port 3000 .",
+    "server-static-prod": "ecstatic --port 8080 --baseDir /open-source/playbook build",
+    "test-func-static-prod": "TEST_FUNC_BASE_DIR=/open-source/playbook builder run test-func-static",
     "lint": "builder concurrent lint-react lint-config lint-test lint-examples",
     "lint-examples": "eslint --ext .js,.jsx examples --ignore-pattern **/dist/"
   },
@@ -43,7 +45,6 @@
   "devDependencies": {
     "builder-docs-archetype-dev": "^3.0.1",
     "doctoc": "^1.2.0",
-    "http-server": "^0.9.0",
     "rimraf": "^2.5.2"
   },
   "dependencies": {

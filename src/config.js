@@ -2,27 +2,27 @@
 module.exports = [
   {
     label: "Having a Single Infrastructure",
-    route: "/infrastructure/single",
+    route: "/infrastructure/single/",
     file: require("!!raw!../docs/infrastructure/single.md")
   },
   {
     label: "Webpack Code Splitting",
-    route: "/frontend/webpack-code-splitting",
+    route: "/frontend/webpack-code-splitting/",
     file: require("!!raw!../docs/frontend/webpack-code-splitting.md")
   },
   {
     label: "Webpack Plugins",
-    route: "/frontend/webpack-plugins",
+    route: "/frontend/webpack-plugins/",
     file: require("!!raw!../docs/frontend/webpack-plugins.md")
   },
   {
     label: "Webpack Shared Libraries",
-    route: "/frontend/webpack-shared-libs",
+    route: "/frontend/webpack-shared-libs/",
     file: require("!!raw!../docs/frontend/webpack-shared-libs.md")
   },
   {
     label: "Webpack Source Maps",
-    route: "/frontend/webpack-source-maps",
+    route: "/frontend/webpack-source-maps/",
     file: require("!!raw!../docs/frontend/webpack-source-maps.md")
   }
 ];
