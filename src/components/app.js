@@ -1,7 +1,6 @@
 /* eslint-disable global-require */
 import React from "react";
 import Radium, { Style, StyleRoot } from "radium";
-import ga from "react-ga";
 import { Header, Footer } from "formidable-landers";
 
 import stylesheet from "../playbook-stylesheet";
