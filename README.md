@@ -21,7 +21,7 @@ This is our playbook. It is the foundation that allows us to architect & design 
 
 ## The Architecture Playbook
 
-#### [Have a single infrastructure](infrastructure/single.md)
+#### [Have a single infrastructure](docs/infrastructure/single.md)
 
 A unified development effort should use a single infrastructure to control all
 similar projects.
@@ -34,7 +34,7 @@ apply to any build tool.
 
 ### Webpack plugins
 
-#### [Start with good base plugins](frontend/webpack-plugins.md)
+#### [Start with good base plugins](docs/frontend/webpack-plugins.md)
 
 Webpack has a rich plugin ecosystem, including both
 [core](https://webpack.github.io/docs/list-of-plugins.html) and
@@ -52,14 +52,14 @@ A short list of plugin recommendations for best frontend performance include:
 | [`DefinePlugin`](https://webpack.github.io/docs/list-of-plugins.html#defineplugin) | Maybe | Define constants for better optimization |
 | [`lodash-webpack-plugin`](https://github.com/lodash/lodash-webpack-plugin) | Maybe | Optimize `lodash` |
 
-#### [Code splitting](frontend/webpack-code-splitting.md)
+#### [Code splitting](docs/frontend/webpack-code-splitting.md)
 
 [Code splitting](http://webpack.github.io/docs/code-splitting.html) is a Webpack
 feature that enables a JS bundle within a single build to be split up and loaded
 on-demand in smaller parts. Code splitting is appropriate within a single page
 and build.
 
-#### [Shared libraries](frontend/webpack-shared-libs.md)
+#### [Shared libraries](docs/frontend/webpack-shared-libs.md)
 
 Webpack shared libraries are slightly different from code splitting scenarios in
 that the common dependencies are shareable across builds and require a two-part
@@ -69,7 +69,7 @@ in the shared bundle. Shared libraries are appropriate for better long term
 caching within a single app across deploys and across different projects / real
 HTML pages.
 
-#### [Source maps](frontend/webpack-source-maps.md)
+#### [Source maps](docs/frontend/webpack-source-maps.md)
 
 The Webpack [SourceMapDevToolPlugin](http://webpack.github.io/docs/list-of-plugins.html#sourcemapdevtoolplugin)
 creates [source maps](https://github.com/ryanseddon/source-map/wiki/Source-maps:-languages,-tools-and-other-info)
