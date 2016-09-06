@@ -2,9 +2,9 @@ var path = require("path");
 var webpack = require("webpack");
 
 module.exports = {
-  context: path.join(__dirname, "../src"),
+  context: path.join(__dirname, "../src/es5"),
   entry: {
-    entry: "../webpack-code-splitting-ensure/entry.js"
+    entry: "../../webpack-code-splitting-ensure/entry.js"
   },
   output: {
     path: path.join(__dirname, "dist/js"),
@@ -14,7 +14,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      src: path.join(__dirname, "../src")
+      src: path.join(__dirname, "../src/es5")
     }
   },
   plugins: [

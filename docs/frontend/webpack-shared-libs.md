@@ -24,7 +24,7 @@ HTML pages.
 Let's start with some source code (the same as we will use for the
 [code splitting example](./webpack-code-splitting.md)):
 
-[`foo.js`](../../examples/frontend/src/foo.js)
+[`foo.js`](../../examples/frontend/src/es5/foo.js)
 
 ```js
 module.exports = function (id, msg) {
@@ -32,7 +32,7 @@ module.exports = function (id, msg) {
 };
 ```
 
-[`app1.js`](../../examples/frontend/src/app1.js)
+[`app1.js`](../../examples/frontend/src/es5/app1.js)
 
 ```js
 var foo = require("./foo");
@@ -40,7 +40,7 @@ var foo = require("./foo");
 document.querySelector("#content").innerHTML += foo("app1", "App 1");
 ```
 
-[`app2.js`](../../examples/frontend/src/app2.js)
+[`app2.js`](../../examples/frontend/src/es5/app2.js)
 
 ```js
 var foo = require("./foo");
@@ -53,7 +53,7 @@ document.querySelector("#content").innerHTML += foo("app2", "App 2");
 
 We then add one more file:
 
-[`lib.js`](../../examples/frontend/src/lib.js)
+[`lib.js`](../../examples/frontend/src/es5/lib.js)
 
 ```js
 require("./foo");
@@ -84,7 +84,7 @@ var path = require("path");
 var webpack = require("webpack");
 
 module.exports = {
-  context: path.join(__dirname, "../src"),
+  context: path.join(__dirname, "../src/es5"),
   entry: {
     lib: ["./lib"]
   },
@@ -134,7 +134,7 @@ var path = require("path");
 var webpack = require("webpack");
 
 module.exports = {
-  context: path.join(__dirname, "../src"),
+  context: path.join(__dirname, "../src/es5"),
   entry: {
     app1: "./app1.js",
     app2: "./app2.js"
@@ -146,7 +146,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DllReferencePlugin({
-      context: path.join(__dirname, "../src"),
+      context: path.join(__dirname, "../src/es5"),
       manifest: require("./dist/js/lib-manifest.json")
     })
   ]

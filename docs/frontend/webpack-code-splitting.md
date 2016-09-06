@@ -22,7 +22,7 @@ and build.
 Let's start with some source code (the same as we will use for the
 [shared library](./webpack-shared-libs.md)):
 
-[`foo.js`](../../examples/frontend/src/foo.js)
+[`foo.js`](../../examples/frontend/src/es5/foo.js)
 
 ```js
 module.exports = function (id, msg) {
@@ -30,7 +30,7 @@ module.exports = function (id, msg) {
 };
 ```
 
-[`app1.js`](../../examples/frontend/src/app1.js)
+[`app1.js`](../../examples/frontend/src/es5/app1.js)
 
 ```js
 var foo = require("./foo");
@@ -38,7 +38,7 @@ var foo = require("./foo");
 document.querySelector("#content").innerHTML += foo("app1", "App 1");
 ```
 
-[`app2.js`](../../examples/frontend/src/app2.js)
+[`app2.js`](../../examples/frontend/src/es5/app2.js)
 
 ```js
 var foo = require("./foo");
@@ -63,7 +63,7 @@ var path = require("path");
 var webpack = require("webpack");
 
 module.exports = {
-  context: path.join(__dirname, "../src"),
+  context: path.join(__dirname, "../src/es5"),
   entry: {
     app1: "./app1.js",
     app2: "./app2.js"

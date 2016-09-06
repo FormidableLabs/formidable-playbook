@@ -61,42 +61,44 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /* all exports used */
-/*!**********************************************************************!*\
-  !*** delegated ./foo.js from dll-reference lib_3e48f809b016b57221ef ***!
-  \**********************************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/*!*****************!*\
+  !*** ./util.js ***!
+  \*****************/
+/***/ function(module, exports) {
 
-module.exports = (__webpack_require__(1))(1);
+"use strict";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var blue = exports.blue = function blue(id, msg) {
+  return "<h1 id=\"" + id + "\" style=\"color: red\">" + msg + "</h1>";
+};
+var red = exports.red = function red(id, msg) {
+  return "<h1 id=\"" + id + "\" style=\"color: blue\">" + msg + "</h1>";
+};
 
 /***/ },
 /* 1 */
 /* all exports used */
-/*!*******************************************!*\
-  !*** external "lib_3e48f809b016b57221ef" ***!
-  \*******************************************/
-/***/ function(module, exports) {
-
-module.exports = lib_3e48f809b016b57221ef;
-
-/***/ },
-/* 2 */,
-/* 3 */
-/* all exports used */
 /*!*****************!*\
-  !*** ./app2.js ***!
+  !*** ./app1.js ***!
   \*****************/
 /***/ function(module, exports, __webpack_require__) {
 
-var foo = __webpack_require__(/*! ./foo */ 0);
+"use strict";
+"use strict";
 
-document.querySelector("#content").innerHTML += foo("app2", "App 2");
+var _util = __webpack_require__(/*! ./util */ 0);
 
+document.querySelector("#content").innerHTML += (0, _util.red)("app1", "App 1");
 
 /***/ }
 /******/ ]);

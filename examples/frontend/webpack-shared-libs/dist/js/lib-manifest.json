@@ -1,7 +1,17 @@
 {
-  "name": "lib_1c456e9656dd9be74724",
+  "name": "lib_3e48f809b016b57221ef",
   "content": {
-    "./lib.js": 1,
-    "./foo.js": 2
+    "./foo.js": {
+      "id": 1,
+      "meta": {},
+      "hasStarExport": false,
+      "activeExports": []
+    },
+    "./lib.js": {
+      "id": 0,
+      "meta": {},
+      "hasStarExport": false,
+      "activeExports": []
+    }
   }
 }
