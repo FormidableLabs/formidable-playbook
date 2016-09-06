@@ -1,5 +1,0 @@
----
-extends: ../node_modules/builder-docs-archetype/config/eslint/.eslintrc-react
-
-globals:
-  window: true
