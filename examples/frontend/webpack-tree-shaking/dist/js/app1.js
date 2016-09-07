@@ -89,48 +89,18 @@
         return Object.prototype.hasOwnProperty.call(object, property);
     }, __webpack_require__.p = "", __webpack_require__(__webpack_require__.s = 1);
 }([ /* 0 */
-/* exports used: red, blue */
+/* exports used: red */
 /*!*****************!*\
   !*** ./util.js ***!
   \*****************/
 /***/
 function(module, exports, __webpack_require__) {
     "use strict";
-    function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
-    }
-    function red(id, msg) {
+    /* unused harmony export blue */ function red(id, msg) {
         return '<h1 id="' + id + '" style="color: red">' + msg + "</h1>";
     }
-    function blue(id, msg) {
-        return '<h1 id="' + id + '" style="color: blue">' + msg + "</h1>";
-    }
     /* harmony export */
-    exports.a = red, /* harmony export */ exports.b = blue;
-    /* unused harmony export Foo */ var _createClass = function() {
-        function defineProperties(target, props) {
-            for (var i = 0; i < props.length; i++) {
-                var descriptor = props[i];
-                descriptor.enumerable = descriptor.enumerable || !1, descriptor.configurable = !0, 
-                "value" in descriptor && (descriptor.writable = !0), Object.defineProperty(target, descriptor.key, descriptor);
-            }
-        }
-        return function(Constructor, protoProps, staticProps) {
-            return protoProps && defineProperties(Constructor.prototype, protoProps), staticProps && defineProperties(Constructor, staticProps), 
-            Constructor;
-        };
-    }();
-    (function() {
-        function Foo() {
-            _classCallCheck(this, Foo);
-        }
-        return _createClass(Foo, [ {
-            key: "bar",
-            value: function() {
-                return "bar";
-            }
-        } ]), Foo;
-    })();
+    exports.a = red;
 }, /* 1 */
 /* all exports used */
 /*!*****************!*\
