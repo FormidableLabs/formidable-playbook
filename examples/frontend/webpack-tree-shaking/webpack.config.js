@@ -44,11 +44,11 @@ module.exports = ENTRY_POINTS.map(function (entryName) {
         debug: false
       }),
       new webpack.optimize.UglifyJsPlugin({
-        compress: {},
-        mangle: false, // _Don't_ change variable names.
-        beautify: true, // Preserve whitespace
+        compress: true,
+        mangle: false,    // DEMO ONLY: Don't change variable names.
+        beautify: true,   // DEMO ONLY: Preserve whitespace
         output: {
-          comments: true
+          comments: true  // DEMO ONLY: Helpful comments
         },
         sourceMap: false
       })

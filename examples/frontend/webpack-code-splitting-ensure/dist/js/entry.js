@@ -142,6 +142,8 @@
   \*******************************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
+/*eslint-disable*/ // Disable as rest of code around here is Node.
+
 /**
  * Lazy load both applications.
  *
