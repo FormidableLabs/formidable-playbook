@@ -1,5 +1,8 @@
+"use strict";
+
 var path = require("path");
 var webpack = require("webpack");
+var manifest = require("./dist/js/lib-manifest.json");
 
 module.exports = {
   context: path.join(__dirname, "../src/es5"),
@@ -15,7 +18,7 @@ module.exports = {
   plugins: [
     new webpack.DllReferencePlugin({
       context: path.join(__dirname, "../src/es5"),
-      manifest: require("./dist/js/lib-manifest.json")
+      manifest: manifest
     })
   ]
 };

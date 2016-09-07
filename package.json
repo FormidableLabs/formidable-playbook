@@ -19,7 +19,9 @@
     "build-wp-tree-shaking-app": "webpack --config examples/frontend/webpack-tree-shaking/webpack.config.js",
     "build-wp-tree-shaking": "npm run build-wp-tree-shaking-clean && npm run build-wp-tree-shaking-app",
     "build": "npm run build-md-toc && npm run build-wp-code-splitting && npm run build-wp-code-splitting-ensure && npm run build-wp-shared-libs && npm run build-wp-tree-shaking",
-    "server": "http-server -p 3000 ."
+    "server": "http-server -p 3000 .",
+    "lint": "eslint examples",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
