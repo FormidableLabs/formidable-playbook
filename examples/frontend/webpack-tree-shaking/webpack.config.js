@@ -37,11 +37,11 @@ module.exports = {
       debug: false
     }),
     new webpack.optimize.UglifyJsPlugin({
-      compress: true,
+      compress: {},
       mangle: false, // _Don't_ change variable names.
+      beautify: true, // Preserve whitespace
       output: {
-        comments: true,
-        beautify: true // Preserve whitespace
+        comments: true
       },
       sourceMap: false
     })

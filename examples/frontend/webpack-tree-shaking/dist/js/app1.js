@@ -99,13 +99,14 @@ function(module, exports, __webpack_require__) {
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
     }
+    function red(id, msg) {
+        return '<h1 id="' + id + '" style="color: red">' + msg + "</h1>";
+    }
+    function blue(id, msg) {
+        return '<h1 id="' + id + '" style="color: blue">' + msg + "</h1>";
+    }
     /* harmony export */
-    __webpack_require__.d(exports, "b", function() {
-        return blue;
-    }), /* harmony export */
-    __webpack_require__.d(exports, "a", function() {
-        return red;
-    });
+    exports.a = red, /* harmony export */ exports.b = blue;
     /* unused harmony export Foo */ var _createClass = function() {
         function defineProperties(target, props) {
             for (var i = 0; i < props.length; i++) {
@@ -118,11 +119,7 @@ function(module, exports, __webpack_require__) {
             return protoProps && defineProperties(Constructor.prototype, protoProps), staticProps && defineProperties(Constructor, staticProps), 
             Constructor;
         };
-    }(), blue = function(id, msg) {
-        return '<h1 id="' + id + '" style="color: red">' + msg + "</h1>";
-    }, red = function(id, msg) {
-        return '<h1 id="' + id + '" style="color: blue">' + msg + "</h1>";
-    };
+    }();
     (function() {
         function Foo() {
             _classCallCheck(this, Foo);
