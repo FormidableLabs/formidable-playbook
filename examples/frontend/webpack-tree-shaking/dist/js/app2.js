@@ -96,12 +96,14 @@
 /***/
 function(module, exports, __webpack_require__) {
     "use strict";
-    function blue(id, msg) {
-        return '<h1 id="' + id + '" style="color: blue">' + msg + "</h1>";
-    }
     /* unused harmony export red */
     /* harmony export */
-    exports.a = blue;
+    __webpack_require__.d(exports, "a", function() {
+        return blue;
+    });
+    var blue = function(id, msg) {
+        return '<h1 id="' + id + '" style="color: blue">' + msg + "</h1>";
+    };
 }, /* 1 */
 /* all exports used */
 /*!*****************!*\
