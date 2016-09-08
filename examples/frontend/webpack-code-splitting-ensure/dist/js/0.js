@@ -1,6 +1,7 @@
 webpackJsonp([0],{
 
 /***/ 3:
+/* unknown exports provided */
 /* all exports used */
 /*!****************!*\
   !*** ./foo.js ***!

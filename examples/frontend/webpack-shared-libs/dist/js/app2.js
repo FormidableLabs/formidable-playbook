@@ -66,6 +66,7 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/* unknown exports provided */
 /* all exports used */
 /*!**********************************************************************!*\
   !*** delegated ./foo.js from dll-reference lib_3e48f809b016b57221ef ***!
@@ -76,6 +77,7 @@ module.exports = (__webpack_require__(1))(1);
 
 /***/ },
 /* 1 */
+/* unknown exports provided */
 /* all exports used */
 /*!*******************************************!*\
   !*** external "lib_3e48f809b016b57221ef" ***!
@@ -87,6 +89,7 @@ module.exports = lib_3e48f809b016b57221ef;
 /***/ },
 /* 2 */,
 /* 3 */
+/* unknown exports provided */
 /* all exports used */
 /*!*****************!*\
   !*** ./app2.js ***!

@@ -89,6 +89,7 @@
         return Object.prototype.hasOwnProperty.call(object, property);
     }, __webpack_require__.p = "", __webpack_require__(__webpack_require__.s = 1);
 }([ /* 0 */
+/* exports provided: red, blue */
 /* exports used: blue */
 /*!*****************!*\
   !*** ./util.js ***!
@@ -97,7 +98,7 @@
 function(module, exports, __webpack_require__) {
     "use strict";
     /* unused harmony export red */
-    /* harmony export */
+    /* harmony export (binding) */
     __webpack_require__.d(exports, "a", function() {
         return blue;
     });
@@ -105,6 +106,7 @@ function(module, exports, __webpack_require__) {
         return '<h1 id="' + id + '" style="color: blue">' + msg + "</h1>";
     };
 }, /* 1 */
+/* unknown exports provided */
 /* all exports used */
 /*!*****************!*\
   !*** ./app2.js ***!

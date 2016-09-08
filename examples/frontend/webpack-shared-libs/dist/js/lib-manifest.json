@@ -3,15 +3,11 @@
   "content": {
     "./foo.js": {
       "id": 1,
-      "meta": {},
-      "hasStarExport": false,
-      "activeExports": []
+      "meta": {}
     },
     "./lib.js": {
       "id": 0,
-      "meta": {},
-      "hasStarExport": false,
-      "activeExports": []
+      "meta": {}
     }
   }
 }

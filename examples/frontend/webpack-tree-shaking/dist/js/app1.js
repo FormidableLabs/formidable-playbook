@@ -89,6 +89,7 @@
         return Object.prototype.hasOwnProperty.call(object, property);
     }, __webpack_require__.p = "", __webpack_require__(__webpack_require__.s = 1);
 }([ /* 0 */
+/* exports provided: red, blue */
 /* exports used: red */
 /*!*****************!*\
   !*** ./util.js ***!
@@ -96,14 +97,16 @@
 /***/
 function(module, exports, __webpack_require__) {
     "use strict";
-    /* harmony export */
+    /* harmony export (binding) */
     __webpack_require__.d(exports, "a", function() {
         return red;
     });
-    /* unused harmony export blue */ var red = function(id, msg) {
+    /* unused harmony export blue */
+    var red = function(id, msg) {
         return '<h1 id="' + id + '" style="color: red">' + msg + "</h1>";
     };
 }, /* 1 */
+/* unknown exports provided */
 /* all exports used */
 /*!*****************!*\
   !*** ./app1.js ***!

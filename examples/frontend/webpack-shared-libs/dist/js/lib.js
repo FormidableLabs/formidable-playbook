@@ -67,6 +67,7 @@ var lib_3e48f809b016b57221ef =
 /************************************************************************/
 /******/ ([
 /* 0 */
+/* unknown exports provided */
 /* all exports used */
 /*!****************!*\
   !*** ./lib.js ***!
@@ -84,6 +85,7 @@ __webpack_require__(/*! ./foo */ 1);
 
 /***/ },
 /* 1 */
+/* unknown exports provided */
 /* all exports used */
 /*!****************!*\
   !*** ./foo.js ***!
@@ -97,6 +99,7 @@ module.exports = function (id, msg) {
 
 /***/ },
 /* 2 */
+/* unknown exports provided */
 /* all exports used */
 /*!***************!*\
   !*** dll lib ***!
