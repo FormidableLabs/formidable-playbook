@@ -145,6 +145,7 @@ Let's inspect the `util.js` parts of these different bundles in detail:
 
 ```js
 /* 0 */
+/* exports provided: red, blue */
 /* exports used: red */
 /*!*****************!*\
   !*** ./util.js ***!
@@ -152,11 +153,12 @@ Let's inspect the `util.js` parts of these different bundles in detail:
 /***/
 function(module, exports, __webpack_require__) {
     "use strict";
-    /* harmony export */
+    /* harmony export (binding) */
     __webpack_require__.d(exports, "a", function() {
         return red;
     });
-    /* unused harmony export blue */ var red = function(id, msg) {
+    /* unused harmony export blue */
+    var red = function(id, msg) {
         return '<h1 id="' + id + '" style="color: red">' + msg + "</h1>";
     };
 }
@@ -169,6 +171,7 @@ Here we see the indicators that only `red()` is exported with the comment
 
 ```js
 /* 0 */
+/* exports provided: red, blue */
 /* exports used: blue */
 /*!*****************!*\
   !*** ./util.js ***!
@@ -177,7 +180,7 @@ Here we see the indicators that only `red()` is exported with the comment
 function(module, exports, __webpack_require__) {
     "use strict";
     /* unused harmony export red */
-    /* harmony export */
+    /* harmony export (binding) */
     __webpack_require__.d(exports, "a", function() {
         return blue;
     });
