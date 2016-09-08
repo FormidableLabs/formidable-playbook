@@ -10,6 +10,9 @@ during code bundling and removed entirely by Uglify dead code elimination.
 
 
 - [Basic Example](#basic-example)
+- [Tree Shaking Example](#tree-shaking-example)
+- [Advantages](#advantages)
+- [Disadvantages](#disadvantages)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -100,15 +103,123 @@ plugins: [
 The extra demo options allow us to have a much more readable bundle file with
 full variable names, comments, etc.
 
+Finally, we need to specify our entry points. Typically, you can use the same
+configuration to do two entry points like:
+
+```js
+entry: {
+  app1: "./app1.js",
+  app2: "./app2.js"
+},
+```
+
+Unfortunately, this isn't optimal when tree-shaking is involved because the
+separate entry point bundles will contain any exported code used in **either**
+of the entry points. To address this deficiency, we utilize a Webpack feature
+of providing an **array** of configuration objects tailored to each entry point:
+
+```js
+var ENTRY_POINTS = ["app1", "app2"];
+
+module.exports = ENTRY_POINTS.map(function (entryName) {
+  var entry = {};
+  entry[entryName] = "./" + entryName + ".js";
+
+  return {
+    entry: entry,
+    // OTHER WEBPACK CONFIGURATION
+  };
+});
+```
+
+With all of this configuration finished, our output is two files:
+
+* [`dist/js/app1.js`](../../examples/frontend/webpack-tree-shaking/dist/js/app1.js):
+  The `app1` entry point, with `red()` but not `blue()` code.
+* [`dist/js/app2.js`](../../examples/frontend/webpack-tree-shaking/dist/js/app1.js):
+  The `app2` entry point, with `blue()` but not `red()` code.
+
+Let's inspect the `util.js` parts of these different bundles in detail:
+
+[`dist/js/app1.js`](../../examples/frontend/webpack-tree-shaking/dist/js/app1.js):
+
+```js
+/* 0 */
+/* exports used: red */
+/*!*****************!*\
+  !*** ./util.js ***!
+  \*****************/
+/***/
+function(module, exports, __webpack_require__) {
+    "use strict";
+    /* harmony export */
+    __webpack_require__.d(exports, "a", function() {
+        return red;
+    });
+    /* unused harmony export blue */ var red = function(id, msg) {
+        return '<h1 id="' + id + '" style="color: red">' + msg + "</h1>";
+    };
+}
+```
+
+Here we see the indicators that only `red()` is exported with the comment
+`/* exports used: red */` and `/* unused harmony export blue */`.
+
+[`dist/js/app2.js`](../../examples/frontend/webpack-tree-shaking/dist/js/app2.js):
+
+```js
+/* 0 */
+/* exports used: blue */
+/*!*****************!*\
+  !*** ./util.js ***!
+  \*****************/
+/***/
+function(module, exports, __webpack_require__) {
+    "use strict";
+    /* unused harmony export red */
+    /* harmony export */
+    __webpack_require__.d(exports, "a", function() {
+        return blue;
+    });
+    var blue = function(id, msg) {
+        return '<h1 id="' + id + '" style="color: blue">' + msg + "</h1>";
+    };
+}
+```
+
+Here we see the indicators that only `blue()` is exported with the comment
+`/* exports used: blue */` and `/* unused harmony export red */`.
+
+And with that, we have the most efficient bundles that use _only_ the ES6
+module exports that are actually used by the code. The functions actually used
+are present in the bundles, and the other ones are removed.
 
 
+##### Advantages
 
+* **Use Multiple Export Files**: The way to "normally" only include the code
+  you need is do deeply-nested `require` or `import` of the full file path to
+  a single exported module. This is brittle and tedious. With tree shaking we
+  can just import a root file with multiple exports and let Webpack slim down
+  the code to that which is actually used.
 
+* **Small Bundle**: Unused exported code in otherwise included files is removed.
+  Yay!
 
+##### Disadvantages
 
+* **Webpack 2 Only**: Tree shaking is only available in Webpack 2.
 
+* **Single Entry Points**: A minor detail, but to properly remove code, each
+  Webpack configuration object should have a _single_ entry point. But, you can
+  provide a mapped array of objects like in our example.
 
+* **ES6 Modules Only**: Tree shaking does not work with normal ES5 / Node-style
+  CommonJS `require`'s. Only `import`.
 
-* **TODO: NOTE**: List of open issues (like `lodash-es`).
-* **TODO: NOTE**: Multiple entry points will detect code as "used" if used by
-  _any_ entry point, even if completely unrelated.
+* **Shaky, Occasionally Buggy**: Tree shaking is still in the early stages and
+  applying it to complex real world code has proved to be pretty bumpy. See
+  the following issues with tree shaking correctness out in the wild:
+  * https://github.com/webpack/webpack/issues/1750
+  * https://github.com/lodash/babel-plugin-lodash/issues/75
+  * https://github.com/rollup/rollup/issues/45
