@@ -19,8 +19,10 @@ and build.
 
 ##### Basic Example
 
+(Example source available at: [github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/src/es5](https://github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/src/es5))
+
 Let's start with some source code (the same as we will use for the
-[shared library](./webpack-shared-libs.md)):
+[shared library](./webpack-shared-libs.md)).
 
 [`foo.js`](../../examples/frontend/src/es5/foo.js)
 
@@ -50,6 +52,8 @@ document.querySelector("#content").innerHTML += foo("app2", "App 2");
 `App 2` to a page using the same `foo()` method...
 
 ##### Code Splitting Example
+
+(Example build / dist code available at: [github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-code-splitting](https://github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-code-splitting))
 
 Code splitting allows us to extract the common parts of both entry points, which
 in our case is the `foo.js` file. We can accomplish this with a single webpack
@@ -105,16 +109,17 @@ Let's look at these files in detail:
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
-/* 1 */
+/* 0 */
+/* unknown exports provided */
+/* all exports used */
 /*!****************!*\
   !*** ./foo.js ***!
   \****************/
 /***/ function(module, exports) {
 
-  module.exports = function (id, msg) {
-    return "<h1 id=\"" + id + "\">" + msg + "</h1>";
-  };
+module.exports = function (id, msg) {
+  return "<h1 id=\"" + id + "\">" + msg + "</h1>";
+};
 
 
 /***/ }
@@ -124,39 +129,46 @@ Let's look at these files in detail:
 [`dist/js/app1.js`](../../examples/frontend/webpack-code-splitting/dist/js/app1.js)
 
 ```js
-webpackJsonp([0],[
-/* 0 */
+webpackJsonp([1],[
+/* 0 */,
+/* 1 */
+/* unknown exports provided */
+/* all exports used */
 /*!*****************!*\
   !*** ./app1.js ***!
   \*****************/
 /***/ function(module, exports, __webpack_require__) {
 
-  var foo = __webpack_require__(/*! ./foo */ 1);
+var foo = __webpack_require__(/*! ./foo */ 0);
 
-  document.querySelector("#content").innerHTML += foo("app1", "App 1");
+document.querySelector("#content").innerHTML += foo("app1", "App 1");
 
 
 /***/ }
-]);
+],[1]);
 ```
 
 [`dist/js/app2.js`](../../examples/frontend/webpack-code-splitting/dist/js/app2.js)
 
 ```js
-webpackJsonp([1],[
-/* 0 */
+webpackJsonp([0],{
+
+/***/ 2:
+/* unknown exports provided */
+/* all exports used */
 /*!*****************!*\
   !*** ./app2.js ***!
   \*****************/
 /***/ function(module, exports, __webpack_require__) {
 
-  var foo = __webpack_require__(/*! ./foo */ 1);
+var foo = __webpack_require__(/*! ./foo */ 0);
 
-  document.querySelector("#content").innerHTML += foo("app2", "App 2");
+document.querySelector("#content").innerHTML += foo("app2", "App 2");
 
 
 /***/ }
-]);
+
+},[2]);
 ```
 
 The `commons.js` file does indeed contain our common code and bootstrap loader,
@@ -180,6 +192,10 @@ following webpage:
 ```
 
 ##### Automatic Splitting
+
+(Working example available in the
+[github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-code-splitting-ensure](https://github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-code-splitting-ensure)
+directory.)
 
 In our example above, we specified two separate entry points and added `script`
 tags for both. Webpack is actually intelligent enough to create entry points
@@ -219,10 +235,6 @@ and Webpack will mostly split things up the same way. This approach is
 particularly useful for the very common case of React application-based routes
 (via any router) so that you have (1) a common chunk of code load first, then
 (2) only the specific code needed for a route to load application-wise.
-
-We have a working example available in the
-[`webpack-code-splitting-ensure`](../../examples/frontend/webpack-code-splitting-ensure)
-directory.
 
 ##### Advantages
 

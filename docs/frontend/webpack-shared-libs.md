@@ -21,6 +21,8 @@ HTML pages.
 
 ##### Basic Example
 
+(Example source available at: [github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/src/es5](https://github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/src/es5))
+
 Let's start with some source code (the same as we will use for the
 [code splitting example](./webpack-code-splitting.md)):
 
@@ -67,6 +69,8 @@ library approach in this section, we will need to manually curate and update the
 libraries to include in the shared bundle.
 
 ##### Shared Lib Example
+
+(Example build / dist code available at: [github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-shared-libs](https://github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-shared-libs))
 
 Shared libraries allow us to manually specify code in shared bundle, that can
 then be excluded in any other entry points (across projects). To accomplish
@@ -167,47 +171,53 @@ Let's look at these files in detail:
 [`dist/js/lib.js`](../../examples/frontend/webpack-shared-libs/dist/js/lib.js)
 
 ```js
-var lib_1c456e9656dd9be74724 =
+var lib_3e48f809b016b57221ef =
 /******/ (function(modules) { // webpackBootstrap
 /******/  // SNIPPED
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/*!***************!*\
-  !*** dll lib ***!
-  \***************/
-/***/ function(module, exports, __webpack_require__) {
-
-  module.exports = __webpack_require__;
-
-/***/ },
-/* 1 */
+/* unknown exports provided */
+/* all exports used */
 /*!****************!*\
   !*** ./lib.js ***!
   \****************/
 /***/ function(module, exports, __webpack_require__) {
 
-  /**
-   * Shared Library (DLL)
-   *
-   * Don't need to assign to variable, just the side-effect of "including"
-   * desired libraries in this file.
-   */
-  __webpack_require__(/*! ./foo */ 2);
+/**
+ * Shared Library (DLL)
+ *
+ * Don't need to assign to variable, just the side-effect of "including"
+ * desired libraries in this file.
+ */
+__webpack_require__(/*! ./foo */ 1);
 
 
 /***/ },
-/* 2 */
+/* 1 */
+/* unknown exports provided */
+/* all exports used */
 /*!****************!*\
   !*** ./foo.js ***!
   \****************/
 /***/ function(module, exports) {
 
-  module.exports = function (id, msg) {
-    return "<h1 id=\"" + id + "\">" + msg + "</h1>";
-  };
+module.exports = function (id, msg) {
+  return "<h1 id=\"" + id + "\">" + msg + "</h1>";
+};
 
+
+/***/ },
+/* 2 */
+/* unknown exports provided */
+/* all exports used */
+/*!***************!*\
+  !*** dll lib ***!
+  \***************/
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__;
 
 /***/ }
 /******/ ]);
@@ -234,33 +244,39 @@ var lib_1c456e9656dd9be74724 =
 /************************************************************************/
 /******/ ([
 /* 0 */
+/* unknown exports provided */
+/* all exports used */
+/*!**********************************************************************!*\
+  !*** delegated ./foo.js from dll-reference lib_3e48f809b016b57221ef ***!
+  \**********************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(1))(1);
+
+/***/ },
+/* 1 */
+/* unknown exports provided */
+/* all exports used */
+/*!*******************************************!*\
+  !*** external "lib_3e48f809b016b57221ef" ***!
+  \*******************************************/
+/***/ function(module, exports) {
+
+module.exports = lib_3e48f809b016b57221ef;
+
+/***/ },
+/* 2 */
+/* unknown exports provided */
+/* all exports used */
 /*!*****************!*\
   !*** ./app1.js ***!
   \*****************/
 /***/ function(module, exports, __webpack_require__) {
 
-  var foo = __webpack_require__(/*! ./foo */ 1);
+var foo = __webpack_require__(/*! ./foo */ 0);
 
-  document.querySelector("#content").innerHTML += foo("app1", "App 1");
+document.querySelector("#content").innerHTML += foo("app1", "App 1");
 
-
-/***/ },
-/* 1 */
-/*!**********************************************************************!*\
-  !*** delegated ./foo.js from dll-reference lib_1c456e9656dd9be74724 ***!
-  \**********************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-  module.exports = (__webpack_require__(2))(2);
-
-/***/ },
-/* 2 */
-/*!*******************************************!*\
-  !*** external "lib_1c456e9656dd9be74724" ***!
-  \*******************************************/
-/***/ function(module, exports) {
-
-  module.exports = lib_1c456e9656dd9be74724;
 
 /***/ }
 /******/ ]);
@@ -275,33 +291,40 @@ var lib_1c456e9656dd9be74724 =
 /************************************************************************/
 /******/ ([
 /* 0 */
+/* unknown exports provided */
+/* all exports used */
+/*!**********************************************************************!*\
+  !*** delegated ./foo.js from dll-reference lib_3e48f809b016b57221ef ***!
+  \**********************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(1))(1);
+
+/***/ },
+/* 1 */
+/* unknown exports provided */
+/* all exports used */
+/*!*******************************************!*\
+  !*** external "lib_3e48f809b016b57221ef" ***!
+  \*******************************************/
+/***/ function(module, exports) {
+
+module.exports = lib_3e48f809b016b57221ef;
+
+/***/ },
+/* 2 */,
+/* 3 */
+/* unknown exports provided */
+/* all exports used */
 /*!*****************!*\
   !*** ./app2.js ***!
   \*****************/
 /***/ function(module, exports, __webpack_require__) {
 
-  var foo = __webpack_require__(/*! ./foo */ 1);
+var foo = __webpack_require__(/*! ./foo */ 0);
 
-  document.querySelector("#content").innerHTML += foo("app2", "App 2");
+document.querySelector("#content").innerHTML += foo("app2", "App 2");
 
-
-/***/ },
-/* 1 */
-/*!**********************************************************************!*\
-  !*** delegated ./foo.js from dll-reference lib_1c456e9656dd9be74724 ***!
-  \**********************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-  module.exports = (__webpack_require__(2))(2);
-
-/***/ },
-/* 2 */
-/*!*******************************************!*\
-  !*** external "lib_1c456e9656dd9be74724" ***!
-  \*******************************************/
-/***/ function(module, exports) {
-
-  module.exports = lib_1c456e9656dd9be74724;
 
 /***/ }
 /******/ ]);
@@ -312,33 +335,33 @@ code splitting examples, the files created with the shared library plugins all
 contain a Webpack bootstrap loader. The main trick is seeing that there is a
 mapping of indirection for shared code like `./foo` in our entry point code:
 
-Let's start at `app1`, index `0` (or `app1:0`):
+Let's start at `app1`, index `2` (or `app1:2`):
 
 ```js
-var foo = __webpack_require__(/*! ./foo */ 1);
+var foo = __webpack_require__(/*! ./foo */ 0);
 ```
 
-This means that we get `foo` from `app1:1`. Looking there we see:
+This means that we get `foo` from `app1:0`. Looking there we see:
 
 ```js
-module.exports = (__webpack_require__(2))(2);
+module.exports = (__webpack_require__(1))(1);
 ```
 
-this means we need to look at `app1:2` to get a function, which we then call
+this means we need to look at `app1:1` to get a function, which we then call
 with the index `2`. So we get a function from `app1:2` for
 `__webpack_require__(2)`:
 
 ```js
-module.exports = lib_1c456e9656dd9be74724;
+module.exports = lib_3e48f809b016b57221ef;
 ```
 
-which is the exported function of shared library. Then we call into `lib:2` to
+which is the exported function of shared library. Then we call into `lib:1` to
 find the actual code we want for `foo.js`:
 
 ```js
-  module.exports = function (id, msg) {
-    return "<h1 id=\"" + id + "\">" + msg + "</h1>";
-  };
+module.exports = function (id, msg) {
+  return "<h1 id=\"" + id + "\">" + msg + "</h1>";
+};
 ```
 
 So this is a bit of a tortured adventure of indirection, but hopefully it gets

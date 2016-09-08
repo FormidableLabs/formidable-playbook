@@ -18,6 +18,8 @@ during code bundling and removed entirely by Uglify dead code elimination.
 
 ##### Basic Example
 
+(Example source available at: [github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/src/es6](https://github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/src/es6))
+
 Let's start with a very basic ESnext file that exports two functions -
 `red()` and `blue()`:
 
@@ -47,6 +49,8 @@ document.querySelector("#content").innerHTML += blue("app2", "App 2");
 ```
 
 ##### Tree Shaking Example
+
+(Example build / dist code available at: [github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-tree-shaking](https://github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-tree-shaking))
 
 Our goal with tree shaking is to have `app1` include the code for `red()`, but
 not `blue()` and have the opposite situation for `app2`. To accomplish this,
