@@ -1,3 +1,5 @@
+/*eslint-disable*/ // Disable as rest of code around here is Node.
+
 /**
  * Lazy load both applications.
  *

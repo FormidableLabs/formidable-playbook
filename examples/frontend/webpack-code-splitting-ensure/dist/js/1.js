@@ -4,14 +4,14 @@ webpackJsonp([1],[
 /* unknown exports provided */
 /* all exports used */
 /*!*****************!*\
-  !*** ./app1.js ***!
+  !*** ./app2.js ***!
   \*****************/
 /***/ function(module, exports, __webpack_require__) {
 
-var foo = __webpack_require__(/*! ./foo */ 0);
+var foo = __webpack_require__(/*! ./foo */ 3);
 
-document.querySelector("#content").innerHTML += foo("app1", "App 1");
+document.querySelector("#content").innerHTML += foo("app2", "App 2");
 
 
 /***/ }
-],[1]);
+]);

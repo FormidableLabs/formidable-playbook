@@ -5,18 +5,26 @@
   "main": "",
   "scripts": {
     "build-md-toc": "doctoc --notitle README.md docs",
-    "build-webpack-code-splitting-clean": "rimraf examples/frontend/webpack-code-splitting/dist",
-    "build-webpack-code-splitting-app": "webpack --config examples/frontend/webpack-code-splitting/webpack.config.js",
-    "build-webpack-code-splitting": "npm run build-webpack-code-splitting-clean && npm run build-webpack-code-splitting-app",
-    "build-webpack-code-splitting-ensure-clean": "rimraf examples/frontend/webpack-code-splitting-ensure/dist",
-    "build-webpack-code-splitting-ensure-app": "webpack --config examples/frontend/webpack-code-splitting-ensure/webpack.config.js",
-    "build-webpack-code-splitting-ensure": "npm run build-webpack-code-splitting-ensure-clean && npm run build-webpack-code-splitting-ensure-app",
-    "build-webpack-shared-libs-clean": "rimraf examples/frontend/webpack-shared-libs/dist",
-    "build-webpack-shared-libs-lib": "webpack --config examples/frontend/webpack-shared-libs/webpack.config.lib.js",
-    "build-webpack-shared-libs-app": "webpack --config examples/frontend/webpack-shared-libs/webpack.config.js",
-    "build-webpack-shared-libs": "npm run build-webpack-shared-libs-clean && npm run build-webpack-shared-libs-lib && npm run build-webpack-shared-libs-app",
-    "build": "npm run build-md-toc && npm run build-webpack-code-splitting && npm run build-webpack-code-splitting-ensure && npm run build-webpack-shared-libs",
-    "server": "http-server -p 3000 ."
+    "build-wp-code-splitting-clean": "rimraf examples/frontend/webpack-code-splitting/dist",
+    "build-wp-code-splitting-app": "webpack --config examples/frontend/webpack-code-splitting/webpack.config.js",
+    "build-wp-code-splitting": "npm run build-wp-code-splitting-clean && npm run build-wp-code-splitting-app",
+    "build-wp-code-splitting-ensure-clean": "rimraf examples/frontend/webpack-code-splitting-ensure/dist",
+    "build-wp-code-splitting-ensure-app": "webpack --config examples/frontend/webpack-code-splitting-ensure/webpack.config.js",
+    "build-wp-code-splitting-ensure": "npm run build-wp-code-splitting-ensure-clean && npm run build-wp-code-splitting-ensure-app",
+    "build-wp-shared-libs-clean": "rimraf examples/frontend/webpack-shared-libs/dist",
+    "build-wp-shared-libs-lib": "webpack --config examples/frontend/webpack-shared-libs/webpack.config.lib.js",
+    "build-wp-shared-libs-app": "webpack --config examples/frontend/webpack-shared-libs/webpack.config.js",
+    "build-wp-shared-libs": "npm run build-wp-shared-libs-clean && npm run build-wp-shared-libs-lib && npm run build-wp-shared-libs-app",
+    "build-wp-tree-shaking-clean": "rimraf examples/frontend/webpack-tree-shaking/dist",
+    "build-wp-tree-shaking-app": "webpack --config examples/frontend/webpack-tree-shaking/webpack.config.js",
+    "build-wp-tree-shaking": "npm run build-wp-tree-shaking-clean && npm run build-wp-tree-shaking-app",
+    "build-wp": "npm run build-wp-code-splitting && npm run build-wp-code-splitting-ensure && npm run build-wp-shared-libs && npm run build-wp-tree-shaking",
+    "build": "npm run build-md-toc && npm run build-wp",
+    "server": "http-server -p 3000 .",
+    "lint": "eslint examples",
+    "check-uncommitted": "test -z \"$(git status --porcelain)\" || (echo \"Uncommited changes found: $(git status)\" && exit 1)",
+    "check": "npm run lint",
+    "check-ci": "npm run check && npm run build-md-toc && npm run check-uncommitted"
   },
   "repository": {
     "type": "git",
@@ -35,9 +43,17 @@
   },
   "homepage": "https://github.com/FormidableLabs/formidable-playbook#readme",
   "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
     "doctoc": "^1.2.0",
+    "eslint": "^2.13.1",
+    "eslint-config-formidable": "^1.0.1",
+    "eslint-plugin-filenames": "^1.1.0",
+    "eslint-plugin-import": "^1.14.0",
     "http-server": "^0.9.0",
     "rimraf": "^2.5.2",
-    "webpack": "^1.13.1"
+    "webpack": "^2.1.0-beta.22"
   }
 }

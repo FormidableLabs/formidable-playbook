@@ -1,8 +1,10 @@
+"use strict";
+
 var path = require("path");
 var webpack = require("webpack");
 
 module.exports = {
-  context: path.join(__dirname, "../src"),
+  context: path.join(__dirname, "../src/es5"),
   entry: {
     lib: ["./lib"]
   },

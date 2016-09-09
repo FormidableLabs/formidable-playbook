@@ -11,6 +11,7 @@ This is our playbook. It is the foundation that allows us to architect & design 
     - [Start with good base plugins](#start-with-good-base-plugins)
     - [Code splitting](#code-splitting)
     - [Shared libraries](#shared-libraries)
+    - [Tree shaking](#tree-shaking)
     - [Source maps](#source-maps)
   - [Babel plugins - In Progress](#babel-plugins---in-progress)
   - [Other tools - In Progress](#other-tools---in-progress)
@@ -68,6 +69,13 @@ a second step, entry points ingest the manifest and omit any libraries included
 in the shared bundle. Shared libraries are appropriate for better long term
 caching within a single app across deploys and across different projects / real
 HTML pages.
+
+#### [Tree shaking](docs/frontend/webpack-tree-shaking.md)
+
+[Tree shaking](http://www.2ality.com/2015/12/webpack-tree-shaking.html) is a
+transformation process for [ES6 modules](http://www.2ality.com/2014/09/es6-modules-final.html)
+whereby ESnext `export`s that are not used in a Webpack bundle can be isolated
+during code bundling and removed entirely by Uglify dead code elimination.
 
 #### [Source maps](docs/frontend/webpack-source-maps.md)
 

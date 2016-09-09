@@ -1,0 +1,4 @@
+---
+"extends":
+  # Assume everything is Node (ignoring `dist`).
+  - "formidable/configurations/es5-node"
