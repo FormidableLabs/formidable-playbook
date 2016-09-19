@@ -111,6 +111,7 @@ Finally, we need to specify our entry points. Typically, you can use the same
 configuration to do two entry points like:
 
 ```js
+// BAD: Dependencies are not isolated.
 entry: {
   app1: "./app1.js",
   app2: "./app2.js"
@@ -123,6 +124,7 @@ of the entry points. To address this deficiency, we utilize a Webpack feature
 of providing an **array** of configuration objects tailored to each entry point:
 
 ```js
+// GOOD: Dependencies are correctly isolated.
 var ENTRY_POINTS = ["app1", "app2"];
 
 module.exports = ENTRY_POINTS.map(function (entryName) {
