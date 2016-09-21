@@ -101,6 +101,77 @@ being able to debug a production app for any sizeable bundle in the modern
 web. The rest of this page will examine enabling your critical "out" for bugs
 you find in production.
 
+##### Integrating Source Maps
+
+With the above background in mind, the big issue is where and how to serve
+source maps when focusing on production.
+
+###### Open Source Apps
+
+For *open source applications*, this is fairly easy -- just serve the source
+map alongside the application code. There's no worry about the real source
+code getting out to the public, so for an application like `app1.js` and a
+source map file of `app1.js.map`, a simple `sourceMappingUrl` comment like:
+
+```js
+//# sourceMappingURL=app1.js.map
+```
+
+is sufficient to make the tight minified bundle execute for most users while
+still having source maps available for any users that have a development
+console open.
+
+###### Private Apps
+
+For *closed source / private applications*, it is a little more complicated.
+Essentially, the source maps need to be served, but _just_ to trusted members
+of a private team. And the source mapping control comment needs to integrate
+this choice.
+
+Here are a couple of basic choices to support privately available source maps:
+
+*Option 1: Locally serve the maps*
+
+The easiest option to wire together is to point the source mapping comment to
+localhost, either by direct reference or an alias that developers have to
+enter in `/etc/hosts` or whatnot. For example:
+
+```js
+//# sourceMappingURL=http://127.0.0.1:3000/PATH/TO/app1.js.map
+//# sourceMappingURL=http://localhost:3000/PATH/TO/app1.js.map
+//# sourceMappingURL=http://localhost-alias.com:3000/PATH/TO/app1.js.map
+```
+
+The application build process should then go through these steps:
+
+1. Ensure that the version number or git hash uniquely identifying the specific
+   point in the application code is available in the production app.
+   (E.g., `window.__VERSION = "2.0.3"`).
+2. On building the application, potentially store the source mapping files for
+   later serving. This is not strictly necessary as a checked out project may
+   rebuild the source map files, but there is some risk of version skew in the
+   build tools affecting the resulting bundle / source. The best practice is
+   to *store the maps that built the code in production*.
+3. Provide a simple development static server to serve the source maps at a
+   given port (in our example port `3000`) so that a project checkout can
+   provide the maps via a server.
+4. Ensure that the build process writes a correct `sourceMappingURL` comment
+   that corresponds to the correct locally hosted map server path.
+
+Then, when a developer needs to debug production code, they:
+
+1. Identify the version or git hash at issue.
+2. Download the project (git, npm, deploy artifact) at the proper version.
+3. Rebuild the map files if not already provided.
+4. Start the local static map server.
+
+After these steps, local source maps will be available for the production code.
+
+*Option 2: Privately served maps*
+
+
+
+
 ##### Source Map Example
 
 (Example build / dist code available at: [github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-source-maps](https://github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-source-maps))
@@ -142,9 +213,15 @@ module.exports = {
       filename: "[name].js.map",
 
       // Output sourceMappingUrl comment.
-      // Defaults to: `"\n//# sourceMappingURL=[url]"` for relative hosting
-      append: "\n//# sourceMappingURL=http://localhost:3000/" +
-        "examples/frontend/webpack-source-maps/dist/js/[url]"
+      //
+      // Examples:
+      // 1. Default to: `"\n//# sourceMappingURL=[url]"` for relative hosting
+      append: ""
+      // 2. Localhost + local repo checkout.
+      // append: "\n//# sourceMappingURL=http://localhost:3000/" +
+      //   "examples/frontend/webpack-source-maps/dist/js/[url]"
+      // 3. Internal VPN URL.
+      // append: "\n//# sourceMappingURL=http://my-vpn-url.com/PATH/[url]"
     })
   ]
 };
@@ -167,11 +244,22 @@ Let's look at the `app1` files in detail (the `app2` files are analogous):
 
 ```js
 !function(n){function r(e){/*... SNIPPED ...*/document.querySelector("#content").innerHTML+=e("app1","App 1")}]);
-//# sourceMappingURL=http://localhost:3000/examples/frontend/webpack-source-maps/dist/js/app1.js.map
+//# sourceMappingURL=app1.js.map
 ```
 
 The `app1.js` file contains a straightforward minified bundle of the `app1`
-entry point with the key `sourceMappingURL` control comment at the bottom.
+entry point with the key `sourceMappingURL` control comment at the bottom. As
+it stands now, an `app1.js.map` file is expected to be served from the same
+directory as the application bundle.
+
+While this is fine for this playbook example, real world usage would tend
+towards rewriting the `//# sourceMappingURL=app1.js.map` comment to either:
+
+* Point to `localhost` for development and/or a local git checkout for
+  production debugging; or,
+* Point to an internal-only / protected URL (like within a VPN) of a host that
+  makes source map files "automagically" available in production once a
+  developer logs into the appropriate network.
 
 [`dist/js/app1.js.map`](../../examples/frontend/webpack-source-maps/dist/js/app1.js.map)
 
