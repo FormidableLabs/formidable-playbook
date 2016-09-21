@@ -104,6 +104,16 @@ being able to debug a production app for any sizeable bundle in the modern
 web. The rest of this page will examine enabling your critical "out" for bugs
 you find in production.
 
+**Side Note: source maps for end users**: There is sometimes a concern that for
+most end users of an application that they shouldn't have the penalty of either
+downloading or 404'ing source maps in the non-development use of a production
+application. Fortunately, source map integration in browsers works such that
+a browser will not even attempt to download source maps unless the development
+console of the browser is open, using that as a good heuristic of when to add
+the enhanced debugging capabilities of source maps. Thus, for normal end users
+there is absolutely no penalty for having a source map integration strategy
+in production applications.
+
 ##### Integrating Source Maps
 
 With the above background in mind, the big issue is where and how to serve
@@ -133,7 +143,7 @@ this choice.
 
 Here are a couple of basic choices to support privately available source maps:
 
-*Option 1: Locally serve the maps*
+**Option 1: Locally serve the maps**
 
 The easiest option to wire together is to point the source mapping comment to
 localhost, either by direct reference or an alias that developers have to
@@ -181,7 +191,7 @@ Disadvantages:
   out that version locally.
 * Rebuilding source maps risks correctness issues.
 
-*Option 2: Privately served maps*
+**Option 2: Privately served maps**
 
 The more complicated and robust option is to have source mapping comments point
 to an internal server so that developers just have to "get on the network" and
