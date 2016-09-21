@@ -21,9 +21,15 @@ module.exports = {
       filename: "[name].js.map",
 
       // Output sourceMappingUrl comment.
-      // Defaults to: `"\n//# sourceMappingURL=[url]"` for relative hosting
-      append: "\n//# sourceMappingURL=http://localhost:3000/" +
-        "examples/frontend/webpack-source-maps/dist/js/[url]"
+      //
+      // Examples:
+      // 1. Default to: `"\n//# sourceMappingURL=[url]"` for relative hosting
+      append: ""
+      // 2. Localhost + local repo checkout.
+      // append: "\n//# sourceMappingURL=http://localhost:3000/" +
+      //   "examples/frontend/webpack-source-maps/dist/js/[url]"
+      // 3. Internal VPN URL.
+      // append: "\n//# sourceMappingURL=http://my-vpn-url.com/PATH/[url]"
     })
   ]
 };

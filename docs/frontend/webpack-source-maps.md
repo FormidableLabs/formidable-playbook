@@ -6,8 +6,15 @@ which allows a developer to view / debug developer-friendly source code instead
 of the optimized, mangled, and minified JS bundle of a frontend web app. Source
 maps should be enabled for both development and production.
 
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Basic Example](#basic-example)
+- [Source Maps Primer](#source-maps-primer)
+- [Source Map Example](#source-map-example)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ##### Basic Example
 
@@ -154,52 +161,61 @@ This produces four files:
 * [`dist/js/app2.js.map`](../../examples/frontend/webpack-source-maps/dist/js/app2.js.map):
   The `app2` source map file.
 
-Let's look at these files in detail:
+Let's look at the `app1` files in detail (the `app2` files are analogous):
 
 [`dist/js/app1.js`](../../examples/frontend/webpack-source-maps/dist/js/app1.js)
 
 ```js
-TODO HERE
+!function(n){function r(e){/*... SNIPPED ...*/document.querySelector("#content").innerHTML+=e("app1","App 1")}]);
+//# sourceMappingURL=http://localhost:3000/examples/frontend/webpack-source-maps/dist/js/app1.js.map
 ```
 
+The `app1.js` file contains a straightforward minified bundle of the `app1`
+entry point with the key `sourceMappingURL` control comment at the bottom.
 
-
-
-
-
-
-
-
-
-
-[`dist/js/app2.js`](../../examples/frontend/webpack-source-maps/dist/js/app2.js)
+[`dist/js/app1.js.map`](../../examples/frontend/webpack-source-maps/dist/js/app1.js.map)
 
 ```js
-webpackJsonp([0],{
+// Prettified and truncated.
+{
+  "version": 3,
+  "sources": [
+    "webpack:///app1.js",
+    "webpack:///webpack/bootstrap 05941fb93e61871b9ba6?c490",
+    "webpack:///./foo.js?60db",
+    "webpack:///./app1.js"
+  ],
+  "names": [
+    "modules",
+    "__webpack_require__",
+    "moduleId",
+    /* ... SNIPPED ... */
+    "querySelector",
+    "innerHTML"
+  ],
+  "mappings": "CAAS,SAAUA,GCInB,QAAAC,/* ... SNIPPED ... */,WAAAH,EAAA",
+  "file": "app1.js",
+  "sourcesContent": [
+    /* ... SNIPPED ... */
+    "module.exports = function (id, msg) {\n  return \"<h1 id=\\\"\" + id + \"\\\">\" + msg + \"</h1>\";\n};\n\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./foo.js\n// module id = 0\n// module chunks = 0 1",
+    "var foo = require(\"./foo\");\n\ndocument.querySelector(\"#content\").innerHTML += foo(\"app1\", \"App 1\");\n\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./app1.js\n// module id = 1\n// module chunks = 1"
+  ],
+  "sourceRoot": ""
+}
 
-/***/ 2:
-/* unknown exports provided */
-/* all exports used */
-/*!*****************!*\
-  !*** ./app2.js ***!
-  \*****************/
-/***/ function(module, exports, __webpack_require__) {
-
-var foo = __webpack_require__(/*! ./foo */ 0);
-
-document.querySelector("#content").innerHTML += foo("app2", "App 2");
-
-
-/***/ }
-
-},[2]);
 ```
 
-The `commons.js` file does indeed contain our common code and bootstrap loader,
-leaving us with very small `app1|2` files.
 
-Once we build these files, we can load the common chunks and both apps with the
-following webpage:
+
+
+
+
+
+
+
+
+Once we build these files, we can load the independent applications with a
+standard index page:
 
 [`index.html`](../../examples/frontend/webpack-source-maps/index.html)
 
@@ -213,6 +229,11 @@ following webpage:
   </body>
 </html>
 ```
+
+
+
+
+
 
 <!-- * TODO: https://github.com/FormidableLabs/formidable-playbook/issues/10  -->
 <!-- * TODO: GOAL - Get dev / prod friendly sourcemaps -->
