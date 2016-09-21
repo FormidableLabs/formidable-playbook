@@ -372,17 +372,24 @@ standard index page:
 </html>
 ```
 
+And with these steps, both `app1` and `app2` have individualized full source
+maps and offer a fighting chance for developers debugging live in production.
 
+##### Advantages
 
+**Summary**: You **absolutely should** be enabling source maps in production
+and probably in development too. The disadvantages provided below are really
+just the "costs" of doing the right thing.
 
+* **Debug against original source files**: This is huge. Debugging single
+  application bundles is awkward, and debugging large minififed code chunks is
+  downright impossible.
+* **Easy in development / open source**: For development time or projects that
+  don't care if the full source is publicly served via source maps, integrating
+  source maps is very straightforward.
 
+##### Disadvantages
 
-
-<!-- * TODO: https://github.com/FormidableLabs/formidable-playbook/issues/10  -->
-<!-- * TODO: GOAL - Get dev / prod friendly sourcemaps -->
-
-**TODO: NOTES**
-
-- Maps contain full source. Need to be protected in prod.
-- Make available in prod via VPN.
-- Make available in prod via git checkout.
+* **Complicates build**: The build infrastructure for private source maps in
+  production code is complicated and must have an appropriate strategy. But
+  the costs are well worth it.
