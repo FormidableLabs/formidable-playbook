@@ -167,10 +167,55 @@ Then, when a developer needs to debug production code, they:
 
 After these steps, local source maps will be available for the production code.
 
+Advantages:
+
+* Easy implementation for existing infrastructure.
+* Don't need any specialized private map servers.
+
+Disadvantages:
+
+* Slow, tedious. Developers need to figure out the deployed version and check
+  out that version locally.
+* Rebuilding source maps risks correctness issues.
+
 *Option 2: Privately served maps*
 
+The more complicated and robust option is to have source mapping comments point
+to an internal server so that developers just have to "get on the network" and
+have access to source maps while the general public does not.
 
+For example, control comments in this scenario could look like:
 
+```js
+//# sourceMappingURL=http://vpn-only-server.com:3000/PATH/TO/app1.js.map
+//# sourceMappingURL=http://authenticated-server.com:3000/PATH/TO/app1.js.map
+```
+
+The application build process should then go through these steps:
+
+1. On building the application, publish the map files to a private server and
+   capture the published URL of each map file.
+2. Ensure that the build process writes a correct `sourceMappingURL` comment
+   that corresponds to the privately hosted map server path.
+
+Then, when a developer needs to debug production code, they:
+
+1. Gain access to the private maps server. This could be, logging in to
+   the VPN, authenticating to a publicly-accessible server, firing up an SSH
+   tunnel to a non-public server, etc.
+
+After these steps, privately hosted source maps will be available for the
+production code.
+
+Advantages:
+
+* Developers can just "go online" and magically have the correct maps.
+  No checking out versions, rebuilding, etc.
+
+Disadvantages:
+
+* Need to publish to private servers during build process.
+* Need to host / control private map servers.
 
 ##### Source Map Example
 
