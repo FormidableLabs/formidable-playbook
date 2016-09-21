@@ -124,7 +124,7 @@ source maps when focusing on production.
 For *open source applications*, this is fairly easy -- just serve the source
 map alongside the application code. There's no worry about the real source
 code getting out to the public, so for an application like `app1.js` and a
-source map file of `app1.js.map`, a simple `sourceMappingUrl` comment like:
+source map file of `app1.js.map`, a simple `sourceMappingURL` comment like:
 
 ```js
 //# sourceMappingURL=app1.js.map
@@ -270,7 +270,7 @@ module.exports = {
       // https://webpack.github.io/docs/configuration.html#output-sourcemapfilename
       filename: "[name].js.map",
 
-      // Output sourceMappingUrl comment.
+      // Output sourceMappingURL comment.
       //
       // Examples:
       // 1. Default to: `"\n//# sourceMappingURL=[url]"` for relative hosting
