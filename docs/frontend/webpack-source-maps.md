@@ -12,6 +12,9 @@ maps should be enabled for both development and production.
 
 - [Basic Example](#basic-example)
 - [Source Maps Primer](#source-maps-primer)
+- [Integrating Source Maps](#integrating-source-maps)
+  - [Open Source Apps](#open-source-apps)
+  - [Private Apps](#private-apps)
 - [Source Map Example](#source-map-example)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -292,19 +295,22 @@ Let's look at the `app1` files in detail (the `app2` files are analogous):
 //# sourceMappingURL=app1.js.map
 ```
 
-The `app1.js` file contains a straightforward minified bundle of the `app1`
-entry point with the key `sourceMappingURL` control comment at the bottom. As
-it stands now, an `app1.js.map` file is expected to be served from the same
-directory as the application bundle.
+The `app1.js` file contains a minified bundle of the `app1` entry point with the
+key `sourceMappingURL` control comment at the bottom. As it stands now, an
+`app1.js.map` file is expected to be served from the same directory as the
+application bundle.
+
+As discussed in the [Integrating Source Maps](#integrating-source-maps) section,
+there are many ways to serve and write the `sourceMappingURL`. Here, we take
+the easy way out and choose "Option 1" of serving the maps alongside code.
 
 While this is fine for this playbook example, real world usage would tend
 towards rewriting the `//# sourceMappingURL=app1.js.map` comment to either:
 
-* Point to `localhost` for development and/or a local git checkout for
-  production debugging; or,
-* Point to an internal-only / protected URL (like within a VPN) of a host that
-  makes source map files "automagically" available in production once a
-  developer logs into the appropriate network.
+* Point to `localhost` for development and/or local versioned checkout; or,
+* Point to an internal-only / protected map server
+
+per our "Option 2" suggestions above.
 
 [`dist/js/app1.js.map`](../../examples/frontend/webpack-source-maps/dist/js/app1.js.map)
 
@@ -335,17 +341,20 @@ towards rewriting the `//# sourceMappingURL=app1.js.map` comment to either:
   ],
   "sourceRoot": ""
 }
-
 ```
 
+This [JSON structure](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-anatomy)
+corresponds to the source map [V3 spec](https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit?hl=en_US&pli=1&pli=1).
+The essential information in this file includes:
 
+* The names of the individual files.
+* The full original source code of the individual code files.
+* Names of variables used and mappings of production code location to individual
+  source file locations.
 
-
-
-
-
-
-
+With this file available, a browser can download the map file, attach it to the
+execution environment, and developers are now off to the debugging races with
+the original development source!
 
 Once we build these files, we can load the independent applications with a
 standard index page:
@@ -362,6 +371,7 @@ standard index page:
   </body>
 </html>
 ```
+
 
 
 
