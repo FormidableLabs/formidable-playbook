@@ -234,7 +234,7 @@ Disadvantages:
 
 (Example build / dist code available at: [github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-source-maps](https://github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-source-maps))
 
-Our webpack configuration uses the
+Our Webpack configuration uses the
 [`SourceMapDevToolPlugin`](https://webpack.github.io/docs/list-of-plugins.html#sourcemapdevtoolplugin)
 directly for maximum flexibility. Note however that there are many catch-all
 [`devtool` options](https://webpack.github.io/docs/configuration.html#devtool)
@@ -392,7 +392,7 @@ and probably in development too. The disadvantages provided below are really
 just the "costs" of doing the right thing.
 
 * **Debug against original source files**: This is huge. Debugging single
-  application bundles is awkward, and debugging large minififed code chunks is
+  application bundles is awkward, and debugging large minified code chunks is
   downright impossible.
 * **Easy in development / open source**: For development time or projects that
   don't care if the full source is publicly served via source maps, integrating
