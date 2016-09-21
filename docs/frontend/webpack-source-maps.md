@@ -16,6 +16,8 @@ maps should be enabled for both development and production.
   - [Open Source Apps](#open-source-apps)
   - [Private Apps](#private-apps)
 - [Source Map Example](#source-map-example)
+- [Advantages](#advantages)
+- [Disadvantages](#disadvantages)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
