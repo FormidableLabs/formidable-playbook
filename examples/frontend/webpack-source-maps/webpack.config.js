@@ -24,6 +24,8 @@ module.exports = {
 
       // Output sourceMappingUrl comment.
       //
+      // `[url]` is replaced with the `PATH/TO/<filename>`.
+      //
       // Examples:
       // 1. Default to: `"\n//# sourceMappingURL=[url]"` for relative hosting
       append: ""
