@@ -211,9 +211,8 @@ Disadvantages:
 (Example source available at: [github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/src/es5](https://github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/src/es5))
 
 Let's start with the familiar source code used in our
-[shared library](./webpack-shared-libs.md)) and
-[code splitting example](./webpack-source-maps.md)) examples.
-
+[shared library](./webpack-shared-libs.md) and
+[code splitting example](./webpack-source-maps.md) examples.
 
 [`foo.js`](../../examples/frontend/src/es5/foo.js)
 
