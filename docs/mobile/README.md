@@ -14,7 +14,7 @@ React Native is superior to hybrid mobile app development, because it's *native*
 
 React Native philosophy is *learn once, write everywhere*. While well-architected apps can achieve high degree of code sharing, there will be need for platform-specific implementation.
 
-#### [Navigation and routing](platform-specific-code.md)
+#### [Navigation and routing](navigation-and-routing.md)
 
 Navigation and routing patterns differ significantly from React web applications. Following idiomatic mobile navigation UX patterns, combined with Redux/Flux-managed navigation state, can be a powerful and pleasant abstraction to work with.
 
@@ -24,9 +24,7 @@ Unlike your average web application, a mobile app's state is long-lived. We reco
 
 #### [Networking](networking.md)
 
-Mobile applications have to deal with high network latency, unreliable network conditions, and they should be kind to the user's data plan.
-
-This chapter discusses good practices around mobile app networking with standard HTTPS JSON API endpoints.
+Mobile applications have to deal with high network latency, unreliable network conditions, and they should be kind to the user's data plan. This chapter discusses good practices around mobile app networking with standard HTTPS JSON API endpoints.
 
 Consider GraphQL as the primary data interchange format.
 
