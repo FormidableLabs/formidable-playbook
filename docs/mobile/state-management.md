@@ -8,7 +8,7 @@ Most mobile applications will need to persist their data stores to achieve a sna
 
 The simplest way to achieve persistent state and offline caching is to serialize the store object to JSON and write it to disk via the [AsyncStorage](https://facebook.github.io/react-native/docs/asyncstorage.html) API, and reset the store state from the serialized representation on app startup.
 
-You can use the [redux-storage](https://github.com/michaelcontento/redux-storage) middleware with the [redux-storage-engine-reactNativeAsyncStorage]https://github.com/michaelcontento/redux-storage-engine-reactNativeAsyncStorage backend to achieve this. For performance reasons, [debouncing](https://github.com/michaelcontento/redux-storage-decorator-debounce) the serialization is usually a good idea.
+You can use the [redux-storage](https://github.com/michaelcontento/redux-storage) middleware with the [redux-storage-engine-reactNativeAsyncStorage](https://github.com/michaelcontento/redux-storage-engine-reactNativeAsyncStorage) backend to achieve this. For performance reasons, [debouncing](https://github.com/michaelcontento/redux-storage-decorator-debounce) the serialization is usually a good idea.
 
 #### Prepare for store schema migrations/pruning on updates
 
