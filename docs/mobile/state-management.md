@@ -20,7 +20,7 @@ Before launching your application to the public, consider what should happen to 
 
 In some cases the application state is a cache that can be repopulated from the backend. Easiest solution is to jettison the persisted state and allow the new version of the application to start from empty initial state.
 
-Sometimes the state can be mostly discarded, but some bits like user session information needs to be kept to avoid having the user to log into the application again. Simple solution is to organise the redux store in a way that some subtrees can be kept as-is, and others discarded wholesale.
+Sometimes the state can be mostly discarded, but some bits like user session information needs to be kept, so the user isn't required to log into the application again. Simple solution is to organise the Redux store in a way that some subtrees can be kept as-is, and others discarded wholesale.
 
 ##### Schema migrations
 
