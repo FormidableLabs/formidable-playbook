@@ -10,6 +10,23 @@ The simplest way to achieve persistent state and offline caching is to serialize
 
 You can use the [redux-storage](https://github.com/michaelcontento/redux-storage) middleware with the [redux-storage-engine-reactNativeAsyncStorage](https://github.com/michaelcontento/redux-storage-engine-reactNativeAsyncStorage) backend to achieve this. For performance reasons, [debouncing](https://github.com/michaelcontento/redux-storage-decorator-debounce) the serialization is usually a good idea.
 
+#### Transient state
+
+Some store keys should not be restored on startup. A good example are "isLoading"-style properties that control loading indicator visibility. If an application crashes while a request is in flight, the app would still display the loading indicator on next launch.
+
+Because state is serialized much more often than it is read, prefer to keep writes simple by writing everything to disk, and remove the unwanted properties when restoring the state.
+
+Some attempted strategies for marking which parts of the store are transient:
+ * Blacklist keys (not recommended, increases maintenance burden)
+ * Have a separate store subtree for transient state and [prune](#pruning) on startup (not recommended, leads to fragmented source-of-truth in reducers, though your mileage may vary)
+ * Prefix transient properties with `_` (or other convention) and use a [JSON.parse reviver](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#Using_the_reviver_parameter) to drop keys that match the convention:
+
+   ```
+   JSON.parse(json, (key, value) => key.startsWith('_') ? undefined : value)
+   ```
+   This method is crude, but effective.
+
+
 #### Prepare for store schema migrations/pruning on updates
 
 When you persist your application state to disk, you have created a database. And like traditional databases, the schema and existing data may need to be migrated when new versions of application code are released.
