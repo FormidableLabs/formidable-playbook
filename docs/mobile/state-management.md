@@ -39,6 +39,8 @@ In some cases the application state is a cache that can be repopulated from the 
 
 Sometimes the state can be mostly discarded, but some bits like user session information needs to be kept, so the user isn't required to log into the application again. Simple solution is to organise the Redux store in a way that some subtrees can be kept as-is, and others discarded wholesale.
 
+The redux-storage middleware supports pruning via [redux-storage-decorator-filter](https://github.com/michaelcontento/redux-storage-decorator-filter).
+
 ##### Schema migrations
 
 When the application state contains information that cannot be repopulated from the backend, or it would be too expensive to do so, you need to be able to migrate the store schema and data to be compatible with the new application version.
@@ -54,6 +56,8 @@ Conceptually, schema migrations are simple:
 The implementation of the migrations is usually simple, but testing them reliably is hard, and the consequence of a bad or incomplete migration can be a non-functioning app.
 
 The app should always verify that the it was able to start correctly after a migration and fall back to an initial state if something went wrong.
+
+The redux-storage middleware supports migrations via [redux-storage-decorator-migrate](https://github.com/mathieudutour/redux-storage-decorator-migrate).
 
 #### Cache invalidation
 
