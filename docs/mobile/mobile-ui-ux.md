@@ -38,7 +38,7 @@ If you look at an app on the screen of a phone, you could not tell whether it wa
 
 The key to a great mobile UX is [thoughtful animation](https://uxplanet.org/animation-in-mobile-ux-design-93263dc6c5f4#.c6nmv0wkg). Unfortunately, in cases where design/dev collaboration is not truly cross-functional, the communication tools (photoshops, lo-fi prototypes, mockups) do not easily communicate motion.
 
-It is therefore the responsibility of the developer to ensure the animations are implemented. As front end web developers we have grown wary of animation: it often feels gratuitous, performs poorly, and is difficult to implement cross-browser. React Native animation, on the other hand, are easy to use and to maintain, and you should not judge them before you try them.
+It is therefore the responsibility of the developer to ensure the animations are implemented. As front end web developers we have grown wary of animation: it often feels gratuitous, performs poorly, and is difficult to implement cross-browser. React Native animation, on the other hand, are easy to use and to maintain, and you should not judge it before you try it.
 
 The MVP for animation in React Native is a liberal sprinkling of [LayoutAnimation](https://facebook.github.io/react-native/docs/layoutanimation.html) in `componentWillMount`/`componentWillReceiveProps`.
 
