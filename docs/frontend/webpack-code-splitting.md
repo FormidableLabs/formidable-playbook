@@ -197,9 +197,17 @@ following webpage:
 [github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-code-splitting-ensure](https://github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-code-splitting-ensure)
 directory.)
 
-In our example above, we specified two separate entry points and added `script`
-tags for both. Webpack is actually intelligent enough to create entry points
-_automatically_ from a single root entry point if desired.
+It is worth noting that while code splitting is often used in conjunction with
+lazy loading, the two are not synonymous. The
+[previous example](#code-splitting-example) splits a shared `commons.js` bundle
+using the `CommonsChunkPlugin`, but is _not_ lazily loaded. The example HTML
+page has three normal `<script>` tags to load the entry points.
+
+The code could be re-written to manually lazy load `app1` or `app2` on demand.
+Or, as an even easier option, Webpack can create entry points _automatically_
+from a single root entry point if desired. These inferred entry points can then
+be lazily or conditionally loaded with a little extra in-application JavaScript
+logic.
 
 So, we could tweak our example configuration of:
 
@@ -234,7 +242,7 @@ entry: {
 and Webpack will mostly split things up the same way. This approach is
 particularly useful for the very common case of React application-based routes
 (via any router) so that you have (1) a common chunk of code load first, then
-(2) only the specific code needed for a route to load application-wise.
+(2) only the specific code needed for a route is lazily loaded on demand.
 
 ##### Advantages
 
