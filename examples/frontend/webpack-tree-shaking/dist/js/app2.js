@@ -46,10 +46,10 @@
     // expose the module cache
     /******/
     /******/
-    // identity function for calling harmory imports with the correct context
+    // identity function for calling harmony imports with the correct context
     /******/
     /******/
-    // define getter function for harmory exports
+    // define getter function for harmony exports
     /******/
     /******/
     // getDefaultExport function for compatibility with non-harmony modules
@@ -65,6 +65,7 @@
         return value;
     }, __webpack_require__.d = function(exports, name, getter) {
         /******/
+        __webpack_require__.o(exports, name) || /******/
         Object.defineProperty(exports, name, {
             /******/
             configurable: !1,
@@ -77,7 +78,7 @@
         /******/
         var getter = module && module.__esModule ? /******/
         function() {
-            return module["default"];
+            return module.default;
         } : /******/
         function() {
             return module;

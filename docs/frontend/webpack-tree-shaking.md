@@ -66,7 +66,7 @@ module: {
     {
       test: /\.js$/,
       include: [path.join(__dirname, "../src/es6")],
-      loader: "babel",
+      loader: "babel-loader",
       query: {
         presets: [
           [

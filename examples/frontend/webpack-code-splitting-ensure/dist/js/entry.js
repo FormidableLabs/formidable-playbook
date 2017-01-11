@@ -72,6 +72,9 @@
 /******/ 		script.async = true;
 /******/ 		script.timeout = 120000;
 
+/******/ 		if (__webpack_require__.nc) {
+/******/ 			script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 		}
 /******/ 		script.src = __webpack_require__.p + "" + chunkId + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
@@ -99,16 +102,18 @@
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 
-/******/ 	// identity function for calling harmory imports with the correct context
+/******/ 	// identity function for calling harmony imports with the correct context
 /******/ 	__webpack_require__.i = function(value) { return value; };
 
-/******/ 	// define getter function for harmory exports
+/******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		Object.defineProperty(exports, name, {
-/******/ 			configurable: false,
-/******/ 			enumerable: true,
-/******/ 			get: getter
-/******/ 		});
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
 /******/ 	};
 
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -150,12 +155,12 @@
  *
  * **Note**: `src` is aliased to `examples/frontend/src`.
  */
-Promise.all/* nsure */([__webpack_require__.e(2), __webpack_require__.e(0)]).catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
+Promise.all/* nsure */([__webpack_require__.e(2), __webpack_require__.e(0)]).then((function (require) {
   __webpack_require__(/*! src/app1 */ 0);
-}).bind(null, __webpack_require__));
-Promise.all/* nsure */([__webpack_require__.e(1), __webpack_require__.e(0)]).catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
+}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+Promise.all/* nsure */([__webpack_require__.e(1), __webpack_require__.e(0)]).then((function (require) {
   __webpack_require__(/*! src/app2 */ 1);
-}).bind(null, __webpack_require__));
+}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 
 
 /***/ }
