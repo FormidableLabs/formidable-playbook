@@ -24,7 +24,7 @@ module.exports = ENTRY_POINTS.map(function (entryName) {
         {
           test: /\.js$/,
           include: [path.join(__dirname, "../src/es6")],
-          loader: "babel",
+          loader: "babel-loader",
           query: {
             presets: [
               [
