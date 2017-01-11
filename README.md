@@ -13,6 +13,7 @@ This is our playbook. It is the foundation that allows us to architect & design 
     - [Shared libraries](#shared-libraries)
     - [Tree shaking](#tree-shaking)
     - [Source maps](#source-maps)
+    - [Progressive web applications](#progressive-web-applications)
   - [Babel plugins - In Progress](#babel-plugins---in-progress)
   - [Other tools - In Progress](#other-tools---in-progress)
   - [Performance auditing - In Progress](#performance-auditing---in-progress)
@@ -84,6 +85,21 @@ creates [source maps](https://github.com/ryanseddon/source-map/wiki/Source-maps:
 which allows a developer to view / debug developer-friendly source code instead
 of the optimized, mangled, and minified JS bundle of a frontend web app. Source
 maps should be enabled for both development and production.
+
+#### [Progressive web applications](docs/frontend/webpack-pwa.md)
+
+[Progressive web applications](https://developers.google.com/web/progressive-web-apps/)
+as described by Google are applications that are:
+
+> - **Reliable** - Load instantly and never show the downasaur, even in uncertain network conditions.
+> - **Fast** - Respond quickly to user interactions with silky smooth animations and no janky scrolling.
+> - **Engaging** - Feel like a natural app on the device, with an immersive user experience.
+
+This section discuss setting up a PWA infrastructure using Webpack.
+
+For a more in-depth introduction, Google provides a handy
+"[Your First Progressive Web App](https://developers.google.com/web/fundamentals/getting-started/codelabs/your-first-pwapp/)"
+tutorial.
 
 ### Babel plugins - In Progress
 
