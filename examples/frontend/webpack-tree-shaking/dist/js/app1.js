@@ -96,10 +96,10 @@
   !*** ./util.js ***!
   \*****************/
 /***/
-function(module, exports, __webpack_require__) {
+function(module, __webpack_exports__, __webpack_require__) {
     "use strict";
     /* harmony export (binding) */
-    __webpack_require__.d(exports, "a", function() {
+    __webpack_require__.d(__webpack_exports__, "a", function() {
         return red;
     });
     /* unused harmony export blue */
@@ -113,8 +113,11 @@ function(module, exports, __webpack_require__) {
   !*** ./app1.js ***!
   \*****************/
 /***/
-function(module, exports, __webpack_require__) {
+function(module, __webpack_exports__, __webpack_require__) {
     "use strict";
+    Object.defineProperty(__webpack_exports__, "__esModule", {
+        value: !0
+    });
     /* harmony import */
     var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(/*! ./util */ 0);
     document.querySelector("#content").innerHTML += __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util__.a)("app1", "App 1");

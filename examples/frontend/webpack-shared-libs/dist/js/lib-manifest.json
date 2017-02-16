@@ -1,12 +1,12 @@
 {
-  "name": "lib_3e48f809b016b57221ef",
+  "name": "lib_e592a3d0caa5da228360",
   "content": {
-    "./foo.js": {
-      "id": 1,
-      "meta": {}
-    },
     "./lib.js": {
       "id": 0,
+      "meta": {}
+    },
+    "./foo.js": {
+      "id": 1,
       "meta": {}
     }
   }

@@ -71,36 +71,35 @@
 /* unknown exports provided */
 /* all exports used */
 /*!**********************************************************************!*\
-  !*** delegated ./foo.js from dll-reference lib_3e48f809b016b57221ef ***!
+  !*** delegated ./foo.js from dll-reference lib_e592a3d0caa5da228360 ***!
   \**********************************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(1);
 
-/***/ },
+/***/ }),
 /* 1 */
 /* unknown exports provided */
-/* all exports used */
 /*!*******************************************!*\
-  !*** external "lib_3e48f809b016b57221ef" ***!
+  !*** external "lib_e592a3d0caa5da228360" ***!
   \*******************************************/
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
-module.exports = lib_3e48f809b016b57221ef;
+module.exports = lib_e592a3d0caa5da228360;
 
-/***/ },
+/***/ }),
 /* 2 */
 /* unknown exports provided */
 /* all exports used */
 /*!*****************!*\
   !*** ./app1.js ***!
   \*****************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 var foo = __webpack_require__(/*! ./foo */ 0);
 
 document.querySelector("#content").innerHTML += foo("app1", "App 1");
 
 
-/***/ }
+/***/ })
 /******/ ]);

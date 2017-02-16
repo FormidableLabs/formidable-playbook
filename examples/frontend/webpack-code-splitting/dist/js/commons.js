@@ -93,12 +93,14 @@
 /******/ 				installedChunks[chunkId] = undefined;
 /******/ 			}
 /******/ 		};
-/******/ 		head.appendChild(script);
 
 /******/ 		var promise = new Promise(function(resolve, reject) {
 /******/ 			installedChunks[chunkId] = [resolve, reject];
 /******/ 		});
-/******/ 		return installedChunks[chunkId][2] = promise;
+/******/ 		installedChunks[chunkId][2] = promise;
+
+/******/ 		head.appendChild(script);
+/******/ 		return promise;
 /******/ 	};
 
 /******/ 	// expose the modules object (__webpack_modules__)
@@ -147,12 +149,12 @@
 /*!****************!*\
   !*** ./foo.js ***!
   \****************/
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = function (id, msg) {
   return "<h1 id=\"" + id + "\">" + msg + "</h1>";
 };
 
 
-/***/ }
+/***/ })
 /******/ ]);

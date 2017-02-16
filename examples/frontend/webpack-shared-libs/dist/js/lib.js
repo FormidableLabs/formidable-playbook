@@ -1,4 +1,4 @@
-var lib_3e48f809b016b57221ef =
+var lib_e592a3d0caa5da228360 =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -74,7 +74,7 @@ var lib_3e48f809b016b57221ef =
 /*!****************!*\
   !*** ./lib.js ***!
   \****************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 /**
  * Shared Library (DLL)
@@ -85,30 +85,30 @@ var lib_3e48f809b016b57221ef =
 __webpack_require__(/*! ./foo */ 1);
 
 
-/***/ },
+/***/ }),
 /* 1 */
 /* unknown exports provided */
 /* all exports used */
 /*!****************!*\
   !*** ./foo.js ***!
   \****************/
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = function (id, msg) {
   return "<h1 id=\"" + id + "\">" + msg + "</h1>";
 };
 
 
-/***/ },
+/***/ }),
 /* 2 */
 /* unknown exports provided */
 /* all exports used */
 /*!***************!*\
   !*** dll lib ***!
   \***************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__;
 
-/***/ }
+/***/ })
 /******/ ]);

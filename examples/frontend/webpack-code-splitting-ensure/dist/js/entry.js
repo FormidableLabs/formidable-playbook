@@ -88,12 +88,14 @@
 /******/ 				installedChunks[chunkId] = undefined;
 /******/ 			}
 /******/ 		};
-/******/ 		head.appendChild(script);
 
 /******/ 		var promise = new Promise(function(resolve, reject) {
 /******/ 			installedChunks[chunkId] = [resolve, reject];
 /******/ 		});
-/******/ 		return installedChunks[chunkId][2] = promise;
+/******/ 		installedChunks[chunkId][2] = promise;
+
+/******/ 		head.appendChild(script);
+/******/ 		return promise;
 /******/ 	};
 
 /******/ 	// expose the modules object (__webpack_modules__)
@@ -146,7 +148,7 @@
 /*!*******************************************************************************************************!*\
   !*** /Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js ***!
   \*******************************************************************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 /*eslint-disable*/ // Disable as rest of code around here is Node.
 
@@ -155,14 +157,14 @@
  *
  * **Note**: `src` is aliased to `examples/frontend/src`.
  */
-Promise.all/* nsure */([__webpack_require__.e(2), __webpack_require__.e(0)]).then((function (require) {
+Promise.all/* require.ensure */([__webpack_require__.e(2), __webpack_require__.e(0)]).then((function (require) {
   __webpack_require__(/*! src/app1 */ 0);
 }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
-Promise.all/* nsure */([__webpack_require__.e(1), __webpack_require__.e(0)]).then((function (require) {
+Promise.all/* require.ensure */([__webpack_require__.e(1), __webpack_require__.e(0)]).then((function (require) {
   __webpack_require__(/*! src/app2 */ 1);
 }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 
 
-/***/ }
+/***/ })
 
 /******/ });
