@@ -1,13 +1,1 @@
-{
-  "name": "lib_3e48f809b016b57221ef",
-  "content": {
-    "./foo.js": {
-      "id": 1,
-      "meta": {}
-    },
-    "./lib.js": {
-      "id": 0,
-      "meta": {}
-    }
-  }
-}
+{"name":"lib_00d73d25eef8ddd2ed11","content":{"./lib.js":{"id":1,"meta":{}},"./foo.js":{"id":2,"meta":{}}}}

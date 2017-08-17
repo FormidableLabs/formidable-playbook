@@ -1,8 +1,10 @@
 /******/ !function(modules) {
     /******/
+    /******/
     // The require function
     /******/
     function __webpack_require__(moduleId) {
+        /******/
         /******/
         // Check if module is in cache
         /******/
@@ -20,10 +22,13 @@
             exports: {}
         };
         /******/
+        /******/
         // Return the exports of the module
         /******/
         /******/
+        /******/
         // Execute the module function
+        /******/
         /******/
         /******/
         // Flag the module as loaded
@@ -37,33 +42,23 @@
     /******/
     var installedModules = {};
     /******/
+    /******/
     // Load entry module and return exports
+    /******/
+    /******/
     /******/
     /******/
     // expose the modules object (__webpack_modules__)
     /******/
+    __webpack_require__.m = modules, /******/
     /******/
     // expose the module cache
     /******/
-    /******/
-    // identity function for calling harmony imports with the correct context
-    /******/
+    __webpack_require__.c = installedModules, /******/
     /******/
     // define getter function for harmony exports
     /******/
-    /******/
-    // getDefaultExport function for compatibility with non-harmony modules
-    /******/
-    /******/
-    // Object.prototype.hasOwnProperty.call
-    /******/
-    /******/
-    // __webpack_public_path__
-    /******/
-    return __webpack_require__.m = modules, __webpack_require__.c = installedModules, 
-    __webpack_require__.i = function(value) {
-        return value;
-    }, __webpack_require__.d = function(exports, name, getter) {
+    __webpack_require__.d = function(exports, name, getter) {
         /******/
         __webpack_require__.o(exports, name) || /******/
         Object.defineProperty(exports, name, {
@@ -74,7 +69,11 @@
             /******/
             get: getter
         });
-    }, __webpack_require__.n = function(module) {
+    }, /******/
+    /******/
+    // getDefaultExport function for compatibility with non-harmony modules
+    /******/
+    __webpack_require__.n = function(module) {
         /******/
         var getter = module && module.__esModule ? /******/
         function() {
@@ -86,36 +85,47 @@
         /******/
         /******/
         return __webpack_require__.d(getter, "a", getter), getter;
-    }, __webpack_require__.o = function(object, property) {
+    }, /******/
+    /******/
+    // Object.prototype.hasOwnProperty.call
+    /******/
+    __webpack_require__.o = function(object, property) {
         return Object.prototype.hasOwnProperty.call(object, property);
-    }, __webpack_require__.p = "", __webpack_require__(__webpack_require__.s = 1);
+    }, /******/
+    /******/
+    // __webpack_public_path__
+    /******/
+    __webpack_require__.p = "", __webpack_require__(__webpack_require__.s = 0);
 }([ /* 0 */
-/* exports provided: red, blue */
-/* exports used: red */
+/*!*****************!*\
+  !*** ./app1.js ***!
+  \*****************/
+/*! exports provided:  */
+/*! all exports used */
+/***/
+function(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+    Object.defineProperty(__webpack_exports__, "__esModule", {
+        value: !0
+    });
+    /* harmony import */
+    var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(/*! ./util */ 1);
+    document.querySelector("#content").innerHTML += Object(__WEBPACK_IMPORTED_MODULE_0__util__.a)("app1", "App 1");
+}, /* 1 */
 /*!*****************!*\
   !*** ./util.js ***!
   \*****************/
+/*! exports provided: red, blue */
+/*! exports used: red */
 /***/
-function(module, exports, __webpack_require__) {
+function(module, __webpack_exports__, __webpack_require__) {
     "use strict";
     /* harmony export (binding) */
-    __webpack_require__.d(exports, "a", function() {
+    __webpack_require__.d(__webpack_exports__, "a", function() {
         return red;
     });
     /* unused harmony export blue */
     var red = function(id, msg) {
         return '<h1 id="' + id + '" style="color: red">' + msg + "</h1>";
     };
-}, /* 1 */
-/* unknown exports provided */
-/* all exports used */
-/*!*****************!*\
-  !*** ./app1.js ***!
-  \*****************/
-/***/
-function(module, exports, __webpack_require__) {
-    "use strict";
-    /* harmony import */
-    var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(/*! ./util */ 0);
-    document.querySelector("#content").innerHTML += __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util__.a)("app1", "App 1");
 } ]);
