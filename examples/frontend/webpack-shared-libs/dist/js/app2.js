@@ -1,41 +1,38 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
 /******/ 			l: false,
 /******/ 			exports: {}
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.l = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-
+/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -46,7 +43,7 @@
 /******/ 			});
 /******/ 		}
 /******/ 	};
-
+/******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
 /******/ 	__webpack_require__.n = function(module) {
 /******/ 		var getter = module && module.__esModule ?
@@ -55,53 +52,53 @@
 /******/ 		__webpack_require__.d(getter, 'a', getter);
 /******/ 		return getter;
 /******/ 	};
-
+/******/
 /******/ 	// Object.prototype.hasOwnProperty.call
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/* unknown exports provided */
-/* all exports used */
 /*!**********************************************************************!*\
-  !*** delegated ./foo.js from dll-reference lib_3e48f809b016b57221ef ***!
+  !*** delegated ./foo.js from dll-reference lib_00d73d25eef8ddd2ed11 ***!
   \**********************************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(1))(1);
+module.exports = (__webpack_require__(1))(2);
 
-/***/ },
+/***/ }),
 /* 1 */
-/* unknown exports provided */
-/* all exports used */
 /*!*******************************************!*\
-  !*** external "lib_3e48f809b016b57221ef" ***!
+  !*** external "lib_00d73d25eef8ddd2ed11" ***!
   \*******************************************/
-/***/ function(module, exports) {
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports) {
 
-module.exports = lib_3e48f809b016b57221ef;
+module.exports = lib_00d73d25eef8ddd2ed11;
 
-/***/ },
+/***/ }),
 /* 2 */,
 /* 3 */
-/* unknown exports provided */
-/* all exports used */
 /*!*****************!*\
   !*** ./app2.js ***!
   \*****************/
-/***/ function(module, exports, __webpack_require__) {
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
 
 var foo = __webpack_require__(/*! ./foo */ 0);
 
 document.querySelector("#content").innerHTML += foo("app2", "App 2");
 
 
-/***/ }
+/***/ })
 /******/ ]);
