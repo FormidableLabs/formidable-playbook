@@ -2,6 +2,7 @@
 
 var path = require("path");
 var webpack = require("webpack");
+var StatsWriterPlugin = require("webpack-stats-plugin").StatsWriterPlugin;
 
 module.exports = {
   context: path.join(__dirname, "../src/es5"),
@@ -18,6 +19,7 @@ module.exports = {
       // Preserve the source map comment in minified code.
       sourceMap: true
     }),
+
     new webpack.SourceMapDevToolPlugin({
       // https://webpack.github.io/docs/configuration.html#output-sourcemapfilename
       filename: "[name].js.map",
@@ -34,6 +36,11 @@ module.exports = {
       //   "examples/frontend/webpack-source-maps/dist/js/[url]"
       // 3. Internal VPN URL.
       // append: "\n//# sourceMappingURL=http://my-vpn-url.com/PATH/[url]"
+    }),
+
+    new StatsWriterPlugin({
+      filename: "../stats.json",
+      fields: null
     })
   ]
 };

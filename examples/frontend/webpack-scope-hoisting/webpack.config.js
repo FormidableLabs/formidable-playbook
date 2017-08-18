@@ -5,24 +5,21 @@ var webpack = require("webpack");
 var StatsWriterPlugin = require("webpack-stats-plugin").StatsWriterPlugin;
 
 module.exports = {
-  context: path.join(__dirname, "../src/es5"),
+  context: path.join(__dirname, "../src/es6"),
   entry: {
-    lib: ["./lib"]
+    app1: "./app1.js",
+    app2: "./app2.js"
   },
   output: {
     path: path.join(__dirname, "dist/js"),
     filename: "[name].js",
-    library: "[name]_[hash]",
     pathinfo: true
   },
   plugins: [
-    new webpack.DllPlugin({
-      path: path.join(__dirname, "dist/js/[name]-manifest.json"),
-      name: "[name]_[hash]"
-    }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
 
     new StatsWriterPlugin({
-      filename: "../stats-lib.json",
+      filename: "../stats.json",
       fields: null
     })
   ]

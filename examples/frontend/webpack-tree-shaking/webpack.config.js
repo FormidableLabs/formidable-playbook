@@ -2,6 +2,7 @@
 
 var path = require("path");
 var webpack = require("webpack");
+var StatsWriterPlugin = require("webpack-stats-plugin").StatsWriterPlugin;
 
 // Need **independent** webpack configs for tree-shaking to correctly determine
 // unused libraries.
@@ -43,6 +44,7 @@ module.exports = ENTRY_POINTS.map(function (entryName) {
         minimize: true,
         debug: false
       }),
+
       new webpack.optimize.UglifyJsPlugin({
         compress: true,
         mangle: false,    // DEMO ONLY: Don't change variable names.
@@ -51,6 +53,11 @@ module.exports = ENTRY_POINTS.map(function (entryName) {
           comments: true  // DEMO ONLY: Helpful comments
         },
         sourceMap: false
+      }),
+
+      new StatsWriterPlugin({
+        filename: `../stats-${entryName}.json`,
+        fields: null
       })
     ]
   };
