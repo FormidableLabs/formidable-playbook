@@ -56,7 +56,7 @@ module.exports = ENTRY_POINTS.map(function (entryName) {
       }),
 
       new StatsWriterPlugin({
-        filename: `../stats-${entryName}.json`,
+        filename: "../stats-" + entryName + ".json",
         fields: null
       })
     ]

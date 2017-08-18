@@ -1,10 +1,8 @@
 {
   "errors": [],
-  "warnings": [
-    "app3.js from UglifyJs\nDropping unused variable blue [app3.js:83,4]"
-  ],
+  "warnings": [],
   "version": "3.5.5",
-  "hash": "1083276fc4c268e2022a",
+  "hash": "b73e12a94a9bcf755f41",
   "publicPath": "",
   "assetsByChunkName": {
     "app3": "app3.js"
@@ -12,7 +10,7 @@
   "assets": [
     {
       "name": "app3.js",
-      "size": 3483,
+      "size": 3280,
       "chunks": [
         0
       ],
@@ -46,7 +44,7 @@
       "files": [
         "app3.js"
       ],
-      "hash": "0f1125a2ae10f1e4dd7b",
+      "hash": "3dd96b3b00dd238d4f1b",
       "parents": [],
       "modules": [
         {
