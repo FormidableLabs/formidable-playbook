@@ -66,7 +66,7 @@
 /******/ ([
 /* 0 */
 /*!*****************************!*\
-  !*** ./app3.js + 2 modules ***!
+  !*** ./app1.js + 1 modules ***!
   \*****************************/
 /*! exports provided:  */
 /*! all exports used */
@@ -83,13 +83,10 @@ var red = function red(id, msg) {
 var blue = function blue(id, msg) {
   return "<h1 id=\"" + id + "\" style=\"color: blue\">" + msg + "</h1>";
 };
-// CONCATENATED MODULE: ./util-reexport.js
-
-// CONCATENATED MODULE: ./app3.js
+// CONCATENATED MODULE: ./app1.js
 
 
-// app1, but using `red` from `util-reexport` instead of `util`.
-document.querySelector("#content").innerHTML += red("app3", "App 3");
+document.querySelector("#content").innerHTML += red("app1", "App 1");
 
 /***/ })
 /******/ ]);
