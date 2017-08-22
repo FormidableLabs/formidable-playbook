@@ -38,7 +38,7 @@ module.exports = ENTRY_POINTS.map(function (entry) {
       pathinfo: true
     },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.js$/,
           include: [path.join(__dirname, "../src/es6")],
