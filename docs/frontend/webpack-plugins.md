@@ -35,7 +35,7 @@ new webpack.optimize.UglifyJsPlugin()
 
 ##### [`DedupePlugin`](https://webpack.github.io/docs/list-of-plugins.html#dedupeplugin)
 
-* Recommended?: **Yes**
+* Recommended?: **Yes for `webpack@1`**
 
 Collapse identical code chunks to a single reference. The plugin looks for
 identical occurrences of the same code and replaces real code chunks in the
@@ -48,15 +48,22 @@ Typical configuration:
 new webpack.optimize.DedupePlugin()
 ```
 
-**Note**: This "deduplication" is separate from the deduplication that `npm`
-performs while flattening the dependency tree in `node_modules`. It is just
-a scan by webpack to coalesce identical code chunks to a single reference.
+**Note - npm Deduplication**: This "deduplication" is separate from the
+deduplication that `npm` performs while flattening the dependency tree in
+`node_modules`. It is just a scan by webpack to coalesce identical code chunks
+to a single reference.
 
 <!-- **TODO: inspectpack duplicates reference + note - https://github.com/FormidableLabs/formidable-playbook/issues/2* -->
 
+**Webpack 2+ Note**: This plugin has been removed as of `webpack@2` with a note
+that it "isn't needed anymore" because of npm deduplication. Unfortunately, npm
+deduplication can often fail where the plugin would yield a smaller bundle.
+Hopefully, this plugin will be resurrected by core or the community as a new OSS
+project.
+
 ##### [`OccurrenceOrderPlugin`](https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin)
 
-* Recommended?: **Maybe**
+* Recommended?: **Maybe for `webpack@1`**
 
 Reorder module / chunk ids by order of most-to-least occurring. This reduces
 raw code size since smaller integer indexes are `require`-ed more. Also makes
@@ -73,6 +80,8 @@ ultimate minified + gzipped bundle size actually _larger_. And this calculus
 can change over time, so generally speaking size should not be a motivating
 factor for enabling this plugin. However, if you need a deterministic ordering
 of chunks and modules, this plugin is appropriate.
+
+**Webpack 2+ Note**: Enabled by default now.
 
 ##### [`DefinePlugin`](https://webpack.github.io/docs/list-of-plugins.html#defineplugin)
 

@@ -2,6 +2,8 @@
 
 var path = require("path");
 var webpack = require("webpack");
+var StatsWriterPlugin = require("webpack-stats-plugin").StatsWriterPlugin;
+
 var manifest = require("./dist/js/lib-manifest.json");
 
 module.exports = {
@@ -19,6 +21,11 @@ module.exports = {
     new webpack.DllReferencePlugin({
       context: path.join(__dirname, "../src/es5"),
       manifest: manifest
+    }),
+
+    new StatsWriterPlugin({
+      filename: "../stats.json",
+      fields: null
     })
   ]
 };

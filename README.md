@@ -11,6 +11,7 @@ This is our playbook. It is the foundation that allows us to architect & design 
     - [Start with good base plugins](#start-with-good-base-plugins)
     - [Code splitting](#code-splitting)
     - [Shared libraries](#shared-libraries)
+    - [Scope Hoisting](#scope-hoisting)
     - [Tree shaking](#tree-shaking)
     - [Source maps](#source-maps)
   - [Babel plugins - In Progress](#babel-plugins---in-progress)
@@ -48,8 +49,8 @@ A short list of plugin recommendations for best frontend performance include:
 | Plugin | Recommend? | Notes |
 | ------ | ---------- | ----- |
 | [`UglifyJsPlugin`](https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin)| Yes | Minimize code |
-| [`DedupePlugin`](https://webpack.github.io/docs/list-of-plugins.html#dedupeplugin) | Yes | Collapse identical code chunks to a single reference |
-| [`OccurrenceOrderPlugin`](https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin) | Maybe | Reorder module and chunk ids by occurrence count |
+| [`DedupePlugin`](https://webpack.github.io/docs/list-of-plugins.html#dedupeplugin) | Yes for v1 | Collapse identical code chunks to a single reference |
+| [`OccurrenceOrderPlugin`](https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin) | Maybe for v1 | Reorder module and chunk ids by occurrence count |
 | [`DefinePlugin`](https://webpack.github.io/docs/list-of-plugins.html#defineplugin) | Maybe | Define constants for better optimization |
 | [`lodash-webpack-plugin`](https://github.com/lodash/lodash-webpack-plugin) | Maybe | Optimize `lodash` |
 
@@ -69,6 +70,14 @@ a second step, entry points ingest the manifest and omit any libraries included
 in the shared bundle. Shared libraries are appropriate for better long term
 caching within a single app across deploys and across different projects / real
 HTML pages.
+
+#### [Scope Hoisting](docs/frontend/webpack-scope-hoisting.md)
+
+Scope hoisted bundles try to place bundle modules into a global bundle scope so
+as to reduce the overhead of function calls for each bundled module. The problem
+and scope hoisting solutions are discussed in detail in Nolan Lawson's 2016
+article
+["The cost of small modules"](https://nolanlawson.com/2016/08/15/the-cost-of-small-modules/)
 
 #### [Tree shaking](docs/frontend/webpack-tree-shaking.md)
 

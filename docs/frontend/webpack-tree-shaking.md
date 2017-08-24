@@ -62,7 +62,7 @@ the specific option of `modules: false` to correctly enable tree shaking:
 
 ```js
 module: {
-  loaders: [
+  rules: [
     {
       test: /\.js$/,
       include: [path.join(__dirname, "../src/es6")],

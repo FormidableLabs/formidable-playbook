@@ -1,0 +1,482 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "3.5.5",
+  "hash": "c2b1762213ecda21f04c",
+  "publicPath": "",
+  "assetsByChunkName": {
+    "app2": "app2.js",
+    "app1": "app1.js"
+  },
+  "assets": [
+    {
+      "name": "app2.js",
+      "size": 3447,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "app2"
+      ]
+    },
+    {
+      "name": "app1.js",
+      "size": 3438,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "app1"
+      ]
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "app1": {
+      "chunks": [
+        1
+      ],
+      "assets": [
+        "app1.js"
+      ]
+    },
+    "app2": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "app2.js"
+      ]
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "extraAsync": false,
+      "size": 183,
+      "names": [
+        "app2"
+      ],
+      "files": [
+        "app2.js"
+      ],
+      "hash": "8b0f142842544f2acac0",
+      "parents": [],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "delegated 2 from dll-reference lib_00d73d25eef8ddd2ed11",
+          "name": "delegated ./foo.js from dll-reference lib_00d73d25eef8ddd2ed11",
+          "index": 1,
+          "index2": 1,
+          "size": 42,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0,
+            1
+          ],
+          "assets": [],
+          "issuer": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+          "issuerId": 2,
+          "issuerName": "./examples/frontend/src/es5/app1.js",
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 2,
+              "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+              "module": "./examples/frontend/src/es5/app1.js",
+              "moduleName": "./examples/frontend/src/es5/app1.js",
+              "type": "cjs require",
+              "userRequest": "./foo",
+              "loc": "1:10-26"
+            },
+            {
+              "moduleId": 3,
+              "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+              "module": "./examples/frontend/src/es5/app2.js",
+              "moduleName": "./examples/frontend/src/es5/app2.js",
+              "type": "cjs require",
+              "userRequest": "./foo",
+              "loc": "1:10-26"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 1
+        },
+        {
+          "id": 1,
+          "identifier": "external \"lib_00d73d25eef8ddd2ed11\"",
+          "name": "external \"lib_00d73d25eef8ddd2ed11\"",
+          "index": 2,
+          "index2": 0,
+          "size": 42,
+          "cacheable": false,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0,
+            1
+          ],
+          "assets": [],
+          "issuer": "delegated 2 from dll-reference lib_00d73d25eef8ddd2ed11",
+          "issuerId": 0,
+          "issuerName": "delegated ./foo.js from dll-reference lib_00d73d25eef8ddd2ed11",
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "delegated 2 from dll-reference lib_00d73d25eef8ddd2ed11",
+              "module": "delegated ./foo.js from dll-reference lib_00d73d25eef8ddd2ed11",
+              "moduleName": "delegated ./foo.js from dll-reference lib_00d73d25eef8ddd2ed11",
+              "type": "delegated source",
+              "userRequest": "dll-reference lib_00d73d25eef8ddd2ed11"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 2
+        },
+        {
+          "id": 3,
+          "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+          "name": "./examples/frontend/src/es5/app2.js",
+          "index": 3,
+          "index2": 3,
+          "size": 99,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 0,
+          "source": "var foo = require(\"./foo\");\n\ndocument.querySelector(\"#content\").innerHTML += foo(\"app2\", \"App 2\");\n"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 3,
+          "module": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+          "moduleName": "./examples/frontend/src/es5/app2.js",
+          "loc": "",
+          "name": "app2",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "extraAsync": false,
+      "size": 183,
+      "names": [
+        "app1"
+      ],
+      "files": [
+        "app1.js"
+      ],
+      "hash": "459af11f9835ecfc7558",
+      "parents": [],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "delegated 2 from dll-reference lib_00d73d25eef8ddd2ed11",
+          "name": "delegated ./foo.js from dll-reference lib_00d73d25eef8ddd2ed11",
+          "index": 1,
+          "index2": 1,
+          "size": 42,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0,
+            1
+          ],
+          "assets": [],
+          "issuer": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+          "issuerId": 2,
+          "issuerName": "./examples/frontend/src/es5/app1.js",
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 2,
+              "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+              "module": "./examples/frontend/src/es5/app1.js",
+              "moduleName": "./examples/frontend/src/es5/app1.js",
+              "type": "cjs require",
+              "userRequest": "./foo",
+              "loc": "1:10-26"
+            },
+            {
+              "moduleId": 3,
+              "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+              "module": "./examples/frontend/src/es5/app2.js",
+              "moduleName": "./examples/frontend/src/es5/app2.js",
+              "type": "cjs require",
+              "userRequest": "./foo",
+              "loc": "1:10-26"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 1
+        },
+        {
+          "id": 1,
+          "identifier": "external \"lib_00d73d25eef8ddd2ed11\"",
+          "name": "external \"lib_00d73d25eef8ddd2ed11\"",
+          "index": 2,
+          "index2": 0,
+          "size": 42,
+          "cacheable": false,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0,
+            1
+          ],
+          "assets": [],
+          "issuer": "delegated 2 from dll-reference lib_00d73d25eef8ddd2ed11",
+          "issuerId": 0,
+          "issuerName": "delegated ./foo.js from dll-reference lib_00d73d25eef8ddd2ed11",
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "delegated 2 from dll-reference lib_00d73d25eef8ddd2ed11",
+              "module": "delegated ./foo.js from dll-reference lib_00d73d25eef8ddd2ed11",
+              "moduleName": "delegated ./foo.js from dll-reference lib_00d73d25eef8ddd2ed11",
+              "type": "delegated source",
+              "userRequest": "dll-reference lib_00d73d25eef8ddd2ed11"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 2
+        },
+        {
+          "id": 2,
+          "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+          "name": "./examples/frontend/src/es5/app1.js",
+          "index": 0,
+          "index2": 2,
+          "size": 99,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "assets": [],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 0,
+          "source": "var foo = require(\"./foo\");\n\ndocument.querySelector(\"#content\").innerHTML += foo(\"app1\", \"App 1\");\n"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 2,
+          "module": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+          "moduleName": "./examples/frontend/src/es5/app1.js",
+          "loc": "",
+          "name": "app1",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "delegated 2 from dll-reference lib_00d73d25eef8ddd2ed11",
+      "name": "delegated ./foo.js from dll-reference lib_00d73d25eef8ddd2ed11",
+      "index": 1,
+      "index2": 1,
+      "size": 42,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0,
+        1
+      ],
+      "assets": [],
+      "issuer": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+      "issuerId": 2,
+      "issuerName": "./examples/frontend/src/es5/app1.js",
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 2,
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+          "module": "./examples/frontend/src/es5/app1.js",
+          "moduleName": "./examples/frontend/src/es5/app1.js",
+          "type": "cjs require",
+          "userRequest": "./foo",
+          "loc": "1:10-26"
+        },
+        {
+          "moduleId": 3,
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+          "module": "./examples/frontend/src/es5/app2.js",
+          "moduleName": "./examples/frontend/src/es5/app2.js",
+          "type": "cjs require",
+          "userRequest": "./foo",
+          "loc": "1:10-26"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 1
+    },
+    {
+      "id": 1,
+      "identifier": "external \"lib_00d73d25eef8ddd2ed11\"",
+      "name": "external \"lib_00d73d25eef8ddd2ed11\"",
+      "index": 2,
+      "index2": 0,
+      "size": 42,
+      "cacheable": false,
+      "built": false,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0,
+        1
+      ],
+      "assets": [],
+      "issuer": "delegated 2 from dll-reference lib_00d73d25eef8ddd2ed11",
+      "issuerId": 0,
+      "issuerName": "delegated ./foo.js from dll-reference lib_00d73d25eef8ddd2ed11",
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "delegated 2 from dll-reference lib_00d73d25eef8ddd2ed11",
+          "module": "delegated ./foo.js from dll-reference lib_00d73d25eef8ddd2ed11",
+          "moduleName": "delegated ./foo.js from dll-reference lib_00d73d25eef8ddd2ed11",
+          "type": "delegated source",
+          "userRequest": "dll-reference lib_00d73d25eef8ddd2ed11"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 2
+    },
+    {
+      "id": 2,
+      "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+      "name": "./examples/frontend/src/es5/app1.js",
+      "index": 0,
+      "index2": 2,
+      "size": 99,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "assets": [],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 0,
+      "source": "var foo = require(\"./foo\");\n\ndocument.querySelector(\"#content\").innerHTML += foo(\"app1\", \"App 1\");\n"
+    },
+    {
+      "id": 3,
+      "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+      "name": "./examples/frontend/src/es5/app2.js",
+      "index": 3,
+      "index2": 3,
+      "size": 99,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 0,
+      "source": "var foo = require(\"./foo\");\n\ndocument.querySelector(\"#content\").innerHTML += foo(\"app2\", \"App 2\");\n"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}

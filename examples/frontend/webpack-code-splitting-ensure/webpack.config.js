@@ -2,6 +2,7 @@
 
 var path = require("path");
 var webpack = require("webpack");
+var StatsWriterPlugin = require("webpack-stats-plugin").StatsWriterPlugin;
 
 module.exports = {
   context: path.join(__dirname, "../src/es5"),
@@ -24,6 +25,11 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: "entry",  // Set to entry point name.
       async: true     // Need async for extraction of common `./foo` dep.
+    }),
+
+    new StatsWriterPlugin({
+      filename: "../stats.json",
+      fields: null
     })
   ]
 };

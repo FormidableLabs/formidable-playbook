@@ -1,0 +1,213 @@
+{
+  "errors": [],
+  "warnings": [
+    "app2.js from UglifyJs\nDropping unused variable red [app2.js:94,4]"
+  ],
+  "version": "3.5.5",
+  "hash": "c6892220c88805f423df",
+  "publicPath": "",
+  "assetsByChunkName": {
+    "app2": "app2.js"
+  },
+  "assets": [
+    {
+      "name": "app2.js",
+      "size": 3794,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "app2"
+      ]
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "app2": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "app2.js"
+      ]
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "extraAsync": false,
+      "size": 336,
+      "names": [
+        "app2"
+      ],
+      "files": [
+        "app2.js"
+      ],
+      "hash": "857950d3e6b0e07af94f",
+      "parents": [],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/Users/rye/scm/fmd/formidable-playbook/node_modules/babel-loader/lib/index.js??ref--0!/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es6/app2.js",
+          "name": "./examples/frontend/src/es6/app2.js",
+          "index": 0,
+          "index2": 1,
+          "size": 102,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "usedExports": true,
+          "providedExports": [],
+          "optimizationBailout": [],
+          "depth": 0,
+          "source": "import { blue } from \"./util\";\n\ndocument.querySelector(\"#content\").innerHTML += blue(\"app2\", \"App 2\");"
+        },
+        {
+          "id": 1,
+          "identifier": "/Users/rye/scm/fmd/formidable-playbook/node_modules/babel-loader/lib/index.js??ref--0!/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es6/util.js",
+          "name": "./examples/frontend/src/es6/util.js",
+          "index": 1,
+          "index2": 0,
+          "size": 234,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/rye/scm/fmd/formidable-playbook/node_modules/babel-loader/lib/index.js??ref--0!/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es6/app2.js",
+          "issuerId": 0,
+          "issuerName": "./examples/frontend/src/es6/app2.js",
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/node_modules/babel-loader/lib/index.js??ref--0!/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es6/app2.js",
+              "module": "./examples/frontend/src/es6/app2.js",
+              "moduleName": "./examples/frontend/src/es6/app2.js",
+              "type": "harmony import",
+              "userRequest": "./util",
+              "loc": "1:0-30"
+            }
+          ],
+          "usedExports": [
+            "blue"
+          ],
+          "providedExports": [
+            "red",
+            "blue"
+          ],
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "export var red = function red(id, msg) {\n  return \"<h1 id=\\\"\" + id + \"\\\" style=\\\"color: red\\\">\" + msg + \"</h1>\";\n};\nexport var blue = function blue(id, msg) {\n  return \"<h1 id=\\\"\" + id + \"\\\" style=\\\"color: blue\\\">\" + msg + \"</h1>\";\n};"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "/Users/rye/scm/fmd/formidable-playbook/node_modules/babel-loader/lib/index.js??ref--0!/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es6/app2.js",
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/node_modules/babel-loader/lib/index.js??ref--0!/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es6/app2.js",
+          "moduleName": "./examples/frontend/src/es6/app2.js",
+          "loc": "",
+          "name": "app2",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "/Users/rye/scm/fmd/formidable-playbook/node_modules/babel-loader/lib/index.js??ref--0!/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es6/app2.js",
+      "name": "./examples/frontend/src/es6/app2.js",
+      "index": 0,
+      "index2": 1,
+      "size": 102,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "usedExports": true,
+      "providedExports": [],
+      "optimizationBailout": [],
+      "depth": 0,
+      "source": "import { blue } from \"./util\";\n\ndocument.querySelector(\"#content\").innerHTML += blue(\"app2\", \"App 2\");"
+    },
+    {
+      "id": 1,
+      "identifier": "/Users/rye/scm/fmd/formidable-playbook/node_modules/babel-loader/lib/index.js??ref--0!/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es6/util.js",
+      "name": "./examples/frontend/src/es6/util.js",
+      "index": 1,
+      "index2": 0,
+      "size": 234,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/rye/scm/fmd/formidable-playbook/node_modules/babel-loader/lib/index.js??ref--0!/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es6/app2.js",
+      "issuerId": 0,
+      "issuerName": "./examples/frontend/src/es6/app2.js",
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/node_modules/babel-loader/lib/index.js??ref--0!/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es6/app2.js",
+          "module": "./examples/frontend/src/es6/app2.js",
+          "moduleName": "./examples/frontend/src/es6/app2.js",
+          "type": "harmony import",
+          "userRequest": "./util",
+          "loc": "1:0-30"
+        }
+      ],
+      "usedExports": [
+        "blue"
+      ],
+      "providedExports": [
+        "red",
+        "blue"
+      ],
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "export var red = function red(id, msg) {\n  return \"<h1 id=\\\"\" + id + \"\\\" style=\\\"color: red\\\">\" + msg + \"</h1>\";\n};\nexport var blue = function blue(id, msg) {\n  return \"<h1 id=\\\"\" + id + \"\\\" style=\\\"color: blue\\\">\" + msg + \"</h1>\";\n};"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}

@@ -1,0 +1,275 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "3.5.5",
+  "hash": "00d73d25eef8ddd2ed11",
+  "publicPath": "",
+  "assetsByChunkName": {
+    "lib": "lib.js"
+  },
+  "assets": [
+    {
+      "name": "lib.js",
+      "size": 3324,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "lib"
+      ]
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "lib": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "lib.js"
+      ]
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "extraAsync": false,
+      "size": 265,
+      "names": [
+        "lib"
+      ],
+      "files": [
+        "lib.js"
+      ],
+      "hash": "68b5c777f73249612a66",
+      "parents": [],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "dll lib",
+          "name": "dll lib",
+          "index": 0,
+          "index2": 2,
+          "size": 12,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 0
+        },
+        {
+          "id": 1,
+          "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/lib.js",
+          "name": "./examples/frontend/src/es5/lib.js",
+          "index": 1,
+          "index2": 1,
+          "size": 161,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "dll lib",
+          "issuerId": 0,
+          "issuerName": "dll lib",
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "dll lib",
+              "module": "dll lib",
+              "moduleName": "dll lib",
+              "type": "single entry",
+              "userRequest": "./lib",
+              "loc": "lib:0"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "/**\n * Shared Library (DLL)\n *\n * Don't need to assign to variable, just the side-effect of \"including\"\n * desired libraries in this file.\n */\nrequire(\"./foo\");\n"
+        },
+        {
+          "id": 2,
+          "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/foo.js",
+          "name": "./examples/frontend/src/es5/foo.js",
+          "index": 2,
+          "index2": 0,
+          "size": 92,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/lib.js",
+          "issuerId": 1,
+          "issuerName": "./examples/frontend/src/es5/lib.js",
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 1,
+              "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/lib.js",
+              "module": "./examples/frontend/src/es5/lib.js",
+              "moduleName": "./examples/frontend/src/es5/lib.js",
+              "type": "cjs require",
+              "userRequest": "./foo",
+              "loc": "7:0-16"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 2,
+          "source": "module.exports = function (id, msg) {\n  return \"<h1 id=\\\"\" + id + \"\\\">\" + msg + \"</h1>\";\n};\n"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "dll lib",
+          "moduleIdentifier": "dll lib",
+          "moduleName": "dll lib",
+          "loc": "",
+          "name": "lib",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "dll lib",
+      "name": "dll lib",
+      "index": 0,
+      "index2": 2,
+      "size": 12,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 0
+    },
+    {
+      "id": 1,
+      "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/lib.js",
+      "name": "./examples/frontend/src/es5/lib.js",
+      "index": 1,
+      "index2": 1,
+      "size": 161,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "dll lib",
+      "issuerId": 0,
+      "issuerName": "dll lib",
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "dll lib",
+          "module": "dll lib",
+          "moduleName": "dll lib",
+          "type": "single entry",
+          "userRequest": "./lib",
+          "loc": "lib:0"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "/**\n * Shared Library (DLL)\n *\n * Don't need to assign to variable, just the side-effect of \"including\"\n * desired libraries in this file.\n */\nrequire(\"./foo\");\n"
+    },
+    {
+      "id": 2,
+      "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/foo.js",
+      "name": "./examples/frontend/src/es5/foo.js",
+      "index": 2,
+      "index2": 0,
+      "size": 92,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/lib.js",
+      "issuerId": 1,
+      "issuerName": "./examples/frontend/src/es5/lib.js",
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 1,
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/lib.js",
+          "module": "./examples/frontend/src/es5/lib.js",
+          "moduleName": "./examples/frontend/src/es5/lib.js",
+          "type": "cjs require",
+          "userRequest": "./foo",
+          "loc": "7:0-16"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 2,
+      "source": "module.exports = function (id, msg) {\n  return \"<h1 id=\\\"\" + id + \"\\\">\" + msg + \"</h1>\";\n};\n"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}

@@ -1,0 +1,534 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "3.5.5",
+  "hash": "59df90443dbd909bc952",
+  "publicPath": "dist/js/",
+  "assetsByChunkName": {
+    "entry": "entry.js"
+  },
+  "assets": [
+    {
+      "name": "0.js",
+      "size": 292,
+      "chunks": [
+        0
+      ],
+      "chunkNames": []
+    },
+    {
+      "name": "1.js",
+      "size": 348,
+      "chunks": [
+        1
+      ],
+      "chunkNames": []
+    },
+    {
+      "name": "2.js",
+      "size": 339,
+      "chunks": [
+        2
+      ],
+      "chunkNames": []
+    },
+    {
+      "name": "entry.js",
+      "size": 6773,
+      "chunks": [
+        3
+      ],
+      "chunkNames": [
+        "entry"
+      ]
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "entry": {
+      "chunks": [
+        3
+      ],
+      "assets": [
+        "entry.js"
+      ]
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": false,
+      "entry": false,
+      "extraAsync": true,
+      "size": 92,
+      "names": [],
+      "files": [
+        "0.js"
+      ],
+      "hash": "fb36daa466596dbb269b",
+      "parents": [
+        3
+      ],
+      "modules": [
+        {
+          "id": 3,
+          "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/foo.js",
+          "name": "./examples/frontend/src/es5/foo.js",
+          "index": 2,
+          "index2": 0,
+          "size": 92,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+          "issuerId": 0,
+          "issuerName": "./examples/frontend/src/es5/app1.js",
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+              "module": "./examples/frontend/src/es5/app1.js",
+              "moduleName": "./examples/frontend/src/es5/app1.js",
+              "type": "cjs require",
+              "userRequest": "./foo",
+              "loc": "1:10-26"
+            },
+            {
+              "moduleId": 1,
+              "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+              "module": "./examples/frontend/src/es5/app2.js",
+              "moduleName": "./examples/frontend/src/es5/app2.js",
+              "type": "cjs require",
+              "userRequest": "./foo",
+              "loc": "1:10-26"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 2,
+          "source": "module.exports = function (id, msg) {\n  return \"<h1 id=\\\"\" + id + \"\\\">\" + msg + \"</h1>\";\n};\n"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 2,
+          "module": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "moduleName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "loc": "8:0-10:2",
+          "name": null,
+          "reasons": [
+            "async commons"
+          ]
+        },
+        {
+          "moduleId": 2,
+          "module": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "moduleName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "loc": "11:0-13:2",
+          "name": null,
+          "reasons": [
+            "async commons"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "rendered": true,
+      "initial": false,
+      "entry": false,
+      "extraAsync": false,
+      "size": 99,
+      "names": [],
+      "files": [
+        "1.js"
+      ],
+      "hash": "2a1a3faf875fcd8e2916",
+      "parents": [
+        3
+      ],
+      "modules": [
+        {
+          "id": 1,
+          "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+          "name": "./examples/frontend/src/es5/app2.js",
+          "index": 3,
+          "index2": 2,
+          "size": 99,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "assets": [],
+          "issuer": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "issuerId": 2,
+          "issuerName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 2,
+              "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+              "module": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+              "moduleName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+              "type": "require.ensure item",
+              "userRequest": "src/app2",
+              "loc": "11:0-13:2"
+            },
+            {
+              "moduleId": 2,
+              "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+              "module": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+              "moduleName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+              "type": "cjs require",
+              "userRequest": "src/app2",
+              "loc": "12:2-21"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "var foo = require(\"./foo\");\n\ndocument.querySelector(\"#content\").innerHTML += foo(\"app2\", \"App 2\");\n"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 2,
+          "module": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "moduleName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "loc": "11:0-13:2",
+          "name": null,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "rendered": true,
+      "initial": false,
+      "entry": false,
+      "extraAsync": false,
+      "size": 99,
+      "names": [],
+      "files": [
+        "2.js"
+      ],
+      "hash": "95b2f7f58823d07b683f",
+      "parents": [
+        3
+      ],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+          "name": "./examples/frontend/src/es5/app1.js",
+          "index": 1,
+          "index2": 1,
+          "size": 99,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            2
+          ],
+          "assets": [],
+          "issuer": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "issuerId": 2,
+          "issuerName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 2,
+              "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+              "module": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+              "moduleName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+              "type": "require.ensure item",
+              "userRequest": "src/app1",
+              "loc": "8:0-10:2"
+            },
+            {
+              "moduleId": 2,
+              "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+              "module": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+              "moduleName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+              "type": "cjs require",
+              "userRequest": "src/app1",
+              "loc": "9:2-21"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "var foo = require(\"./foo\");\n\ndocument.querySelector(\"#content\").innerHTML += foo(\"app1\", \"App 1\");\n"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 2,
+          "module": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "moduleName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "loc": "8:0-10:2",
+          "name": null,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "extraAsync": false,
+      "size": 323,
+      "names": [
+        "entry"
+      ],
+      "files": [
+        "entry.js"
+      ],
+      "hash": "49b0bea6f9a5e9d55a4e",
+      "parents": [],
+      "modules": [
+        {
+          "id": 2,
+          "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "name": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "index": 0,
+          "index2": 3,
+          "size": 323,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            3
+          ],
+          "assets": [],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 0,
+          "source": "/*eslint-disable*/ // Disable as rest of code around here is Node.\n\n/**\n * Lazy load both applications.\n *\n * **Note**: `src` is aliased to `examples/frontend/src`.\n */\nrequire.ensure([\"src/app1\"], function (require) {\n  require(\"src/app1\");\n});\nrequire.ensure([\"src/app2\"], function (require) {\n  require(\"src/app2\");\n});\n"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 2,
+          "module": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "moduleName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "loc": "",
+          "name": "entry",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+      "name": "./examples/frontend/src/es5/app1.js",
+      "index": 1,
+      "index2": 1,
+      "size": 99,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        2
+      ],
+      "assets": [],
+      "issuer": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+      "issuerId": 2,
+      "issuerName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 2,
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "module": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "moduleName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "type": "require.ensure item",
+          "userRequest": "src/app1",
+          "loc": "8:0-10:2"
+        },
+        {
+          "moduleId": 2,
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "module": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "moduleName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "type": "cjs require",
+          "userRequest": "src/app1",
+          "loc": "9:2-21"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "var foo = require(\"./foo\");\n\ndocument.querySelector(\"#content\").innerHTML += foo(\"app1\", \"App 1\");\n"
+    },
+    {
+      "id": 1,
+      "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+      "name": "./examples/frontend/src/es5/app2.js",
+      "index": 3,
+      "index2": 2,
+      "size": 99,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "assets": [],
+      "issuer": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+      "issuerId": 2,
+      "issuerName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 2,
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "module": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "moduleName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "type": "require.ensure item",
+          "userRequest": "src/app2",
+          "loc": "11:0-13:2"
+        },
+        {
+          "moduleId": 2,
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "module": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "moduleName": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+          "type": "cjs require",
+          "userRequest": "src/app2",
+          "loc": "12:2-21"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "var foo = require(\"./foo\");\n\ndocument.querySelector(\"#content\").innerHTML += foo(\"app2\", \"App 2\");\n"
+    },
+    {
+      "id": 2,
+      "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/webpack-code-splitting-ensure/entry.js",
+      "name": "./examples/frontend/webpack-code-splitting-ensure/entry.js",
+      "index": 0,
+      "index2": 3,
+      "size": 323,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        3
+      ],
+      "assets": [],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 0,
+      "source": "/*eslint-disable*/ // Disable as rest of code around here is Node.\n\n/**\n * Lazy load both applications.\n *\n * **Note**: `src` is aliased to `examples/frontend/src`.\n */\nrequire.ensure([\"src/app1\"], function (require) {\n  require(\"src/app1\");\n});\nrequire.ensure([\"src/app2\"], function (require) {\n  require(\"src/app2\");\n});\n"
+    },
+    {
+      "id": 3,
+      "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/foo.js",
+      "name": "./examples/frontend/src/es5/foo.js",
+      "index": 2,
+      "index2": 0,
+      "size": 92,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+      "issuerId": 0,
+      "issuerName": "./examples/frontend/src/es5/app1.js",
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+          "module": "./examples/frontend/src/es5/app1.js",
+          "moduleName": "./examples/frontend/src/es5/app1.js",
+          "type": "cjs require",
+          "userRequest": "./foo",
+          "loc": "1:10-26"
+        },
+        {
+          "moduleId": 1,
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+          "module": "./examples/frontend/src/es5/app2.js",
+          "moduleName": "./examples/frontend/src/es5/app2.js",
+          "type": "cjs require",
+          "userRequest": "./foo",
+          "loc": "1:10-26"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 2,
+      "source": "module.exports = function (id, msg) {\n  return \"<h1 id=\\\"\" + id + \"\\\">\" + msg + \"</h1>\";\n};\n"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}

@@ -1,0 +1,363 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "3.5.5",
+  "hash": "c0dd74e24f7ec751b518",
+  "publicPath": "",
+  "assetsByChunkName": {
+    "app2": "app2.js",
+    "app1": "app1.js",
+    "commons": "commons.js"
+  },
+  "assets": [
+    {
+      "name": "app2.js",
+      "size": 346,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "app2"
+      ]
+    },
+    {
+      "name": "app1.js",
+      "size": 352,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "app1"
+      ]
+    },
+    {
+      "name": "commons.js",
+      "size": 6052,
+      "chunks": [
+        2
+      ],
+      "chunkNames": [
+        "commons"
+      ]
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "app1": {
+      "chunks": [
+        2,
+        1
+      ],
+      "assets": [
+        "commons.js",
+        "app1.js"
+      ]
+    },
+    "app2": {
+      "chunks": [
+        2,
+        0
+      ],
+      "assets": [
+        "commons.js",
+        "app2.js"
+      ]
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": false,
+      "extraAsync": false,
+      "size": 99,
+      "names": [
+        "app2"
+      ],
+      "files": [
+        "app2.js"
+      ],
+      "hash": "15754a0fed09736fda72",
+      "parents": [
+        2
+      ],
+      "modules": [
+        {
+          "id": 2,
+          "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+          "name": "./examples/frontend/src/es5/app2.js",
+          "index": 2,
+          "index2": 2,
+          "size": 99,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 0,
+          "source": "var foo = require(\"./foo\");\n\ndocument.querySelector(\"#content\").innerHTML += foo(\"app2\", \"App 2\");\n"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 2,
+          "module": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+          "moduleName": "./examples/frontend/src/es5/app2.js",
+          "loc": "",
+          "name": "app2",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "rendered": true,
+      "initial": true,
+      "entry": false,
+      "extraAsync": false,
+      "size": 99,
+      "names": [
+        "app1"
+      ],
+      "files": [
+        "app1.js"
+      ],
+      "hash": "6e2c8109abfed37fbc3e",
+      "parents": [
+        2
+      ],
+      "modules": [
+        {
+          "id": 1,
+          "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+          "name": "./examples/frontend/src/es5/app1.js",
+          "index": 0,
+          "index2": 1,
+          "size": 99,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "assets": [],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 0,
+          "source": "var foo = require(\"./foo\");\n\ndocument.querySelector(\"#content\").innerHTML += foo(\"app1\", \"App 1\");\n"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 1,
+          "module": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+          "moduleName": "./examples/frontend/src/es5/app1.js",
+          "loc": "",
+          "name": "app1",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "extraAsync": false,
+      "size": 92,
+      "names": [
+        "commons"
+      ],
+      "files": [
+        "commons.js"
+      ],
+      "hash": "a9276c14a35f7bd6146f",
+      "parents": [],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/foo.js",
+          "name": "./examples/frontend/src/es5/foo.js",
+          "index": 1,
+          "index2": 0,
+          "size": 92,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            2
+          ],
+          "assets": [],
+          "issuer": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+          "issuerId": 2,
+          "issuerName": "./examples/frontend/src/es5/app2.js",
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 1,
+              "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+              "module": "./examples/frontend/src/es5/app1.js",
+              "moduleName": "./examples/frontend/src/es5/app1.js",
+              "type": "cjs require",
+              "userRequest": "./foo",
+              "loc": "1:10-26"
+            },
+            {
+              "moduleId": 2,
+              "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+              "module": "./examples/frontend/src/es5/app2.js",
+              "moduleName": "./examples/frontend/src/es5/app2.js",
+              "type": "cjs require",
+              "userRequest": "./foo",
+              "loc": "1:10-26"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "module.exports = function (id, msg) {\n  return \"<h1 id=\\\"\" + id + \"\\\">\" + msg + \"</h1>\";\n};\n"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": []
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/foo.js",
+      "name": "./examples/frontend/src/es5/foo.js",
+      "index": 1,
+      "index2": 0,
+      "size": 92,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        2
+      ],
+      "assets": [],
+      "issuer": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+      "issuerId": 2,
+      "issuerName": "./examples/frontend/src/es5/app2.js",
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 1,
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+          "module": "./examples/frontend/src/es5/app1.js",
+          "moduleName": "./examples/frontend/src/es5/app1.js",
+          "type": "cjs require",
+          "userRequest": "./foo",
+          "loc": "1:10-26"
+        },
+        {
+          "moduleId": 2,
+          "moduleIdentifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+          "module": "./examples/frontend/src/es5/app2.js",
+          "moduleName": "./examples/frontend/src/es5/app2.js",
+          "type": "cjs require",
+          "userRequest": "./foo",
+          "loc": "1:10-26"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "module.exports = function (id, msg) {\n  return \"<h1 id=\\\"\" + id + \"\\\">\" + msg + \"</h1>\";\n};\n"
+    },
+    {
+      "id": 1,
+      "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app1.js",
+      "name": "./examples/frontend/src/es5/app1.js",
+      "index": 0,
+      "index2": 1,
+      "size": 99,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "assets": [],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 0,
+      "source": "var foo = require(\"./foo\");\n\ndocument.querySelector(\"#content\").innerHTML += foo(\"app1\", \"App 1\");\n"
+    },
+    {
+      "id": 2,
+      "identifier": "/Users/rye/scm/fmd/formidable-playbook/examples/frontend/src/es5/app2.js",
+      "name": "./examples/frontend/src/es5/app2.js",
+      "index": 2,
+      "index2": 2,
+      "size": 99,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 0,
+      "source": "var foo = require(\"./foo\");\n\ndocument.querySelector(\"#content\").innerHTML += foo(\"app2\", \"App 2\");\n"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}
