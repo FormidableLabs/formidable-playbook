@@ -66,7 +66,7 @@
 /******/ ([
 /* 0 */
 /*!*****************************!*\
-  !*** ./app1.js + 1 modules ***!
+  !*** ./app3.js + 3 modules ***!
   \*****************************/
 /*! exports provided:  */
 /*! all exports used */
@@ -83,10 +83,18 @@ var red = function red(id, msg) {
 var blue = function blue(id, msg) {
   return "<h1 id=\"" + id + "\" style=\"color: blue\">" + msg + "</h1>";
 };
-// CONCATENATED MODULE: ./app1.js
+// CONCATENATED MODULE: ./util-1.js
 
 
-document.querySelector("#content").innerHTML += red("app1", "App 1");
+var one = "one";
+// CONCATENATED MODULE: ./util-2.js
+
+
+var two = "two";
+// CONCATENATED MODULE: ./app3.js
+
+
+document.querySelector("#content").innerHTML += red("app3", "App 3");
 
 /***/ })
 /******/ ]);

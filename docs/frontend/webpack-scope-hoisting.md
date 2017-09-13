@@ -33,27 +33,30 @@ export const blue = (id, msg) => `<h1 id="${id}" style="color: blue">${msg}</h1>
 
 Our application then uses `red()`:
 
-[`app1.js`](../../examples/frontend/src/es6/app1.js)
+[`app3.js`](../../examples/frontend/src/es6/app3.js)
 
 ```js
-import { red } from "./util";
+import { red } from "./util-2";
 
-document.querySelector("#content").innerHTML += red("app1", "App 1");
+document.querySelector("#content").innerHTML += red("app3", "App 3");
 ```
+
+which has an indirect path of `util.js`'s `red` rexported through `util-1.js`
+and `util-2.js`.
 
 ##### Scope Hoisting Example
 
 (Example build / dist code available at: [github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-scope-hoisting](https://github.com/FormidableLabs/formidable-playbook/tree/master/examples/frontend/webpack-scope-hoisting))
 
-Our goal with scope hoisting is to have `app1` include only **one** webpack
-module function instead of two. Out of the box, here is roughly what our modules
-look like in a sample bundle:
+Our goal with scope hoisting is to have `app3` include only **one** webpack
+module function instead of four. Out of the box, here is roughly what our
+modules look like in a sample bundle:
 
 ```js
 [
 /* 0 */
 /*!*****************!*\
-  !*** ./app1.js ***!
+  !*** ./app3.js ***!
   \*****************/
 /*! exports provided:  */
 /*! all exports used */
@@ -61,13 +64,49 @@ look like in a sample bundle:
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(/*! ./util */ 1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_2__ = __webpack_require__(/*! ./util-2 */ 1);
 
 
-document.querySelector("#content").innerHTML += Object(__WEBPACK_IMPORTED_MODULE_0__util__["a" /* red */])("app1", "App 1");
+document.querySelector("#content").innerHTML += Object(__WEBPACK_IMPORTED_MODULE_0__util_2__["a" /* red */])("app3", "App 3");
 
 /***/ }),
 /* 1 */
+/*!*******************!*\
+  !*** ./util-2.js ***!
+  \*******************/
+/*! exports provided: red, blue, two */
+/*! exports used: red */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export two */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_1__ = __webpack_require__(/*! ./util-1 */ 2);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__util_1__["a"]; });
+/* unused harmony reexport blue */
+
+
+var two = "two";
+
+/***/ }),
+/* 2 */
+/*!*******************!*\
+  !*** ./util-1.js ***!
+  \*******************/
+/*! exports provided: red, blue, one */
+/*! exports used: red */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export one */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(/*! ./util */ 3);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__util__["a"]; });
+/* unused harmony reexport blue */
+
+
+var one = "one";
+
+/***/ }),
+/* 3 */
 /*!*****************!*\
   !*** ./util.js ***!
   \*****************/
@@ -86,10 +125,12 @@ var blue = function blue(id, msg) {
 };
 
 /***/ })
-/******/ ]
+]
 ```
 
-By default the above shows **two** module definitions (the `(function(module, __webpack_exports__, __webpack_require__)` part) -- `0` for `./app1.js` and `1` for `./util.js`.
+By default the above shows **four** module definitions (the
+`(function(module, __webpack_exports__, __webpack_require__)` part) -- `0` for
+`./app3.js`, etc.
 
 So how do we collapse this into fewer module definitions? By enabling the module
 concatenation plugin in our webpack configuration:
@@ -103,18 +144,18 @@ plugins: [
 
 With all of this configuration finished, our output:
 
-* [`dist/js/app1.js`](../../examples/frontend/webpack-scope-hoisting/dist/js/app1.js):
-  The `app1` entry point.
-* [`dist/js/app1.min.js`](../../examples/frontend/webpack-scope-hoisting/dist/js/app1.min.js):
-  A minified + prettified version of `app1` entry point.
+* [`dist/js/app3.js`](../../examples/frontend/webpack-scope-hoisting/dist/js/app3.js):
+  The `app3` entry point.
+* [`dist/js/app3.min.js`](../../examples/frontend/webpack-scope-hoisting/dist/js/app3.min.js):
+  A minified + prettified version of `app3` entry point.
 
-Looking at `app1.js`:
+Looking at `app3.js`:
 
 ```js
 [
 /* 0 */
 /*!*****************************!*\
-  !*** ./app1.js + 1 modules ***!
+  !*** ./app3.js + 3 modules ***!
   \*****************************/
 /*! exports provided:  */
 /*! all exports used */
@@ -131,28 +172,37 @@ var red = function red(id, msg) {
 var blue = function blue(id, msg) {
   return "<h1 id=\"" + id + "\" style=\"color: blue\">" + msg + "</h1>";
 };
-// CONCATENATED MODULE: ./app1.js
+// CONCATENATED MODULE: ./util-1.js
 
 
-document.querySelector("#content").innerHTML += red("app1", "App 1");
+var one = "one";
+// CONCATENATED MODULE: ./util-2.js
+
+
+var two = "two";
+// CONCATENATED MODULE: ./app3.js
+
+
+document.querySelector("#content").innerHTML += red("app3", "App 3");
 
 /***/ })
-/******/ ]
+]
 ```
 
-we now have only **one** module definition -- `0` for `./app1.js + 1 modules`.
-The separate `./util.js` is collapsed _into_ the `app1` definition. (See the `//
-CONCATENATED MODULE: ./util.js` comment). Yay!
+we now have only **one** module definition -- `0` for `./app3.js + 3 modules`.
+The separate `./util.js`, `./util-1.js`, and `./util-2.js` modules are collapsed
+_into_ the `app3` definition. (See the `// CONCATENATED MODULE: ./[NAME].js`
+comments). Yay!
 
-
-Looking at `app1.min.js` we see an even _smaller_ bundle as `uglify` is able to
-remove the unused `blue` function and further inline `red` into it's function
+Looking at `app3.min.js` we see an even _smaller_ bundle as `uglify` is able to
+remove the unused `blue` function and unused intermediate variables in
+`./util-1.js` and `./util-2.js` and then further inline `red` into its function
 call. That's super tight!
 
 ```js
 [ /* 0 */
 /*!*****************************!*\
-  !*** ./app1.js + 1 modules ***!
+  !*** ./app3.js + 3 modules ***!
   \*****************************/
 /*! exports provided:  */
 /*! all exports used */
@@ -163,10 +213,10 @@ function(module, __webpack_exports__, __webpack_require__) {
     Object.defineProperty(__webpack_exports__, "__esModule", {
         value: !0
     });
-    // CONCATENATED MODULE: ./app1.js
+    // CONCATENATED MODULE: ./app3.js
     document.querySelector("#content").innerHTML += function(id, msg) {
         return '<h1 id="' + id + '" style="color: red">' + msg + "</h1>";
-    }("app1", "App 1");
+    }("app3", "App 3");
 } ]
 ```
 
